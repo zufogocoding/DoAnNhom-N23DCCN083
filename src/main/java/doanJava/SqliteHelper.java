@@ -22,16 +22,12 @@ public class SqliteHelper {
         return DriverManager.getConnection(DB_URL);
     }
 
-    /**
-     * Khởi tạo 7 bảng cần thiết cho dự án.
-     * Sử dụng "CREATE TABLE IF NOT EXISTS" để an toàn khi gọi lại.
-     */
     public static void initDatabase() {
         
         // Mảng chứa 7 câu lệnh SQL để tạo bảng
         String[] createTableStatements = {
             
-            // 1. Bảng Student
+            // 1. Student
             """
             CREATE TABLE IF NOT EXISTS Student (
                 student_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -45,7 +41,7 @@ public class SqliteHelper {
             );
             """,
             
-            // 2. Bảng Ingredient
+            // 2. Ingredient
             """
             CREATE TABLE IF NOT EXISTS Ingredient (
                 ingredient_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -58,7 +54,7 @@ public class SqliteHelper {
             );
             """,
 
-            // 3. Bảng Student_Inventory
+            // 3. Student_Inventory
             """
             CREATE TABLE IF NOT EXISTS Student_Inventory (
                 student_id INTEGER,
@@ -70,7 +66,7 @@ public class SqliteHelper {
             );
             """,
 
-            // 4. Bảng Food
+            // 4. Food
             """
             CREATE TABLE IF NOT EXISTS Food (
                 food_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -79,7 +75,7 @@ public class SqliteHelper {
             );
             """,
 
-            // 5. Bảng Recipe_Ingredient
+            // 5. Recipe_Ingredient
             """
             CREATE TABLE IF NOT EXISTS Recipe_Ingredient (
                 food_id INTEGER,
@@ -91,7 +87,7 @@ public class SqliteHelper {
             );
             """,
 
-            // 6. Bảng Daily_Menu
+            // 6.Daily_Menu
             """
             CREATE TABLE IF NOT EXISTS Daily_Menu (
                 menu_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -105,7 +101,7 @@ public class SqliteHelper {
             );
             """,
 
-            // 7. Bảng Menu_Food
+            // 7.Menu_Food
             """
             CREATE TABLE IF NOT EXISTS Menu_Food (
                 log_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -122,7 +118,6 @@ public class SqliteHelper {
         // Sử dụng try-with-resources để đảm bảo Connection và Statement được đóng
         try (Connection conn = getConnection(); Statement stmt = conn.createStatement()) {
             
-            // Chạy từng câu lệnh CREATE TABLE
             for (String sql : createTableStatements) {
                 stmt.execute(sql);
             }
@@ -134,10 +129,7 @@ public class SqliteHelper {
         }
     }
 
-    /**
-     * Hàm main để chạy và tạo file data.db.
-     * Đây là cách bạn hoàn thành mục "Chạy initDatabase() 1 lần".
-     */
+    //main test
     public static void main(String[] args) {
         System.out.println("Đang tiến hành khởi tạo database...");
         initDatabase();
