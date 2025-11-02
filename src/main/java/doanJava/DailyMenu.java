@@ -9,5 +9,5 @@ package doanJava;
  * @author phamt
  */
 public class DailyMenu {
-    
+    //adding comment
 }
