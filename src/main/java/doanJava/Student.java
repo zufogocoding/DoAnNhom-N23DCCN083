@@ -17,7 +17,7 @@ public class Student {
     private int targetProteinG;
     private int targetCarbsG;
     private int targetFatG;
-
+    //file word em viet sai xin loi Tu
     // Constructor rỗng
     public Student() {
     }
