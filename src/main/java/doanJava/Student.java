@@ -11,35 +11,30 @@ package doanJava;
 public class Student {
     private int studentId;
     private String name;
-    private int age;
     private double heightCm;
     private double weightKg;
-    private int activityLevel;
     private int targetCalories;
     private int targetProteinG;
     private int targetCarbsG;
     private int targetFatG;
-    
-    // 2. Constructor (Hàm khởi tạo)
+
+    // Constructor rỗng
     public Student() {
-        // Constructor rỗng
     }
 
-    public Student(int studentId, String name, int age, double heightCm, double weightKg, int activityLevel, int targetCalories, int targetProteinG, int targetCarbsG, int targetFatG) {
+    // Constructor đầy đủ
+    public Student(int studentId, String name, double heightCm, double weightKg, int targetCalories, int targetProteinG, int targetCarbsG, int targetFatG) {
         this.studentId = studentId;
         this.name = name;
-        this.age = age;
         this.heightCm = heightCm;
         this.weightKg = weightKg;
-        this.activityLevel = activityLevel;
         this.targetCalories = targetCalories;
         this.targetProteinG = targetProteinG;
         this.targetCarbsG = targetCarbsG;
         this.targetFatG = targetFatG;
     }
-    
-    // 3. Các hàm Getters và Setters
-    // (Bắt buộc phải có để lấy và gán dữ liệu)
+
+    // Getters and Setters
     public int getStudentId() {
         return studentId;
     }
@@ -56,14 +51,6 @@ public class Student {
         this.name = name;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
     public double getHeightCm() {
         return heightCm;
     }
@@ -78,14 +65,6 @@ public class Student {
 
     public void setWeightKg(double weightKg) {
         this.weightKg = weightKg;
-    }
-
-    public int getActivityLevel() {
-        return activityLevel;
-    }
-
-    public void setActivityLevel(int activityLevel) {
-        this.activityLevel = activityLevel;
     }
 
     public int getTargetCalories() {
@@ -122,11 +101,9 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" + 
-               "id=" + studentId + 
-               ", name='" + name + '\'' + 
-               ", age=" + age + 
-               '}';
+        return "Student{" +
+                "studentId=" + studentId +
+                ", name='" + name + '\'' +
+                '}';
     }
-
 }
