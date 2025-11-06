@@ -8,6 +8,74 @@ package doanJava;
  *
  * @author phamt
  */
+import java.sql.Date; 
+
 public class DailyMenu {
-    
+
+    private int menuId;
+    private int studentId;
+    private Date date; 
+    private double totalCalories;
+    private double totalProtein;
+    private double totalCarbs;
+    private double totalFat;
+
+    public DailyMenu() {
+    }
+    public int getMenuId() {
+        return menuId;
+    }
+
+    public void setMenuId(int menuId) {
+        this.menuId = menuId;
+    }
+
+    public int getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(int studentId) {
+        this.studentId = studentId;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public double getTotalCalories() {
+        return totalCalories;
+    }
+
+    public void setTotalCalories(double totalCalories) {
+        this.totalCalories = totalCalories;
+    }
+
+    public double getTotalProtein() {
+        return totalProtein;
+    }
+
+    public void setTotalProtein(double totalProtein) {
+        this.totalProtein = totalProtein;
+    }
+
+    public double getTotalCarbs() {
+        return totalCarbs;
+    }
+
+    public void setTotalCarbs(double totalCarbs) {
+        this.totalCarbs = totalCarbs;
+    }
+
+    public double getTotalFat() {
+        return totalFat;
+    }
+
+    public void setTotalFat(double totalFat) {
+        this.totalFat = totalFat;
+    }
 }
+
