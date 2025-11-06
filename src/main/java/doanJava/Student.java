@@ -19,12 +19,25 @@ public class Student {
     private int targetProteinG;
     private int targetCarbsG;
     private int targetFatG;
-
+    
     // 2. Constructor (Hàm khởi tạo)
     public Student() {
         // Constructor rỗng
     }
 
+    public Student(int studentId, String name, int age, double heightCm, double weightKg, int activityLevel, int targetCalories, int targetProteinG, int targetCarbsG, int targetFatG) {
+        this.studentId = studentId;
+        this.name = name;
+        this.age = age;
+        this.heightCm = heightCm;
+        this.weightKg = weightKg;
+        this.activityLevel = activityLevel;
+        this.targetCalories = targetCalories;
+        this.targetProteinG = targetProteinG;
+        this.targetCarbsG = targetCarbsG;
+        this.targetFatG = targetFatG;
+    }
+    
     // 3. Các hàm Getters và Setters
     // (Bắt buộc phải có để lấy và gán dữ liệu)
     public int getStudentId() {
