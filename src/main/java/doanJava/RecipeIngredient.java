@@ -10,4 +10,35 @@ package doanJava;
  */
 public class RecipeIngredient {
     
+    private int foodId;
+    private int ingredientId;
+    private double quantity;
+
+    public RecipeIngredient() {
+    }
+
+    public int getFoodId() {
+        return foodId;
+    }
+
+    public void setFoodId(int foodId) {
+        this.foodId = foodId;
+    }
+
+    public int getIngredientId() {
+        return ingredientId;
+    }
+
+    public void setIngredientId(int ingredientId) {
+        this.ingredientId = ingredientId;
+    }
+
+    public double getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(double quantity) {
+        this.quantity = quantity;
+    }
+
 }
