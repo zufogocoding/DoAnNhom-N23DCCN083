@@ -3,18 +3,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package doanJava;
+
 import java.sql.*;
 import java.util.*;
+
 /**
  *
  * @author phamt
  */
 public class StudentDAO {
-    public Student addStudent(Student student){
+
+    public Student addStudent(Student student) {
         String sql = "INSERT INTO Student(name,height_cm,weight_kg,target_calories,target_protein_g,target_carbs_g,target_fat_g) VALUES(?,?,?,?,?,?,?)";
-        
-        try (Connection conn =  SqliteHelper.getConnection();
-            PreparedStatement pstmt = conn.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS)){
+
+        try (Connection conn = SqliteHelper.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             pstmt.setString(1, student.getName());
             pstmt.setDouble(2, student.getHeightCm());
             pstmt.setDouble(3, student.getWeightKg());
@@ -23,14 +25,60 @@ public class StudentDAO {
             pstmt.setInt(6, student.getTargetCarbsG());
             pstmt.setInt(7, student.getTargetFatG());
             pstmt.executeUpdate();
-            
+
             ResultSet rs = pstmt.getGeneratedKeys();
-            if(rs.next()) {
-                student.setStudentId(rs.getInt(1));}
+            if (rs.next()) {
+                student.setStudentId(rs.getInt(1));
+            }
             return student;
         } catch (SQLException e) {
-            System.err.println("Error adding Student: "+e.getMessage());
+            System.err.println("Error adding Student: " + e.getMessage());
             return null;
         }
     }
+        
+
+    public Student getStudent(int id) {
+        String sql = "SELECT * FROM Student WHERE student_id = ?";
+        try (Connection conn = SqliteHelper.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+            pstmt.setInt(1, id);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                return mapResultSetToStudent(rs);
+            }
+
+        } catch (SQLException e) {
+            System.err.println("Error getting student: " + e.getMessage());
+        }
+        return null;
+    }
+
+    public List<Student> getAllStudents() {
+        List<Student> students = new ArrayList<>();
+        String sql = "SELECT * FROM Student";
+
+        try (Connection conn = SqliteHelper.getConnection(); Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(sql)) {
+
+            while (rs.next()) {
+                students.add(mapResultSetToStudent(rs));
+            }
+        } catch (SQLException e) {
+            System.err.println("Lỗi khi lấy tất cả Student: " + e.getMessage());
+        }
+        return students;
+    }
+
+    private Student mapResultSetToStudent(ResultSet rs) throws SQLException {
+        return new Student(
+                rs.getInt("student_id"),
+                rs.getString("name"),
+                rs.getDouble("height_cm"),
+                rs.getDouble("weight_kg"),
+                rs.getInt("target_calories"),
+                rs.getInt("target_protein_g"),
+                rs.getInt("target_carbs_g"),
+                rs.getInt("target_fat_g")
+        );
+    }
+
 }
