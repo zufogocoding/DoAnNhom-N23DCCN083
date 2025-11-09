@@ -25,8 +25,50 @@ public class IngredientDAO {
             if (rs.next())  ingredient.setIngredientId(rs.getInt(1));
             return ingredient;    
         } catch(SQLException e) {
-            System.err.println("Error adding ingredient");
+            System.err.println("Error adding ingredient "+e.getMessage());
             return null;  
         } 
     }
+    public Ingredient getIngredient(int id){
+        String sql = "SELECT * FROM Ingredient WHERE IngredientID = ?";
+        try (Connection conn = SqliteHelper.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)){
+            pstmt.setInt(1, id);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) return MapResultSetToIngredient(rs);
+        }
+        catch(SQLException e){
+            System.err.println("Error fetching ingredient " + e.getMessage());
+        }
+        return null;
+    }
+    
+    public ArrayList<Ingredient> getAllIngredients(){
+        ArrayList<Ingredient> ingredients = new ArrayList<>();
+        String sql = "SELECT * FROM Ingredient";
+        try (Connection conn = SqliteHelper.getConnection(); Statement stmt = conn.createStatement();ResultSet rs = stmt.executeQuery(sql)){
+            while(rs.next()) ingredients.add(MapResultSetToIngredient(rs));
+        }
+        catch(SQLException e){
+            System.err.println("Error fetching Ingredients");
+        }
+        return ingredients;
+    }
+    /*
+            CREATE TABLE IF NOT EXISTS Ingredient (
+                ingredient_id INTEGER PRIMARY KEY AUTOINCREMENT,
+                name TEXT NOT NULL UNIQUE,
+                unit TEXT NOT NULL,
+                calories_per_unit REAL,
+                protein_per_unit REAL,
+                carbs_per_unit REAL,
+                fat_per_unit REAL
+            );
+            */
+    
+    public Ingredient MapResultSetToIngredient(ResultSet rs) throws SQLException{
+        return new Ingredient(
+        rs.getInt("ingredient_id"), rs.getString("name"), rs.getString("unit"), 
+        rs.getDouble("calories_per_unit"),rs.getDouble("protein_per_unit"),rs.getDouble("carbs_per_unit"),rs.getDouble("fat_per_unit"));
+    }
+    
 }
