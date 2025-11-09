@@ -53,8 +53,8 @@ public class StudentDAO {
         return null;
     }
 
-    public List<Student> getAllStudents() {
-        List<Student> students = new ArrayList<>();
+    public ArrayList<Student> getAllStudents() {
+        ArrayList<Student> students = new ArrayList<>();
         String sql = "SELECT * FROM Student";
 
         try (Connection conn = SqliteHelper.getConnection(); Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(sql)) {
