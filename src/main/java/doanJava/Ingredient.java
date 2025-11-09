@@ -21,6 +21,15 @@ public class Ingredient {
     public Ingredient() {
     }
 
+    public Ingredient(int ingredientId, String name, String unit, double caloriesPerUnit, double proteinPerUnit, double carbsPerUnit, double fatPerUnit) {
+        this.ingredientId = ingredientId;
+        this.name = name;
+        this.unit = unit;
+        this.caloriesPerUnit = caloriesPerUnit;
+        this.proteinPerUnit = proteinPerUnit;
+        this.carbsPerUnit = carbsPerUnit;
+        this.fatPerUnit = fatPerUnit;
+    }
     public int getIngredientId() {
         return ingredientId;
     }
