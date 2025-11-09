@@ -53,8 +53,8 @@ public class StudentDAO {
         return null;
     }
 
-    public List<Student> getAllStudents() {
-        List<Student> students = new ArrayList<>();
+    public ArrayList<Student> getAllStudents() {
+        ArrayList<Student> students = new ArrayList<>();
         String sql = "SELECT * FROM Student";
 
         try (Connection conn = SqliteHelper.getConnection(); Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(sql)) {
@@ -63,7 +63,7 @@ public class StudentDAO {
                 students.add(mapResultSetToStudent(rs));
             }
         } catch (SQLException e) {
-            System.err.println("Lỗi khi lấy tất cả Student: " + e.getMessage());
+            System.err.println("Error Fetching students: " + e.getMessage());
         }
         return students;
     }
