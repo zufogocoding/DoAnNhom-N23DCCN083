@@ -16,6 +16,13 @@ public class Food {
 
     public Food() {
     }
+
+    public Food(int foodId, String name, String instructions) {
+        this.foodId = foodId;
+        this.name = name;
+        this.instructions = instructions;
+    }
+    
     public int getFoodId() {
         return foodId;
     }
