@@ -27,6 +27,22 @@ public class InventoryDAO {
        return inventory;
 }
    
+   public void addStock(int studentId, int ingredientId,double quantityToAdd){
+       String checkSql  = "SELECT Quantity FROM Student_Inventory WHERE student_id = ? and Ingredient_id = ?";
+       String updateSql = "UPDATE Student_Inventory SET Quantity = ? WHERE student_id = ? and Ingredient_id = ?";
+       String insertSql = "INSERT INTO Student_inventory(student_id, ingredient_id, quantity) VALUES(?,?,?)";
+       
+       try (Connection conn = SqliteHelper.getConnection()){
+           double currentQuantity = 0;
+           boolean exists = true;
+           try (PreparedStatement updateStmt = conn.prepareStatement(updateSql)){
+               updateStmt.setInt(1,studentId);
+               updateStmt.setInt(2, ingredientId);
+               updateStmt.setDouble(3, quantityToAdd);
+           }
+       } catch (SQLException e)
+   }
+   
    private StudentInventory mapResultSetToInventory(ResultSet rs) throws SQLException {
         return new StudentInventory(
                 rs.getInt("student_id"),
