@@ -15,6 +15,13 @@ public class StudentInventory {
 
     public StudentInventory() {
     }
+
+    public StudentInventory(int studentId, int ingredientId, double quantity) {
+        this.studentId = studentId;
+        this.ingredientId = ingredientId;
+        this.quantity = quantity;
+    }
+    
     public int getStudentId() {
         return studentId;
     }
