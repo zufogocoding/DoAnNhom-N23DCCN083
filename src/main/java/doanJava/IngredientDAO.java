@@ -31,7 +31,7 @@ public class IngredientDAO {
     }
     public Ingredient getIngredient(int id){
         String sql = "SELECT * FROM Ingredient WHERE IngredientID = ?";
-        try (Connection conn = SqliteHelper.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)){
+        try (Connection conn = SqliteHelper.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql)){
             pstmt.setInt(1, id);
             ResultSet rs = pstmt.executeQuery();
             if (rs.next()) return MapResultSetToIngredient(rs);
@@ -65,7 +65,7 @@ public class IngredientDAO {
             );
             */
     
-    public Ingredient MapResultSetToIngredient(ResultSet rs) throws SQLException{
+    private Ingredient MapResultSetToIngredient(ResultSet rs) throws SQLException{
         return new Ingredient(
         rs.getInt("ingredient_id"), rs.getString("name"), rs.getString("unit"), 
         rs.getDouble("calories_per_unit"),rs.getDouble("protein_per_unit"),rs.getDouble("carbs_per_unit"),rs.getDouble("fat_per_unit"));
