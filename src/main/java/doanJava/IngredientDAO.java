@@ -65,7 +65,7 @@ public class IngredientDAO {
             );
             */
     
-    public Ingredient MapResultSetToIngredient(ResultSet rs) throws SQLException{
+    private Ingredient MapResultSetToIngredient(ResultSet rs) throws SQLException{
         return new Ingredient(
         rs.getInt("ingredient_id"), rs.getString("name"), rs.getString("unit"), 
         rs.getDouble("calories_per_unit"),rs.getDouble("protein_per_unit"),rs.getDouble("carbs_per_unit"),rs.getDouble("fat_per_unit"));
