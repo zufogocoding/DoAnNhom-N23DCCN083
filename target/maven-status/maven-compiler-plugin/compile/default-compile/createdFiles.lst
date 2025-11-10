@@ -1,1 +1,16 @@
+doanJava\Food.class
+doanJava\DailyMenuDAO.class
+doanJava\StudentDAO.class
+doanJava\RecipeIngredient.class
+doanJava\RecipeDAO.class
+doanJava\SqliteHelper.class
+doanJava\MenuFoodDAO.class
+doanJava\FoodDAO.class
+doanJava\DailyMenu.class
+doanJava\MenuFood.class
 doanJava\main.class
+doanJava\Ingredient.class
+doanJava\StudentInventory.class
+doanJava\IngredientDAO.class
+doanJava\InventoryDAO.class
+doanJava\Student.class
