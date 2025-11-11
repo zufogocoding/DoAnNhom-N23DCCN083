@@ -20,27 +20,23 @@ public class RecipeDAO {
             pstmt.setDouble(3, quantity);
             pstmt.executeUpdate();
         } catch (SQLException e) {
-            System.err.println(" Loi khi them nguyen lieu vao cong thuc: " + e.getMessage());
+            System.err.println(" Error adding ingredient to recipe: " + e.getMessage());
         }
     }
     public List<RecipeIngredient> getIngredients(int foodId) {
-        List<RecipeIngredient> ingredients = new ArrayList<>();
+        List<RecipeIngredient> recipe = new ArrayList<>();
         String sql = "SELECT ingredient_id, quantity FROM Recipe_Ingredient WHERE food_id = ?";
         try (Connection conn = SqliteHelper.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setInt(1, foodId);
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
-                RecipeIngredient ri = new RecipeIngredient();
-                ri.setFoodId(foodId);
-                ri.setIngredientId(rs.getInt("ingredient_id"));
-                ri.setQuantity(rs.getDouble("quantity"));
-                ingredients.add(ri);
+                recipe.add(mapResultSetToRecipe(rs));
             }
         } catch (SQLException e) {
             System.err.println("Loi khi lay nguyen lieu cua cong thuc: " + e.getMessage());
         }
-        return ingredients;
+        return recipe;
     }
     
     private RecipeIngredient mapResultSetToRecipe(ResultSet rs)  throws SQLException{
