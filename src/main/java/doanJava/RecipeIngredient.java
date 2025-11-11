@@ -17,6 +17,14 @@ public class RecipeIngredient {
     public RecipeIngredient() {
     }
 
+    public RecipeIngredient(int foodId, int ingredientId, double quantity) {
+        this.foodId = foodId;
+        this.ingredientId = ingredientId;
+        this.quantity = quantity;
+    }
+    
+    
+
     public int getFoodId() {
         return foodId;
     }
