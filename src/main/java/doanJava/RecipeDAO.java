@@ -19,7 +19,6 @@ public class RecipeDAO {
             pstmt.setInt(2, ingredientId);
             pstmt.setDouble(3, quantity);
             pstmt.executeUpdate();
-            System.out.println(" Da them nguyen lieu " + ingredientId + " vao mon " + foodId);
         } catch (SQLException e) {
             System.err.println(" Loi khi them nguyen lieu vao cong thuc: " + e.getMessage());
         }
@@ -43,4 +42,13 @@ public class RecipeDAO {
         }
         return ingredients;
     }
+    
+    private RecipeIngredient mapResultSetToRecipe(ResultSet rs)  throws SQLException{
+        return new RecipeIngredient(
+                rs.getInt("food_id"),
+                rs.getInt("ingredient_id"),
+                rs.getDouble("quantity")
+        );
+    }
+    
 }
