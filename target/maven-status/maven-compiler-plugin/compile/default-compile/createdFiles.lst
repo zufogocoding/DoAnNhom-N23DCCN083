@@ -9,6 +9,7 @@ doanJava\FoodDAO.class
 doanJava\DailyMenu.class
 doanJava\MenuFood.class
 doanJava\main.class
+doanJava\JsonParserToDatabase.class
 doanJava\Ingredient.class
 doanJava\StudentInventory.class
 doanJava\IngredientDAO.class
