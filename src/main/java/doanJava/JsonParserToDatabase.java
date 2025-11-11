@@ -29,7 +29,6 @@ public class JsonParserToDatabase {
     }
 
     public static void main(String[] args) throws Exception {
-        // Lấy file từ resources (ví dụ: src/main/resources/food.json)
         InputStream is = JsonParserToDatabase.class
                 .getClassLoader()
                 .getResourceAsStream("FoodData_Central_foundation_food_json_2025-04-24.json");
