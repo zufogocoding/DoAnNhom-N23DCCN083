@@ -1,0 +1,2650 @@
+[
+  {
+    "name": "Hummus, commercial",
+    "unit": "100 g",
+    "calories_per_unit": 229,
+    "protein_per_unit": 7.35,
+    "carbs_per_unit": 14.9,
+    "fat_per_unit": 17.1
+  },
+  {
+    "name": "Tomatoes, grape, raw",
+    "unit": "100 g",
+    "calories_per_unit": 27.0,
+    "protein_per_unit": 0.83,
+    "carbs_per_unit": 5.51,
+    "fat_per_unit": 0.63
+  },
+  {
+    "name": "Beans, snap, green, canned, regular pack, drained solids",
+    "unit": "100 g",
+    "calories_per_unit": 21.0,
+    "protein_per_unit": 1.04,
+    "carbs_per_unit": 4.11,
+    "fat_per_unit": 0.39
+  },
+  {
+    "name": "Frankfurter, beef, unheated",
+    "unit": "100 g",
+    "calories_per_unit": 314,
+    "protein_per_unit": 11.7,
+    "carbs_per_unit": 2.89,
+    "fat_per_unit": 28.0
+  },
+  {
+    "name": "Nuts, almonds, dry roasted, with salt added",
+    "unit": "100 g",
+    "calories_per_unit": 620,
+    "protein_per_unit": 20.4,
+    "carbs_per_unit": 16.2,
+    "fat_per_unit": 57.8
+  },
+  {
+    "name": "Kale, raw",
+    "unit": "100 g",
+    "calories_per_unit": 35.0,
+    "protein_per_unit": 2.92,
+    "carbs_per_unit": 4.42,
+    "fat_per_unit": 1.49
+  },
+  {
+    "name": "Egg, whole, raw, frozen, pasteurized",
+    "unit": "100 g",
+    "calories_per_unit": 150,
+    "protein_per_unit": 12.3,
+    "carbs_per_unit": 0.91,
+    "fat_per_unit": 10.3
+  },
+  {
+    "name": "Egg, white, raw, frozen, pasteurized",
+    "unit": "100 g",
+    "calories_per_unit": 48.0,
+    "protein_per_unit": 10.1,
+    "carbs_per_unit": 0.74,
+    "fat_per_unit": 0.16
+  },
+  {
+    "name": "Egg, white, dried",
+    "unit": "100 g",
+    "calories_per_unit": 376,
+    "protein_per_unit": 79.9,
+    "carbs_per_unit": 6.02,
+    "fat_per_unit": 0.65
+  },
+  {
+    "name": "Onion rings, breaded, par fried, frozen, prepared, heated in oven",
+    "unit": "100 g",
+    "calories_per_unit": 288,
+    "protein_per_unit": 4.52,
+    "carbs_per_unit": 36.3,
+    "fat_per_unit": 14.4
+  },
+  {
+    "name": "Pickles, cucumber, dill or kosher dill",
+    "unit": "100 g",
+    "calories_per_unit": 12.0,
+    "protein_per_unit": 0.48,
+    "carbs_per_unit": 1.99,
+    "fat_per_unit": 0.43
+  },
+  {
+    "name": "Cheese, parmesan, grated",
+    "unit": "100 g",
+    "calories_per_unit": 421,
+    "protein_per_unit": 29.6,
+    "carbs_per_unit": 12.4,
+    "fat_per_unit": 28.0
+  },
+  {
+    "name": "Cheese, pasteurized process, American, vitamin D fortified",
+    "unit": "100 g",
+    "calories_per_unit": 366,
+    "protein_per_unit": 18.0,
+    "carbs_per_unit": 5.27,
+    "fat_per_unit": 30.6
+  },
+  {
+    "name": "Grapefruit juice, white, canned or bottled, unsweetened",
+    "unit": "100 ml",
+    "calories_per_unit": 37.0,
+    "protein_per_unit": 0.55,
+    "carbs_per_unit": 7.59,
+    "fat_per_unit": 0.7
+  },
+  {
+    "name": "Peaches, yellow, raw",
+    "unit": "100 g",
+    "calories_per_unit": 42.0,
+    "protein_per_unit": 0.91,
+    "carbs_per_unit": 10.1,
+    "fat_per_unit": 0.27
+  },
+  {
+    "name": "Seeds, sunflower seed kernels, dry roasted, with salt added",
+    "unit": "100 g",
+    "calories_per_unit": 612,
+    "protein_per_unit": 21.0,
+    "carbs_per_unit": 17.1,
+    "fat_per_unit": 56.1
+  },
+  {
+    "name": "Bread, white, commercially prepared",
+    "unit": "100 g",
+    "calories_per_unit": 270,
+    "protein_per_unit": 9.43,
+    "carbs_per_unit": 49.2,
+    "fat_per_unit": 3.59
+  },
+  {
+    "name": "Kale, frozen, cooked, boiled, drained, without salt",
+    "unit": "100 ml",
+    "calories_per_unit": 36.0,
+    "protein_per_unit": 2.94,
+    "carbs_per_unit": 5.3,
+    "fat_per_unit": 1.21
+  },
+  {
+    "name": "Mustard, prepared, yellow",
+    "unit": "100 g",
+    "calories_per_unit": 61.0,
+    "protein_per_unit": 4.25,
+    "carbs_per_unit": 5.3,
+    "fat_per_unit": 3.38
+  },
+  {
+    "name": "Kiwifruit, green, raw",
+    "unit": "100 g",
+    "calories_per_unit": 58.0,
+    "protein_per_unit": 1.06,
+    "carbs_per_unit": 14.0,
+    "fat_per_unit": 0.44
+  },
+  {
+    "name": "Nectarines, raw",
+    "unit": "100 g",
+    "calories_per_unit": 39.0,
+    "protein_per_unit": 1.06,
+    "carbs_per_unit": 9.18,
+    "fat_per_unit": 0.28
+  },
+  {
+    "name": "Cheese, cheddar",
+    "unit": "100 g",
+    "calories_per_unit": 408,
+    "protein_per_unit": 23.3,
+    "carbs_per_unit": 2.44,
+    "fat_per_unit": 34.0
+  },
+  {
+    "name": "Cheese, cottage, lowfat, 2% milkfat",
+    "unit": "100 ml",
+    "calories_per_unit": 84.0,
+    "protein_per_unit": 11.0,
+    "carbs_per_unit": 4.31,
+    "fat_per_unit": 2.3
+  },
+  {
+    "name": "Cheese, mozzarella, low moisture, part-skim",
+    "unit": "100 g",
+    "calories_per_unit": 298,
+    "protein_per_unit": 23.7,
+    "carbs_per_unit": 4.44,
+    "fat_per_unit": 20.4
+  },
+  {
+    "name": "Egg, whole, dried",
+    "unit": "100 g",
+    "calories_per_unit": 575,
+    "protein_per_unit": 48.1,
+    "carbs_per_unit": 1.87,
+    "fat_per_unit": 39.8
+  },
+  {
+    "name": "Egg, yolk, raw, frozen, pasteurized",
+    "unit": "100 g",
+    "calories_per_unit": 296,
+    "protein_per_unit": 15.6,
+    "carbs_per_unit": 0.59,
+    "fat_per_unit": 25.1
+  },
+  {
+    "name": "Egg, yolk, dried",
+    "unit": "100 g",
+    "calories_per_unit": 654,
+    "protein_per_unit": 34.2,
+    "carbs_per_unit": 1.07,
+    "fat_per_unit": 55.5
+  },
+  {
+    "name": "Yogurt, Greek, plain, nonfat",
+    "unit": "100 g",
+    "calories_per_unit": 61.0,
+    "protein_per_unit": 10.3,
+    "carbs_per_unit": 3.64,
+    "fat_per_unit": 0.37
+  },
+  {
+    "name": "Yogurt, Greek, strawberry, nonfat",
+    "unit": "100 g",
+    "calories_per_unit": 83.0,
+    "protein_per_unit": 8.06,
+    "carbs_per_unit": 12.2,
+    "fat_per_unit": 0.15
+  },
+  {
+    "name": "Oil, coconut",
+    "unit": "100 ml",
+    "calories_per_unit": 833,
+    "protein_per_unit": 0.0,
+    "carbs_per_unit": 0.84,
+    "fat_per_unit": 99.1
+  },
+  {
+    "name": "Chicken, broilers or fryers, drumstick, meat only, cooked, braised",
+    "unit": "100 ml",
+    "calories_per_unit": 156,
+    "protein_per_unit": 23.9,
+    "carbs_per_unit": 0.0,
+    "fat_per_unit": 5.95
+  },
+  {
+    "name": "Chicken, broiler or fryers, breast, skinless, boneless, meat only, cooked, braised",
+    "unit": "100 ml",
+    "calories_per_unit": 166,
+    "protein_per_unit": 32.1,
+    "carbs_per_unit": 0.0,
+    "fat_per_unit": 3.24
+  },
+  {
+    "name": "Sauce, pasta, spaghetti/marinara, ready-to-serve",
+    "unit": "100 g",
+    "calories_per_unit": 45.0,
+    "protein_per_unit": 1.41,
+    "carbs_per_unit": 8.05,
+    "fat_per_unit": 1.48
+  },
+  {
+    "name": "Ham, sliced, pre-packaged, deli meat (96%fat free, water added)",
+    "unit": "100 ml",
+    "calories_per_unit": 106,
+    "protein_per_unit": 16.7,
+    "carbs_per_unit": 0.27,
+    "fat_per_unit": 3.73
+  },
+  {
+    "name": "Olives, green, Manzanilla, stuffed with pimiento",
+    "unit": "100 g",
+    "calories_per_unit": 130,
+    "protein_per_unit": 1.15,
+    "carbs_per_unit": 4.96,
+    "fat_per_unit": 12.9
+  },
+  {
+    "name": "Cookies, oatmeal, soft, with raisins",
+    "unit": "100 g",
+    "calories_per_unit": 430,
+    "protein_per_unit": 5.79,
+    "carbs_per_unit": 69.6,
+    "fat_per_unit": 14.3
+  },
+  {
+    "name": "Tomatoes, canned, red, ripe, diced",
+    "unit": "100 g",
+    "calories_per_unit": 18.0,
+    "protein_per_unit": 0.84,
+    "carbs_per_unit": 3.32,
+    "fat_per_unit": 0.5
+  },
+  {
+    "name": "Fish, haddock, raw",
+    "unit": "100 g",
+    "calories_per_unit": 74.0,
+    "protein_per_unit": 16.3,
+    "carbs_per_unit": 0.0,
+    "fat_per_unit": 0.45
+  },
+  {
+    "name": "Fish, pollock, raw",
+    "unit": "100 g",
+    "calories_per_unit": 56.0,
+    "protein_per_unit": 12.3,
+    "carbs_per_unit": 0.0,
+    "fat_per_unit": 0.41
+  },
+  {
+    "name": "Fish, tuna, light, canned in water, drained solids",
+    "unit": "100 ml",
+    "calories_per_unit": 90.0,
+    "protein_per_unit": 19.0,
+    "carbs_per_unit": 0.08,
+    "fat_per_unit": 0.94
+  },
+  {
+    "name": "Restaurant, Chinese, fried rice, without meat",
+    "unit": "100 g",
+    "calories_per_unit": 174,
+    "protein_per_unit": 3.84,
+    "carbs_per_unit": 32.5,
+    "fat_per_unit": 3.19
+  },
+  {
+    "name": "Restaurant, Latino, tamale, pork",
+    "unit": "100 g",
+    "calories_per_unit": 174,
+    "protein_per_unit": 7.38,
+    "carbs_per_unit": 15.8,
+    "fat_per_unit": 9.04
+  },
+  {
+    "name": "Restaurant, Latino, pupusas con frijoles (pupusas, bean)",
+    "unit": "100 g",
+    "calories_per_unit": 229,
+    "protein_per_unit": 5.59,
+    "carbs_per_unit": 31.5,
+    "fat_per_unit": 9.01
+  },
+  {
+    "name": "Bread, whole-wheat, commercially prepared",
+    "unit": "100 g",
+    "calories_per_unit": 254,
+    "protein_per_unit": 12.3,
+    "carbs_per_unit": 43.1,
+    "fat_per_unit": 3.55
+  },
+  {
+    "name": "Beef, loin, tenderloin roast, separable lean only, boneless, trimmed to 0\" fat, select, cooked, roasted",
+    "unit": "100 g",
+    "calories_per_unit": 176,
+    "protein_per_unit": 27.7,
+    "carbs_per_unit": 0.0,
+    "fat_per_unit": 6.36
+  },
+  {
+    "name": "Beef, loin, top loin steak, boneless, lip-on, separable lean only, trimmed to 1/8\" fat, choice, raw",
+    "unit": "100 g",
+    "calories_per_unit": 155,
+    "protein_per_unit": 22.8,
+    "carbs_per_unit": 0.0,
+    "fat_per_unit": 6.39
+  },
+  {
+    "name": "Beef, round, eye of round roast, boneless, separable lean only, trimmed to 0\" fat, select, raw",
+    "unit": "100 g",
+    "calories_per_unit": 122,
+    "protein_per_unit": 23.4,
+    "carbs_per_unit": 0.0,
+    "fat_per_unit": 2.48
+  },
+  {
+    "name": "Beef, round, top round roast, boneless, separable lean only, trimmed to 0\" fat, select, raw",
+    "unit": "100 g",
+    "calories_per_unit": 123,
+    "protein_per_unit": 23.7,
+    "carbs_per_unit": 0.0,
+    "fat_per_unit": 2.41
+  },
+  {
+    "name": "Beef, short loin, porterhouse steak, separable lean only, trimmed to 1/8\" fat, select, raw",
+    "unit": "100 g",
+    "calories_per_unit": 145,
+    "protein_per_unit": 22.7,
+    "carbs_per_unit": 0.0,
+    "fat_per_unit": 5.32
+  },
+  {
+    "name": "Beef, short loin, t-bone steak, bone-in, separable lean only, trimmed to 1/8\" fat, choice, cooked, grilled",
+    "unit": "100 g",
+    "calories_per_unit": 219,
+    "protein_per_unit": 27.3,
+    "carbs_per_unit": 0.0,
+    "fat_per_unit": 11.4
+  },
+  {
+    "name": "Carrots, frozen, unprepared",
+    "unit": "100 g",
+    "calories_per_unit": 37.0,
+    "protein_per_unit": 0.81,
+    "carbs_per_unit": 7.92,
+    "fat_per_unit": 0.47
+  },
+  {
+    "name": "Cheese, dry white, queso seco",
+    "unit": "100 g",
+    "calories_per_unit": 326,
+    "protein_per_unit": 24.5,
+    "carbs_per_unit": 2.07,
+    "fat_per_unit": 24.3
+  },
+  {
+    "name": "Cheese, ricotta, whole milk",
+    "unit": "100 ml",
+    "calories_per_unit": 157,
+    "protein_per_unit": 7.81,
+    "carbs_per_unit": 6.86,
+    "fat_per_unit": 11.0
+  },
+  {
+    "name": "Cheese, swiss",
+    "unit": "100 g",
+    "calories_per_unit": 393,
+    "protein_per_unit": 27.0,
+    "carbs_per_unit": 1.44,
+    "fat_per_unit": 31.0
+  },
+  {
+    "name": "Figs, dried, uncooked",
+    "unit": "100 g",
+    "calories_per_unit": 249,
+    "protein_per_unit": 3.3,
+    "carbs_per_unit": 63.9,
+    "fat_per_unit": 0.92
+  },
+  {
+    "name": "Lettuce, cos or romaine, raw",
+    "unit": "100 g",
+    "calories_per_unit": 17.0,
+    "protein_per_unit": 1.24,
+    "carbs_per_unit": 3.24,
+    "fat_per_unit": 0.26
+  },
+  {
+    "name": "Melons, cantaloupe, raw",
+    "unit": "100 g",
+    "calories_per_unit": 34.0,
+    "protein_per_unit": 0.82,
+    "carbs_per_unit": 8.16,
+    "fat_per_unit": 0.18
+  },
+  {
+    "name": "Oranges, raw, navels",
+    "unit": "100 g",
+    "calories_per_unit": 47.0,
+    "protein_per_unit": 0.91,
+    "carbs_per_unit": 11.8,
+    "fat_per_unit": 0.15
+  },
+  {
+    "name": "Milk, lowfat, fluid, 1% milkfat, with added vitamin A and vitamin D",
+    "unit": "100 ml",
+    "calories_per_unit": 43.0,
+    "protein_per_unit": 3.38,
+    "carbs_per_unit": 5.18,
+    "fat_per_unit": 0.95
+  },
+  {
+    "name": "Pears, raw, bartlett",
+    "unit": "100 g",
+    "calories_per_unit": 57.0,
+    "protein_per_unit": 0.38,
+    "carbs_per_unit": 15.1,
+    "fat_per_unit": 0.16
+  },
+  {
+    "name": "Restaurant, Chinese, sweet and sour pork",
+    "unit": "100 g",
+    "calories_per_unit": 260,
+    "protein_per_unit": 8.88,
+    "carbs_per_unit": 25.5,
+    "fat_per_unit": 13.6
+  },
+  {
+    "name": "Milk, nonfat, fluid, with added vitamin A and vitamin D (fat free or skim)",
+    "unit": "100 ml",
+    "calories_per_unit": 34.0,
+    "protein_per_unit": 3.43,
+    "carbs_per_unit": 4.92,
+    "fat_per_unit": 0.08
+  },
+  {
+    "name": "Sauce, salsa, ready-to-serve",
+    "unit": "100 g",
+    "calories_per_unit": 29.0,
+    "protein_per_unit": 1.44,
+    "carbs_per_unit": 6.74,
+    "fat_per_unit": 0.19
+  },
+  {
+    "name": "Milk, reduced fat, fluid, 2% milkfat, with added vitamin A and vitamin D",
+    "unit": "100 ml",
+    "calories_per_unit": 50.0,
+    "protein_per_unit": 3.36,
+    "carbs_per_unit": 4.9,
+    "fat_per_unit": 1.9
+  },
+  {
+    "name": "Sausage, breakfast sausage, beef, pre-cooked, unprepared",
+    "unit": "100 g",
+    "calories_per_unit": 328,
+    "protein_per_unit": 13.3,
+    "carbs_per_unit": 3.37,
+    "fat_per_unit": 28.7
+  },
+  {
+    "name": "Sausage, Italian, pork, mild, cooked, pan-fried",
+    "unit": "100 g",
+    "calories_per_unit": 322,
+    "protein_per_unit": 18.2,
+    "carbs_per_unit": 2.15,
+    "fat_per_unit": 26.2
+  },
+  {
+    "name": "Sausage, pork, chorizo, link or ground, cooked, pan-fried",
+    "unit": "100 g",
+    "calories_per_unit": 346,
+    "protein_per_unit": 19.3,
+    "carbs_per_unit": 2.63,
+    "fat_per_unit": 28.1
+  },
+  {
+    "name": "Milk, whole, 3.25% milkfat, with added vitamin D",
+    "unit": "100 ml",
+    "calories_per_unit": 60.0,
+    "protein_per_unit": 3.27,
+    "carbs_per_unit": 4.63,
+    "fat_per_unit": 3.2
+  },
+  {
+    "name": "Sausage, turkey, breakfast links, mild, raw",
+    "unit": "100 g",
+    "calories_per_unit": 169,
+    "protein_per_unit": 16.7,
+    "carbs_per_unit": 0.93,
+    "fat_per_unit": 10.4
+  },
+  {
+    "name": "Sugars, granulated",
+    "unit": "100 g",
+    "calories_per_unit": 385,
+    "protein_per_unit": 0.0,
+    "carbs_per_unit": 99.6,
+    "fat_per_unit": 0.32
+  },
+  {
+    "name": "Turkey, ground, 93% lean, 7% fat, pan-broiled crumbles",
+    "unit": "100 ml",
+    "calories_per_unit": 220,
+    "protein_per_unit": 27.1,
+    "carbs_per_unit": 0.0,
+    "fat_per_unit": 11.6
+  },
+  {
+    "name": "Ham, sliced, restaurant",
+    "unit": "100 g",
+    "calories_per_unit": 121,
+    "protein_per_unit": 19.6,
+    "carbs_per_unit": 2.36,
+    "fat_per_unit": 3.68
+  },
+  {
+    "name": "Cheese, American, restaurant",
+    "unit": "100 g",
+    "calories_per_unit": 375,
+    "protein_per_unit": 17.5,
+    "carbs_per_unit": 6.35,
+    "fat_per_unit": 31.1
+  },
+  {
+    "name": "Beans, Dry, Medium Red (0% moisture)",
+    "unit": "100 g",
+    "calories_per_unit": 111.4,
+    "protein_per_unit": 25.5,
+    "carbs_per_unit": "N/A",
+    "fat_per_unit": 1.04
+  },
+  {
+    "name": "Beans, Dry, Red (0% moisture)",
+    "unit": "100 g",
+    "calories_per_unit": 95.6,
+    "protein_per_unit": 21.3,
+    "carbs_per_unit": "N/A",
+    "fat_per_unit": 1.16
+  },
+  {
+    "name": "Beans, Dry, Flor de Mayo (0% moisture)",
+    "unit": "100 g",
+    "calories_per_unit": 100.9,
+    "protein_per_unit": 23.3,
+    "carbs_per_unit": "N/A",
+    "fat_per_unit": 0.86
+  },
+  {
+    "name": "Beans, Dry, Brown (0% moisture)",
+    "unit": "100 g",
+    "calories_per_unit": 112.5,
+    "protein_per_unit": 25.6,
+    "carbs_per_unit": "N/A",
+    "fat_per_unit": 1.12
+  },
+  {
+    "name": "Beans, Dry, Tan (0% moisture)",
+    "unit": "100 g",
+    "calories_per_unit": 117.5,
+    "protein_per_unit": 26.8,
+    "carbs_per_unit": "N/A",
+    "fat_per_unit": 1.14
+  },
+  {
+    "name": "Beans, Dry, Light Tan (0% moisture)",
+    "unit": "100 g",
+    "calories_per_unit": 109.9,
+    "protein_per_unit": 24.6,
+    "carbs_per_unit": "N/A",
+    "fat_per_unit": 1.28
+  },
+  {
+    "name": "Beans, Dry, Carioca (0% moisture)",
+    "unit": "100 g",
+    "calories_per_unit": 113.8,
+    "protein_per_unit": 25.2,
+    "carbs_per_unit": "N/A",
+    "fat_per_unit": 1.44
+  },
+  {
+    "name": "Beans, Dry, Cranberry (0% moisture)",
+    "unit": "100 g",
+    "calories_per_unit": 108.7,
+    "protein_per_unit": 24.4,
+    "carbs_per_unit": "N/A",
+    "fat_per_unit": 1.23
+  },
+  {
+    "name": "Beans, Dry, Light Red Kidney (0% moisture)",
+    "unit": "100 g",
+    "calories_per_unit": 109.3,
+    "protein_per_unit": 25.0,
+    "carbs_per_unit": "N/A",
+    "fat_per_unit": 1.03
+  },
+  {
+    "name": "Beans, Dry, Pink (0% moisture)",
+    "unit": "100 g",
+    "calories_per_unit": 104.4,
+    "protein_per_unit": 23.4,
+    "carbs_per_unit": "N/A",
+    "fat_per_unit": 1.2
+  },
+  {
+    "name": "Beans, Dry, Dark Red Kidney (0% moisture)",
+    "unit": "100 g",
+    "calories_per_unit": 115.4,
+    "protein_per_unit": 25.9,
+    "carbs_per_unit": "N/A",
+    "fat_per_unit": 1.31
+  },
+  {
+    "name": "Beans, Dry, Navy (0% moisture)",
+    "unit": "100 g",
+    "calories_per_unit": 110.0,
+    "protein_per_unit": 24.1,
+    "carbs_per_unit": "N/A",
+    "fat_per_unit": 1.51
+  },
+  {
+    "name": "Beans, Dry, Small White (0% moisture)",
+    "unit": "100 g",
+    "calories_per_unit": 109.9,
+    "protein_per_unit": 24.5,
+    "carbs_per_unit": "N/A",
+    "fat_per_unit": 1.32
+  },
+  {
+    "name": "Beans, Dry, Small Red (0% moisture)",
+    "unit": "100 g",
+    "calories_per_unit": 105.5,
+    "protein_per_unit": 23.5,
+    "carbs_per_unit": "N/A",
+    "fat_per_unit": 1.28
+  },
+  {
+    "name": "Beans, Dry, Black (0% moisture)",
+    "unit": "100 g",
+    "calories_per_unit": 110.6,
+    "protein_per_unit": 24.4,
+    "carbs_per_unit": "N/A",
+    "fat_per_unit": 1.45
+  },
+  {
+    "name": "Beans, Dry, Pinto (0% moisture)",
+    "unit": "100 g",
+    "calories_per_unit": 106.0,
+    "protein_per_unit": 23.7,
+    "carbs_per_unit": "N/A",
+    "fat_per_unit": 1.24
+  },
+  {
+    "name": "Beans, Dry, Great Northern (0% moisture)",
+    "unit": "100 g",
+    "calories_per_unit": 110.0,
+    "protein_per_unit": 24.7,
+    "carbs_per_unit": "N/A",
+    "fat_per_unit": 1.24
+  },
+  {
+    "name": "Broccoli, raw",
+    "unit": "100 g",
+    "calories_per_unit": 31.0,
+    "protein_per_unit": 2.57,
+    "carbs_per_unit": 6.27,
+    "fat_per_unit": 0.34
+  },
+  {
+    "name": "Ketchup, restaurant",
+    "unit": "100 g",
+    "calories_per_unit": 117,
+    "protein_per_unit": 1.11,
+    "carbs_per_unit": 26.8,
+    "fat_per_unit": 0.55
+  },
+  {
+    "name": "Eggs, Grade A, Large, egg white",
+    "unit": "100 g",
+    "calories_per_unit": 55.0,
+    "protein_per_unit": 10.7,
+    "carbs_per_unit": 2.36,
+    "fat_per_unit": 0.0
+  },
+  {
+    "name": "Eggs, Grade A, Large, egg yolk",
+    "unit": "100 g",
+    "calories_per_unit": 334,
+    "protein_per_unit": 16.2,
+    "carbs_per_unit": 1.02,
+    "fat_per_unit": 28.8
+  },
+  {
+    "name": "Eggs, Grade A, Large, egg whole",
+    "unit": "100 g",
+    "calories_per_unit": 148,
+    "protein_per_unit": 12.4,
+    "carbs_per_unit": 0.96,
+    "fat_per_unit": 9.96
+  },
+  {
+    "name": "Pork, cured, bacon, cooked, restaurant",
+    "unit": "100 g",
+    "calories_per_unit": 500,
+    "protein_per_unit": 40.9,
+    "carbs_per_unit": 2.1,
+    "fat_per_unit": 36.5
+  },
+  {
+    "name": "Butter, stick, unsalted",
+    "unit": "100 g",
+    "calories_per_unit": 733.5,
+    "protein_per_unit": "N/A",
+    "carbs_per_unit": "N/A",
+    "fat_per_unit": 81.5
+  },
+  {
+    "name": "Flour, wheat, all-purpose, enriched, bleached",
+    "unit": "100 g",
+    "calories_per_unit": 366,
+    "protein_per_unit": 10.9,
+    "carbs_per_unit": 77.3,
+    "fat_per_unit": 1.48
+  },
+  {
+    "name": "Flour, wheat, all-purpose, enriched, unbleached",
+    "unit": "100 g",
+    "calories_per_unit": 358,
+    "protein_per_unit": 13.1,
+    "carbs_per_unit": 73.2,
+    "fat_per_unit": 1.48
+  },
+  {
+    "name": "Flour, wheat, all-purpose, unenriched, unbleached",
+    "unit": "100 g",
+    "calories_per_unit": 362,
+    "protein_per_unit": 12.0,
+    "carbs_per_unit": 74.6,
+    "fat_per_unit": 1.7
+  },
+  {
+    "name": "Flour, whole wheat, unenriched",
+    "unit": "100 g",
+    "calories_per_unit": 370,
+    "protein_per_unit": 15.1,
+    "carbs_per_unit": 71.2,
+    "fat_per_unit": 2.73
+  },
+  {
+    "name": "Flour, bread, white, enriched, unbleached",
+    "unit": "100 g",
+    "calories_per_unit": 363,
+    "protein_per_unit": 14.3,
+    "carbs_per_unit": 72.8,
+    "fat_per_unit": 1.65
+  },
+  {
+    "name": "Flour, rice, white, unenriched",
+    "unit": "100 g",
+    "calories_per_unit": 359,
+    "protein_per_unit": 6.94,
+    "carbs_per_unit": 79.8,
+    "fat_per_unit": 1.3
+  },
+  {
+    "name": "Flour, corn, yellow, fine meal, enriched",
+    "unit": "100 g",
+    "calories_per_unit": 364,
+    "protein_per_unit": 6.2,
+    "carbs_per_unit": 80.8,
+    "fat_per_unit": 1.74
+  },
+  {
+    "name": "Butter, stick, salted",
+    "unit": "100 g",
+    "calories_per_unit": 739.8,
+    "protein_per_unit": "N/A",
+    "carbs_per_unit": "N/A",
+    "fat_per_unit": 82.2
+  },
+  {
+    "name": "Onions, red, raw",
+    "unit": "100 g",
+    "calories_per_unit": 44.0,
+    "protein_per_unit": 0.94,
+    "carbs_per_unit": 9.93,
+    "fat_per_unit": 0.1
+  },
+  {
+    "name": "Onions, yellow, raw",
+    "unit": "100 g",
+    "calories_per_unit": 38.0,
+    "protein_per_unit": 0.83,
+    "carbs_per_unit": 8.61,
+    "fat_per_unit": 0.05
+  },
+  {
+    "name": "Garlic, raw",
+    "unit": "100 g",
+    "calories_per_unit": 143,
+    "protein_per_unit": 6.62,
+    "carbs_per_unit": 28.2,
+    "fat_per_unit": 0.38
+  },
+  {
+    "name": "Flour, soy, defatted",
+    "unit": "100 g",
+    "calories_per_unit": 366,
+    "protein_per_unit": 51.1,
+    "carbs_per_unit": 32.9,
+    "fat_per_unit": 3.33
+  },
+  {
+    "name": "Flour, soy, full-fat",
+    "unit": "100 g",
+    "calories_per_unit": 452,
+    "protein_per_unit": 38.6,
+    "carbs_per_unit": 27.9,
+    "fat_per_unit": 20.7
+  },
+  {
+    "name": "Flour, rice, brown",
+    "unit": "100 g",
+    "calories_per_unit": 365,
+    "protein_per_unit": 7.19,
+    "carbs_per_unit": 75.5,
+    "fat_per_unit": 3.85
+  },
+  {
+    "name": "Flour, rice, glutinous",
+    "unit": "100 g",
+    "calories_per_unit": 358,
+    "protein_per_unit": 6.69,
+    "carbs_per_unit": 80.1,
+    "fat_per_unit": 1.16
+  },
+  {
+    "name": "Flour, pastry, unenriched, unbleached",
+    "unit": "100 g",
+    "calories_per_unit": 358,
+    "protein_per_unit": 8.75,
+    "carbs_per_unit": 77.2,
+    "fat_per_unit": 1.64
+  },
+  {
+    "name": "Onions, white, raw",
+    "unit": "100 g",
+    "calories_per_unit": 35.0,
+    "protein_per_unit": 0.89,
+    "carbs_per_unit": 7.68,
+    "fat_per_unit": 0.13
+  },
+  {
+    "name": "Bananas, overripe, raw",
+    "unit": "100 g",
+    "calories_per_unit": 85.0,
+    "protein_per_unit": 0.73,
+    "carbs_per_unit": 20.1,
+    "fat_per_unit": 0.22
+  },
+  {
+    "name": "Bananas, ripe and slightly ripe, raw",
+    "unit": "100 g",
+    "calories_per_unit": 97.0,
+    "protein_per_unit": 0.74,
+    "carbs_per_unit": 23.0,
+    "fat_per_unit": 0.29
+  },
+  {
+    "name": "Apples, red delicious, with skin, raw",
+    "unit": "100 g",
+    "calories_per_unit": 61.8,
+    "protein_per_unit": 0.188,
+    "carbs_per_unit": 14.8,
+    "fat_per_unit": 0.212
+  },
+  {
+    "name": "Apples, fuji, with skin, raw",
+    "unit": "100 g",
+    "calories_per_unit": 64.7,
+    "protein_per_unit": 0.148,
+    "carbs_per_unit": 15.7,
+    "fat_per_unit": 0.162
+  },
+  {
+    "name": "Apples, gala, with skin, raw",
+    "unit": "100 g",
+    "calories_per_unit": 61.0,
+    "protein_per_unit": 0.133,
+    "carbs_per_unit": 14.8,
+    "fat_per_unit": 0.15
+  },
+  {
+    "name": "Apples, granny smith, with skin, raw",
+    "unit": "100 g",
+    "calories_per_unit": 58.9,
+    "protein_per_unit": 0.266,
+    "carbs_per_unit": 14.1,
+    "fat_per_unit": 0.138
+  },
+  {
+    "name": "Apples, honeycrisp, with skin, raw",
+    "unit": "100 g",
+    "calories_per_unit": 60.0,
+    "protein_per_unit": 0.102,
+    "carbs_per_unit": 14.7,
+    "fat_per_unit": 0.1
+  },
+  {
+    "name": "Mushroom, lion's mane",
+    "unit": "100 g",
+    "calories_per_unit": 42.7,
+    "protein_per_unit": 2.5,
+    "carbs_per_unit": 7.59,
+    "fat_per_unit": 0.256
+  },
+  {
+    "name": "Mushroom, oyster",
+    "unit": "100 g",
+    "calories_per_unit": 41.0,
+    "protein_per_unit": 2.9,
+    "carbs_per_unit": 6.94,
+    "fat_per_unit": 0.188
+  },
+  {
+    "name": "Mushrooms, shiitake",
+    "unit": "100 g",
+    "calories_per_unit": 44.1,
+    "protein_per_unit": 2.41,
+    "carbs_per_unit": 8.17,
+    "fat_per_unit": 0.195
+  },
+  {
+    "name": "Mushrooms, white button",
+    "unit": "100 g",
+    "calories_per_unit": 31.2,
+    "protein_per_unit": 2.89,
+    "carbs_per_unit": 4.08,
+    "fat_per_unit": 0.371
+  },
+  {
+    "name": "Soy milk, unsweetened, plain, shelf stable",
+    "unit": "100 ml",
+    "calories_per_unit": 38.5,
+    "protein_per_unit": 3.55,
+    "carbs_per_unit": 1.29,
+    "fat_per_unit": 2.12
+  },
+  {
+    "name": "Almond milk, unsweetened, plain, shelf stable",
+    "unit": "100 ml",
+    "calories_per_unit": 14.6,
+    "protein_per_unit": 0.555,
+    "carbs_per_unit": 0.337,
+    "fat_per_unit": 1.22
+  },
+  {
+    "name": "Spinach, baby",
+    "unit": "100 g",
+    "calories_per_unit": 26.6,
+    "protein_per_unit": 2.85,
+    "carbs_per_unit": 2.41,
+    "fat_per_unit": 0.619
+  },
+  {
+    "name": "Spinach, mature",
+    "unit": "100 g",
+    "calories_per_unit": 27.6,
+    "protein_per_unit": 2.91,
+    "carbs_per_unit": 2.64,
+    "fat_per_unit": 0.604
+  },
+  {
+    "name": "Tomato, roma",
+    "unit": "100 g",
+    "calories_per_unit": 22.0,
+    "protein_per_unit": 0.696,
+    "carbs_per_unit": 3.84,
+    "fat_per_unit": 0.425
+  },
+  {
+    "name": "Flour, 00",
+    "unit": "100 g",
+    "calories_per_unit": 357,
+    "protein_per_unit": 11.4,
+    "carbs_per_unit": 74.4,
+    "fat_per_unit": 1.52
+  },
+  {
+    "name": "Flour, spelt, whole grain",
+    "unit": "100 g",
+    "calories_per_unit": 364,
+    "protein_per_unit": 14.5,
+    "carbs_per_unit": 70.7,
+    "fat_per_unit": 2.54
+  },
+  {
+    "name": "Flour, semolina, coarse and semi-coarse",
+    "unit": "100 g",
+    "calories_per_unit": 357,
+    "protein_per_unit": 11.7,
+    "carbs_per_unit": 73.8,
+    "fat_per_unit": 1.6
+  },
+  {
+    "name": "Flour, semolina, fine",
+    "unit": "100 g",
+    "calories_per_unit": 358,
+    "protein_per_unit": 13.3,
+    "carbs_per_unit": 72.0,
+    "fat_per_unit": 1.84
+  },
+  {
+    "name": "Apple juice, with added vitamin C, from concentrate, shelf stable",
+    "unit": "100 ml",
+    "calories_per_unit": 48.4,
+    "protein_per_unit": 0.086,
+    "carbs_per_unit": 11.4,
+    "fat_per_unit": 0.286
+  },
+  {
+    "name": "Orange juice, no pulp, not fortified, from concentrate, refrigerated",
+    "unit": "100 ml",
+    "calories_per_unit": 47.2,
+    "protein_per_unit": 0.734,
+    "carbs_per_unit": 10.3,
+    "fat_per_unit": 0.325
+  },
+  {
+    "name": "Grape juice, purple, with added vitamin C, from concentrate, shelf stable",
+    "unit": "100 ml",
+    "calories_per_unit": 66.1,
+    "protein_per_unit": 0.258,
+    "carbs_per_unit": 15.6,
+    "fat_per_unit": 0.288
+  },
+  {
+    "name": "Grape juice, white, with added vitamin C, from concentrate, shelf stable",
+    "unit": "100 ml",
+    "calories_per_unit": 66.1,
+    "protein_per_unit": 0.094,
+    "carbs_per_unit": 15.8,
+    "fat_per_unit": 0.265
+  },
+  {
+    "name": "Cranberry juice, not fortified, from concentrate, shelf stable",
+    "unit": "100 ml",
+    "calories_per_unit": 32.1,
+    "protein_per_unit": 0.0,
+    "carbs_per_unit": 7.26,
+    "fat_per_unit": 0.338
+  },
+  {
+    "name": "Grapefruit juice, red, not fortified, not from concentrate, refrigerated",
+    "unit": "100 ml",
+    "calories_per_unit": 41.1,
+    "protein_per_unit": 0.57,
+    "carbs_per_unit": 9.1,
+    "fat_per_unit": 0.267
+  },
+  {
+    "name": "Tomato juice, with added ingredients, from concentrate, shelf stable",
+    "unit": "100 ml",
+    "calories_per_unit": 23.3,
+    "protein_per_unit": 0.859,
+    "carbs_per_unit": 4.32,
+    "fat_per_unit": 0.288
+  },
+  {
+    "name": "Orange juice, no pulp, not fortified, not from concentrate, refrigerated",
+    "unit": "100 ml",
+    "calories_per_unit": 46.5,
+    "protein_per_unit": 0.812,
+    "carbs_per_unit": 10.0,
+    "fat_per_unit": 0.356
+  },
+  {
+    "name": "Mushroom, portabella",
+    "unit": "100 g",
+    "calories_per_unit": 32.4,
+    "protein_per_unit": 2.75,
+    "carbs_per_unit": 4.66,
+    "fat_per_unit": 0.312
+  },
+  {
+    "name": "Mushroom, king oyster",
+    "unit": "100 g",
+    "calories_per_unit": 46.4,
+    "protein_per_unit": 2.41,
+    "carbs_per_unit": 8.5,
+    "fat_per_unit": 0.308
+  },
+  {
+    "name": "Mushroom, enoki",
+    "unit": "100 g",
+    "calories_per_unit": 44.4,
+    "protein_per_unit": 2.42,
+    "carbs_per_unit": 8.14,
+    "fat_per_unit": 0.245
+  },
+  {
+    "name": "Mushroom, crimini",
+    "unit": "100 g",
+    "calories_per_unit": 30.2,
+    "protein_per_unit": 3.09,
+    "carbs_per_unit": 4.01,
+    "fat_per_unit": 0.197
+  },
+  {
+    "name": "Mushroom, maitake",
+    "unit": "100 g",
+    "calories_per_unit": 37.6,
+    "protein_per_unit": 2.2,
+    "carbs_per_unit": 6.6,
+    "fat_per_unit": 0.265
+  },
+  {
+    "name": "Mushroom, beech",
+    "unit": "100 g",
+    "calories_per_unit": 39.8,
+    "protein_per_unit": 2.18,
+    "carbs_per_unit": 6.76,
+    "fat_per_unit": 0.449
+  },
+  {
+    "name": "Mushroom, pioppini",
+    "unit": "100 g",
+    "calories_per_unit": 39.2,
+    "protein_per_unit": 3.5,
+    "carbs_per_unit": 5.76,
+    "fat_per_unit": 0.24
+  },
+  {
+    "name": "Soy milk, sweetened, plain, refrigerated",
+    "unit": "100 ml",
+    "calories_per_unit": 40.7,
+    "protein_per_unit": 2.78,
+    "carbs_per_unit": 3.0,
+    "fat_per_unit": 1.96
+  },
+  {
+    "name": "Almond milk, unsweetened, plain, refrigerated",
+    "unit": "100 ml",
+    "calories_per_unit": 19.3,
+    "protein_per_unit": 0.656,
+    "carbs_per_unit": 0.671,
+    "fat_per_unit": 1.56
+  },
+  {
+    "name": "Oat milk, unsweetened, plain, refrigerated",
+    "unit": "100 ml",
+    "calories_per_unit": 48.3,
+    "protein_per_unit": 0.797,
+    "carbs_per_unit": 5.1,
+    "fat_per_unit": 2.75
+  },
+  {
+    "name": "Carrots, mature, raw",
+    "unit": "100 g",
+    "calories_per_unit": 48.0,
+    "protein_per_unit": 0.941,
+    "carbs_per_unit": 10.3,
+    "fat_per_unit": 0.351
+  },
+  {
+    "name": "Carrots, baby, raw",
+    "unit": "100 g",
+    "calories_per_unit": 40.8,
+    "protein_per_unit": 0.805,
+    "carbs_per_unit": 9.08,
+    "fat_per_unit": 0.138
+  },
+  {
+    "name": "Peppers, bell, green, raw",
+    "unit": "100 g",
+    "calories_per_unit": 22.9,
+    "protein_per_unit": 0.715,
+    "carbs_per_unit": 4.78,
+    "fat_per_unit": 0.106
+  },
+  {
+    "name": "Peppers, bell, yellow, raw",
+    "unit": "100 g",
+    "calories_per_unit": 30.8,
+    "protein_per_unit": 0.819,
+    "carbs_per_unit": 6.6,
+    "fat_per_unit": 0.121
+  },
+  {
+    "name": "Peppers, bell, red, raw",
+    "unit": "100 g",
+    "calories_per_unit": 31.3,
+    "protein_per_unit": 0.896,
+    "carbs_per_unit": 6.65,
+    "fat_per_unit": 0.126
+  },
+  {
+    "name": "Peppers, bell, orange, raw",
+    "unit": "100 g",
+    "calories_per_unit": 31.7,
+    "protein_per_unit": 0.882,
+    "carbs_per_unit": 6.7,
+    "fat_per_unit": 0.156
+  },
+  {
+    "name": "Buttermilk, low fat",
+    "unit": "100 ml",
+    "calories_per_unit": 42.8,
+    "protein_per_unit": 3.46,
+    "carbs_per_unit": 4.81,
+    "fat_per_unit": 1.08
+  },
+  {
+    "name": "Yogurt, plain, whole milk",
+    "unit": "100 ml",
+    "calories_per_unit": 78.0,
+    "protein_per_unit": 3.82,
+    "carbs_per_unit": 5.57,
+    "fat_per_unit": 4.48
+  },
+  {
+    "name": "Yogurt, Greek, plain, whole milk",
+    "unit": "100 ml",
+    "calories_per_unit": 93.7,
+    "protein_per_unit": 8.78,
+    "carbs_per_unit": 4.75,
+    "fat_per_unit": 4.39
+  },
+  {
+    "name": "Cheese, parmesan, grated, refrigerated",
+    "unit": "100 g",
+    "calories_per_unit": 403,
+    "protein_per_unit": 30.1,
+    "carbs_per_unit": 4.33,
+    "fat_per_unit": 29.5
+  },
+  {
+    "name": "Cheese, feta, whole milk, crumbled",
+    "unit": "100 ml",
+    "calories_per_unit": 273,
+    "protein_per_unit": 19.7,
+    "carbs_per_unit": 5.58,
+    "fat_per_unit": 19.1
+  },
+  {
+    "name": "Flour, almond",
+    "unit": "100 g",
+    "calories_per_unit": 622,
+    "protein_per_unit": 26.2,
+    "carbs_per_unit": 16.2,
+    "fat_per_unit": 50.2
+  },
+  {
+    "name": "Flour, oat, whole grain",
+    "unit": "100 g",
+    "calories_per_unit": 389,
+    "protein_per_unit": 13.2,
+    "carbs_per_unit": 69.9,
+    "fat_per_unit": 6.31
+  },
+  {
+    "name": "Flour, potato",
+    "unit": "100 g",
+    "calories_per_unit": 361,
+    "protein_per_unit": 8.11,
+    "carbs_per_unit": 79.9,
+    "fat_per_unit": 0.951
+  },
+  {
+    "name": "Peanut butter, creamy",
+    "unit": "100 g",
+    "calories_per_unit": 632,
+    "protein_per_unit": 24.0,
+    "carbs_per_unit": 22.7,
+    "fat_per_unit": 49.4
+  },
+  {
+    "name": "Sesame butter, creamy",
+    "unit": "100 g",
+    "calories_per_unit": 697,
+    "protein_per_unit": 19.7,
+    "carbs_per_unit": 14.2,
+    "fat_per_unit": 62.4
+  },
+  {
+    "name": "Almond butter, creamy",
+    "unit": "100 g",
+    "calories_per_unit": 645,
+    "protein_per_unit": 20.8,
+    "carbs_per_unit": 21.2,
+    "fat_per_unit": 53.0
+  },
+  {
+    "name": "Flaxseed, ground",
+    "unit": "100 g",
+    "calories_per_unit": 545,
+    "protein_per_unit": 18.0,
+    "carbs_per_unit": 34.4,
+    "fat_per_unit": 37.3
+  },
+  {
+    "name": "Cottage cheese, full fat, large or small curd",
+    "unit": "100 g",
+    "calories_per_unit": 103,
+    "protein_per_unit": 11.6,
+    "carbs_per_unit": 4.6,
+    "fat_per_unit": 4.22
+  },
+  {
+    "name": "Cream cheese, full fat, block",
+    "unit": "100 g",
+    "calories_per_unit": 343,
+    "protein_per_unit": 5.79,
+    "carbs_per_unit": 4.56,
+    "fat_per_unit": 33.5
+  },
+  {
+    "name": "Cream, heavy",
+    "unit": "100 g",
+    "calories_per_unit": 343,
+    "protein_per_unit": 2.02,
+    "carbs_per_unit": 3.8,
+    "fat_per_unit": 35.6
+  },
+  {
+    "name": "Cream, sour, full fat",
+    "unit": "100 g",
+    "calories_per_unit": 196,
+    "protein_per_unit": 3.07,
+    "carbs_per_unit": 5.56,
+    "fat_per_unit": 18.0
+  },
+  {
+    "name": "Lettuce, iceberg, raw",
+    "unit": "100 g",
+    "calories_per_unit": 17.1,
+    "protein_per_unit": 0.742,
+    "carbs_per_unit": 3.37,
+    "fat_per_unit": 0.074
+  },
+  {
+    "name": "Lettuce, romaine, green, raw",
+    "unit": "100 g",
+    "calories_per_unit": 20.8,
+    "protein_per_unit": 0.977,
+    "carbs_per_unit": 4.06,
+    "fat_per_unit": 0.071
+  },
+  {
+    "name": "Lettuce, leaf, red, raw",
+    "unit": "100 g",
+    "calories_per_unit": 17.5,
+    "protein_per_unit": 0.883,
+    "carbs_per_unit": 3.26,
+    "fat_per_unit": 0.106
+  },
+  {
+    "name": "Lettuce, leaf, green, raw",
+    "unit": "100 g",
+    "calories_per_unit": 22.0,
+    "protein_per_unit": 1.09,
+    "carbs_per_unit": 4.07,
+    "fat_per_unit": 0.156
+  },
+  {
+    "name": "Nuts, pine nuts, raw",
+    "unit": "100 g",
+    "calories_per_unit": 689,
+    "protein_per_unit": 15.7,
+    "carbs_per_unit": 18.6,
+    "fat_per_unit": 61.3
+  },
+  {
+    "name": "Nuts, almonds, whole, raw",
+    "unit": "100 g",
+    "calories_per_unit": 626,
+    "protein_per_unit": 21.5,
+    "carbs_per_unit": 20.0,
+    "fat_per_unit": 51.1
+  },
+  {
+    "name": "Nuts, walnuts, English, halves, raw",
+    "unit": "100 g",
+    "calories_per_unit": 730,
+    "protein_per_unit": 14.6,
+    "carbs_per_unit": 10.9,
+    "fat_per_unit": 69.7
+  },
+  {
+    "name": "Nuts, pecans, halves, raw",
+    "unit": "100 g",
+    "calories_per_unit": 750,
+    "protein_per_unit": 9.96,
+    "carbs_per_unit": 12.7,
+    "fat_per_unit": 73.3
+  },
+  {
+    "name": "Oats, whole grain, rolled, old fashioned",
+    "unit": "100 g",
+    "calories_per_unit": 382,
+    "protein_per_unit": 13.5,
+    "carbs_per_unit": 68.7,
+    "fat_per_unit": 5.89
+  },
+  {
+    "name": "Oats, whole grain, steel cut",
+    "unit": "100 g",
+    "calories_per_unit": 381,
+    "protein_per_unit": 12.5,
+    "carbs_per_unit": 69.8,
+    "fat_per_unit": 5.8
+  },
+  {
+    "name": "Pineapple, raw",
+    "unit": "100 g",
+    "calories_per_unit": 60.1,
+    "protein_per_unit": 0.461,
+    "carbs_per_unit": 14.1,
+    "fat_per_unit": 0.211
+  },
+  {
+    "name": "Cherries, sweet, dark red, raw",
+    "unit": "100 g",
+    "calories_per_unit": 70.5,
+    "protein_per_unit": 1.04,
+    "carbs_per_unit": 16.2,
+    "fat_per_unit": 0.192
+  },
+  {
+    "name": "Beans, snap, green, raw",
+    "unit": "100 g",
+    "calories_per_unit": 40.0,
+    "protein_per_unit": 1.97,
+    "carbs_per_unit": 7.41,
+    "fat_per_unit": 0.275
+  },
+  {
+    "name": "Potatoes, russet, without skin, raw",
+    "unit": "100 g",
+    "calories_per_unit": 83.4,
+    "protein_per_unit": 2.27,
+    "carbs_per_unit": 17.8,
+    "fat_per_unit": 0.36
+  },
+  {
+    "name": "Potatoes, red, without skin, raw",
+    "unit": "100 g",
+    "calories_per_unit": 75.6,
+    "protein_per_unit": 2.06,
+    "carbs_per_unit": 16.3,
+    "fat_per_unit": 0.248
+  },
+  {
+    "name": "Potatoes, gold, without skin, raw",
+    "unit": "100 g",
+    "calories_per_unit": 73.5,
+    "protein_per_unit": 1.81,
+    "carbs_per_unit": 16.0,
+    "fat_per_unit": 0.264
+  },
+  {
+    "name": "Sweet potatoes, orange flesh, without skin, raw",
+    "unit": "100 g",
+    "calories_per_unit": 79.0,
+    "protein_per_unit": 1.58,
+    "carbs_per_unit": 17.3,
+    "fat_per_unit": 0.375
+  },
+  {
+    "name": "Celery, raw",
+    "unit": "100 g",
+    "calories_per_unit": 16.7,
+    "protein_per_unit": 0.492,
+    "carbs_per_unit": 3.32,
+    "fat_per_unit": 0.162
+  },
+  {
+    "name": "Cucumber, with peel, raw",
+    "unit": "100 g",
+    "calories_per_unit": 15.9,
+    "protein_per_unit": 0.625,
+    "carbs_per_unit": 2.95,
+    "fat_per_unit": 0.178
+  },
+  {
+    "name": "Cabbage, green, raw",
+    "unit": "100 g",
+    "calories_per_unit": 31.4,
+    "protein_per_unit": 0.961,
+    "carbs_per_unit": 6.38,
+    "fat_per_unit": 0.228
+  },
+  {
+    "name": "Cabbage, red, raw",
+    "unit": "100 g",
+    "calories_per_unit": 34.1,
+    "protein_per_unit": 1.24,
+    "carbs_per_unit": 6.79,
+    "fat_per_unit": 0.214
+  },
+  {
+    "name": "Strawberries, raw",
+    "unit": "100 g",
+    "calories_per_unit": 36.4,
+    "protein_per_unit": 0.641,
+    "carbs_per_unit": 7.96,
+    "fat_per_unit": 0.22
+  },
+  {
+    "name": "Raspberries, raw",
+    "unit": "100 g",
+    "calories_per_unit": 57.3,
+    "protein_per_unit": 1.01,
+    "carbs_per_unit": 12.9,
+    "fat_per_unit": 0.188
+  },
+  {
+    "name": "Blueberries, raw",
+    "unit": "100 g",
+    "calories_per_unit": 63.9,
+    "protein_per_unit": 0.703,
+    "carbs_per_unit": 14.6,
+    "fat_per_unit": 0.306
+  },
+  {
+    "name": "Grapes, red, seedless, raw",
+    "unit": "100 g",
+    "calories_per_unit": 85.9,
+    "protein_per_unit": 0.914,
+    "carbs_per_unit": 20.2,
+    "fat_per_unit": 0.164
+  },
+  {
+    "name": "Grapes, green, seedless, raw",
+    "unit": "100 g",
+    "calories_per_unit": 80.1,
+    "protein_per_unit": 0.899,
+    "carbs_per_unit": 18.6,
+    "fat_per_unit": 0.232
+  },
+  {
+    "name": "Applesauce, unsweetened, with added vitamin C",
+    "unit": "100 g",
+    "calories_per_unit": 51.6,
+    "protein_per_unit": 0.273,
+    "carbs_per_unit": 12.3,
+    "fat_per_unit": 0.162
+  },
+  {
+    "name": "Flour, amaranth",
+    "unit": "100 g",
+    "calories_per_unit": 384,
+    "protein_per_unit": 13.2,
+    "carbs_per_unit": 68.8,
+    "fat_per_unit": 6.24
+  },
+  {
+    "name": "Flour, quinoa",
+    "unit": "100 g",
+    "calories_per_unit": 385,
+    "protein_per_unit": 11.9,
+    "carbs_per_unit": 69.5,
+    "fat_per_unit": 6.6
+  },
+  {
+    "name": "Flour, sorghum",
+    "unit": "100 g",
+    "calories_per_unit": 375,
+    "protein_per_unit": 8.27,
+    "carbs_per_unit": 77.4,
+    "fat_per_unit": 3.59
+  },
+  {
+    "name": "Flour, buckwheat",
+    "unit": "100 g",
+    "calories_per_unit": 358,
+    "protein_per_unit": 8.88,
+    "carbs_per_unit": 75.0,
+    "fat_per_unit": 2.48
+  },
+  {
+    "name": "Flour, rye",
+    "unit": "100 g",
+    "calories_per_unit": 359,
+    "protein_per_unit": 8.4,
+    "carbs_per_unit": 77.2,
+    "fat_per_unit": 1.91
+  },
+  {
+    "name": "Flour, barley",
+    "unit": "100 g",
+    "calories_per_unit": 367,
+    "protein_per_unit": 8.72,
+    "carbs_per_unit": 77.4,
+    "fat_per_unit": 2.45
+  },
+  {
+    "name": "Flour, cassava",
+    "unit": "100 g",
+    "calories_per_unit": 357,
+    "protein_per_unit": 0.918,
+    "carbs_per_unit": 87.3,
+    "fat_per_unit": 0.494
+  },
+  {
+    "name": "Buckwheat, whole grain",
+    "unit": "100 g",
+    "calories_per_unit": 356,
+    "protein_per_unit": 11.1,
+    "carbs_per_unit": 71.1,
+    "fat_per_unit": 3.04
+  },
+  {
+    "name": "Millet, whole grain",
+    "unit": "100 g",
+    "calories_per_unit": 376,
+    "protein_per_unit": 10.0,
+    "carbs_per_unit": 74.4,
+    "fat_per_unit": 4.19
+  },
+  {
+    "name": "Rice, brown, long grain, unenriched, raw",
+    "unit": "100 g",
+    "calories_per_unit": 366,
+    "protein_per_unit": 7.25,
+    "carbs_per_unit": 76.7,
+    "fat_per_unit": 3.31
+  },
+  {
+    "name": "Rice, white, long grain, unenriched, raw",
+    "unit": "100 g",
+    "calories_per_unit": 359,
+    "protein_per_unit": 7.04,
+    "carbs_per_unit": 80.3,
+    "fat_per_unit": 1.03
+  },
+  {
+    "name": "Beef, ground, 90% lean meat / 10% fat, raw",
+    "unit": "100 g",
+    "calories_per_unit": 185,
+    "protein_per_unit": 18.2,
+    "carbs_per_unit": 0.0,
+    "fat_per_unit": 12.8
+  },
+  {
+    "name": "Beef, ground, 80% lean meat / 20% fat, raw",
+    "unit": "100 g",
+    "calories_per_unit": 243,
+    "protein_per_unit": 17.5,
+    "carbs_per_unit": 0.0,
+    "fat_per_unit": 19.4
+  },
+  {
+    "name": "Pork, ground, raw",
+    "unit": "100 g",
+    "calories_per_unit": 228,
+    "protein_per_unit": 17.8,
+    "carbs_per_unit": 0.0,
+    "fat_per_unit": 17.5
+  },
+  {
+    "name": "Chicken, ground, with additives, raw",
+    "unit": "100 g",
+    "calories_per_unit": 133,
+    "protein_per_unit": 17.9,
+    "carbs_per_unit": 0.0,
+    "fat_per_unit": 7.16
+  },
+  {
+    "name": "Turkey, ground, 93% lean/ 7% fat, raw",
+    "unit": "100 g",
+    "calories_per_unit": 153,
+    "protein_per_unit": 17.3,
+    "carbs_per_unit": 0.0,
+    "fat_per_unit": 9.59
+  },
+  {
+    "name": "Nuts, brazilnuts, raw",
+    "unit": "100 g",
+    "calories_per_unit": 664,
+    "protein_per_unit": 15.0,
+    "carbs_per_unit": 21.6,
+    "fat_per_unit": 57.4
+  },
+  {
+    "name": "Nuts, cashew nuts, raw",
+    "unit": "100 g",
+    "calories_per_unit": 565,
+    "protein_per_unit": 17.4,
+    "carbs_per_unit": 36.3,
+    "fat_per_unit": 38.9
+  },
+  {
+    "name": "Nuts, hazelnuts or filberts, raw",
+    "unit": "100 g",
+    "calories_per_unit": 641,
+    "protein_per_unit": 13.5,
+    "carbs_per_unit": 26.5,
+    "fat_per_unit": 53.5
+  },
+  {
+    "name": "Peanuts, raw",
+    "unit": "100 g",
+    "calories_per_unit": 588,
+    "protein_per_unit": 23.2,
+    "carbs_per_unit": 26.5,
+    "fat_per_unit": 43.3
+  },
+  {
+    "name": "Flour, chestnut",
+    "unit": "100 g",
+    "calories_per_unit": 385,
+    "protein_per_unit": 5.29,
+    "carbs_per_unit": 80.5,
+    "fat_per_unit": 4.64
+  },
+  {
+    "name": "Nuts, macadamia nuts, raw",
+    "unit": "100 g",
+    "calories_per_unit": 712,
+    "protein_per_unit": 7.79,
+    "carbs_per_unit": 24.1,
+    "fat_per_unit": 64.9
+  },
+  {
+    "name": "Nuts, pistachio nuts, raw",
+    "unit": "100 g",
+    "calories_per_unit": 598,
+    "protein_per_unit": 20.5,
+    "carbs_per_unit": 27.7,
+    "fat_per_unit": 45.0
+  },
+  {
+    "name": "Seeds, pumpkin seeds (pepitas), raw",
+    "unit": "100 g",
+    "calories_per_unit": 555,
+    "protein_per_unit": 29.9,
+    "carbs_per_unit": 18.7,
+    "fat_per_unit": 40.0
+  },
+  {
+    "name": "Seeds, sunflower seed, kernel, raw",
+    "unit": "100 g",
+    "calories_per_unit": 609,
+    "protein_per_unit": 18.9,
+    "carbs_per_unit": 24.5,
+    "fat_per_unit": 48.4
+  },
+  {
+    "name": "Flour, coconut",
+    "unit": "100 g",
+    "calories_per_unit": 438,
+    "protein_per_unit": 16.1,
+    "carbs_per_unit": 58.9,
+    "fat_per_unit": 15.3
+  },
+  {
+    "name": "Beans, cannellini, dry",
+    "unit": "100 g",
+    "calories_per_unit": 345,
+    "protein_per_unit": 21.6,
+    "carbs_per_unit": 59.8,
+    "fat_per_unit": 2.2
+  },
+  {
+    "name": "Chickpeas, (garbanzo beans, bengal gram), dry",
+    "unit": "100 g",
+    "calories_per_unit": 383,
+    "protein_per_unit": 21.3,
+    "carbs_per_unit": 60.4,
+    "fat_per_unit": 6.27
+  },
+  {
+    "name": "Lentils, dry",
+    "unit": "100 g",
+    "calories_per_unit": 360,
+    "protein_per_unit": 23.6,
+    "carbs_per_unit": 62.2,
+    "fat_per_unit": 1.92
+  },
+  {
+    "name": "Blackeye pea, dry",
+    "unit": "100 g",
+    "calories_per_unit": 354,
+    "protein_per_unit": 21.2,
+    "carbs_per_unit": 61.8,
+    "fat_per_unit": 2.42
+  },
+  {
+    "name": "Beans, black, canned, sodium added, drained and rinsed",
+    "unit": "100 g",
+    "calories_per_unit": 118,
+    "protein_per_unit": 6.91,
+    "carbs_per_unit": 19.8,
+    "fat_per_unit": 1.27
+  },
+  {
+    "name": "Beans, navy, canned, sodium added, drained and rinsed",
+    "unit": "100 g",
+    "calories_per_unit": 119,
+    "protein_per_unit": 6.57,
+    "carbs_per_unit": 20.0,
+    "fat_per_unit": 1.4
+  },
+  {
+    "name": "Beans, cannellini, canned, sodium added, drained and rinsed",
+    "unit": "100 g",
+    "calories_per_unit": 115,
+    "protein_per_unit": 7.41,
+    "carbs_per_unit": 18.8,
+    "fat_per_unit": 1.17
+  },
+  {
+    "name": "Chickpeas (garbanzo beans, bengal gram), canned, sodium added, drained and rinsed",
+    "unit": "100 g",
+    "calories_per_unit": 137,
+    "protein_per_unit": 7.02,
+    "carbs_per_unit": 20.3,
+    "fat_per_unit": 3.1
+  },
+  {
+    "name": "Beans, kidney, dark red, canned, sodium added, sugar added, drained and rinsed",
+    "unit": "100 g",
+    "calories_per_unit": 127,
+    "protein_per_unit": 7.8,
+    "carbs_per_unit": 21.0,
+    "fat_per_unit": 1.26
+  },
+  {
+    "name": "Beans, kidney, light red, canned, sodium added, sugar added, drained and rinsed",
+    "unit": "100 g",
+    "calories_per_unit": 127,
+    "protein_per_unit": 7.31,
+    "carbs_per_unit": 21.4,
+    "fat_per_unit": 1.3
+  },
+  {
+    "name": "Peas, green, sweet, canned, sodium added, sugar added, drained and rinsed",
+    "unit": "100 g",
+    "calories_per_unit": 80.1,
+    "protein_per_unit": 4.73,
+    "carbs_per_unit": 12.7,
+    "fat_per_unit": 1.15
+  },
+  {
+    "name": "Beans, pinto, canned, sodium added, drained and rinsed",
+    "unit": "100 g",
+    "calories_per_unit": 117,
+    "protein_per_unit": 6.69,
+    "carbs_per_unit": 19.6,
+    "fat_per_unit": 1.27
+  },
+  {
+    "name": "Blackeye pea, canned, sodium added, drained and rinsed",
+    "unit": "100 g",
+    "calories_per_unit": 116,
+    "protein_per_unit": 6.92,
+    "carbs_per_unit": 19.2,
+    "fat_per_unit": 1.3
+  },
+  {
+    "name": "Beans, great northern, canned, sodium added, drained and rinsed",
+    "unit": "100 g",
+    "calories_per_unit": 117,
+    "protein_per_unit": 7.03,
+    "carbs_per_unit": 19.3,
+    "fat_per_unit": 1.27
+  },
+  {
+    "name": "Pork, loin, boneless, raw",
+    "unit": "100 g",
+    "calories_per_unit": 168,
+    "protein_per_unit": 21.1,
+    "carbs_per_unit": 0.0,
+    "fat_per_unit": 9.47
+  },
+  {
+    "name": "Pork, loin, tenderloin, boneless, raw",
+    "unit": "100 g",
+    "calories_per_unit": 119,
+    "protein_per_unit": 21.6,
+    "carbs_per_unit": 0.0,
+    "fat_per_unit": 3.9
+  },
+  {
+    "name": "Chicken, breast, boneless, skinless, raw",
+    "unit": "100 g",
+    "calories_per_unit": 106,
+    "protein_per_unit": 22.5,
+    "carbs_per_unit": 0.0,
+    "fat_per_unit": 1.93
+  },
+  {
+    "name": "Chicken, thigh, boneless, skinless, raw",
+    "unit": "100 g",
+    "calories_per_unit": 144,
+    "protein_per_unit": 18.6,
+    "carbs_per_unit": 0.0,
+    "fat_per_unit": 7.92
+  },
+  {
+    "name": "Beef, ribeye, steak, boneless, choice, raw",
+    "unit": "100 g",
+    "calories_per_unit": 254,
+    "protein_per_unit": 18.7,
+    "carbs_per_unit": 0.0,
+    "fat_per_unit": 20.0
+  },
+  {
+    "name": "Beef, round, top round, boneless, choice, raw",
+    "unit": "100 g",
+    "calories_per_unit": 141,
+    "protein_per_unit": 21.5,
+    "carbs_per_unit": 0.852,
+    "fat_per_unit": 5.7
+  },
+  {
+    "name": "Beef, chuck, roast, boneless, choice, raw",
+    "unit": "100 g",
+    "calories_per_unit": 232,
+    "protein_per_unit": 18.4,
+    "carbs_per_unit": 0.0,
+    "fat_per_unit": 17.8
+  },
+  {
+    "name": "Beef, flank, steak, boneless, choice, raw",
+    "unit": "100 g",
+    "calories_per_unit": 164,
+    "protein_per_unit": 20.1,
+    "carbs_per_unit": 0.0,
+    "fat_per_unit": 9.4
+  },
+  {
+    "name": "Yogurt, plain, nonfat",
+    "unit": "100 g",
+    "calories_per_unit": 50.0,
+    "protein_per_unit": 4.23,
+    "carbs_per_unit": 8.08,
+    "fat_per_unit": 0.087
+  },
+  {
+    "name": "Cheese, monterey jack, solid",
+    "unit": "100 g",
+    "calories_per_unit": 392,
+    "protein_per_unit": 22.6,
+    "carbs_per_unit": 1.9,
+    "fat_per_unit": 32.6
+  },
+  {
+    "name": "Cheese, pasteurized process cheese food or product, American, singles",
+    "unit": "100 g",
+    "calories_per_unit": 310,
+    "protein_per_unit": 15.6,
+    "carbs_per_unit": 8.19,
+    "fat_per_unit": 23.9
+  },
+  {
+    "name": "Cheese, provolone, sliced",
+    "unit": "100 g",
+    "calories_per_unit": 357,
+    "protein_per_unit": 23.5,
+    "carbs_per_unit": 2.45,
+    "fat_per_unit": 28.1
+  },
+  {
+    "name": "Cheese, oaxaca, solid",
+    "unit": "100 g",
+    "calories_per_unit": 297,
+    "protein_per_unit": 22.1,
+    "carbs_per_unit": 2.4,
+    "fat_per_unit": 22.1
+  },
+  {
+    "name": "Cheese, queso fresco, solid",
+    "unit": "100 g",
+    "calories_per_unit": 298,
+    "protein_per_unit": 18.9,
+    "carbs_per_unit": 2.96,
+    "fat_per_unit": 23.4
+  },
+  {
+    "name": "Cheese, cotija, solid",
+    "unit": "100 g",
+    "calories_per_unit": 351,
+    "protein_per_unit": 23.8,
+    "carbs_per_unit": 2.72,
+    "fat_per_unit": 27.2
+  },
+  {
+    "name": "Fish, salmon, sockeye, wild caught, raw",
+    "unit": "100 g",
+    "calories_per_unit": 130,
+    "protein_per_unit": 22.3,
+    "carbs_per_unit": 0.0,
+    "fat_per_unit": 4.94
+  },
+  {
+    "name": "Fish, salmon, Atlantic, farm raised, raw",
+    "unit": "100 g",
+    "calories_per_unit": 197,
+    "protein_per_unit": 20.3,
+    "carbs_per_unit": 0.0,
+    "fat_per_unit": 13.1
+  },
+  {
+    "name": "Fish, tilapia, farm raised, raw",
+    "unit": "100 g",
+    "calories_per_unit": 94.7,
+    "protein_per_unit": 19.0,
+    "carbs_per_unit": 0.0,
+    "fat_per_unit": 2.48
+  },
+  {
+    "name": "Crustaceans, shrimp, farm raised, raw",
+    "unit": "100 g",
+    "calories_per_unit": 71.4,
+    "protein_per_unit": 15.6,
+    "carbs_per_unit": 0.485,
+    "fat_per_unit": 0.801
+  },
+  {
+    "name": "Fish, cod, Atlantic, wild caught, raw",
+    "unit": "100 g",
+    "calories_per_unit": 66.0,
+    "protein_per_unit": 16.1,
+    "carbs_per_unit": 0.0,
+    "fat_per_unit": 0.668
+  },
+  {
+    "name": "Fish, catfish, farm raised, raw",
+    "unit": "100 g",
+    "calories_per_unit": 129,
+    "protein_per_unit": 16.5,
+    "carbs_per_unit": 0.0,
+    "fat_per_unit": 7.31
+  },
+  {
+    "name": "Crustaceans, crab, blue swimming, lump, pasteurized, refrigerated",
+    "unit": "100 g",
+    "calories_per_unit": 81.0,
+    "protein_per_unit": 18.6,
+    "carbs_per_unit": 0.0,
+    "fat_per_unit": 0.808
+  },
+  {
+    "name": "Squash, summer, green, zucchini, includes skin, raw",
+    "unit": "100 g",
+    "calories_per_unit": 19.0,
+    "protein_per_unit": 0.984,
+    "carbs_per_unit": 3.27,
+    "fat_per_unit": 0.205
+  },
+  {
+    "name": "Squash, summer, yellow, includes skin, raw",
+    "unit": "100 g",
+    "calories_per_unit": 22.0,
+    "protein_per_unit": 0.891,
+    "carbs_per_unit": 4.39,
+    "fat_per_unit": 0.135
+  },
+  {
+    "name": "Squash, winter, butternut, raw",
+    "unit": "100 g",
+    "calories_per_unit": 48.1,
+    "protein_per_unit": 1.15,
+    "carbs_per_unit": 10.5,
+    "fat_per_unit": 0.168
+  },
+  {
+    "name": "Squash, winter, acorn, raw",
+    "unit": "100 g",
+    "calories_per_unit": 48.6,
+    "protein_per_unit": 1.25,
+    "carbs_per_unit": 10.5,
+    "fat_per_unit": 0.182
+  },
+  {
+    "name": "Cabbage, bok choy, raw",
+    "unit": "100 g",
+    "calories_per_unit": 20.3,
+    "protein_per_unit": 1.02,
+    "carbs_per_unit": 3.51,
+    "fat_per_unit": 0.234
+  },
+  {
+    "name": "Cauliflower, raw",
+    "unit": "100 g",
+    "calories_per_unit": 27.6,
+    "protein_per_unit": 1.64,
+    "carbs_per_unit": 4.72,
+    "fat_per_unit": 0.238
+  },
+  {
+    "name": "Collards, raw",
+    "unit": "100 g",
+    "calories_per_unit": 46.9,
+    "protein_per_unit": 2.97,
+    "carbs_per_unit": 7.02,
+    "fat_per_unit": 0.77
+  },
+  {
+    "name": "Brussels sprouts, raw",
+    "unit": "100 g",
+    "calories_per_unit": 59.5,
+    "protein_per_unit": 3.98,
+    "carbs_per_unit": 9.62,
+    "fat_per_unit": 0.565
+  },
+  {
+    "name": "Beets, raw",
+    "unit": "100 g",
+    "calories_per_unit": 44.6,
+    "protein_per_unit": 1.69,
+    "carbs_per_unit": 8.79,
+    "fat_per_unit": 0.302
+  },
+  {
+    "name": "Eggplant, raw",
+    "unit": "100 g",
+    "calories_per_unit": 26.1,
+    "protein_per_unit": 0.852,
+    "carbs_per_unit": 5.4,
+    "fat_per_unit": 0.12
+  },
+  {
+    "name": "Tomatoes, whole, canned, solids and liquids, with salt added",
+    "unit": "100 g",
+    "calories_per_unit": 22.5,
+    "protein_per_unit": 0.868,
+    "carbs_per_unit": 4.29,
+    "fat_per_unit": 0.206
+  },
+  {
+    "name": "Tomato, sauce, canned, with salt added",
+    "unit": "100 g",
+    "calories_per_unit": 34.2,
+    "protein_per_unit": 1.35,
+    "carbs_per_unit": 6.33,
+    "fat_per_unit": 0.382
+  },
+  {
+    "name": "Tomato, paste, canned, without salt added",
+    "unit": "100 g",
+    "calories_per_unit": 104,
+    "protein_per_unit": 4.23,
+    "carbs_per_unit": 20.2,
+    "fat_per_unit": 0.732
+  },
+  {
+    "name": "Tomatoes, crushed, canned",
+    "unit": "100 g",
+    "calories_per_unit": 37.9,
+    "protein_per_unit": 1.44,
+    "carbs_per_unit": 7.14,
+    "fat_per_unit": 0.398
+  },
+  {
+    "name": "Tomato, puree, canned",
+    "unit": "100 g",
+    "calories_per_unit": 40.8,
+    "protein_per_unit": 1.58,
+    "carbs_per_unit": 8.04,
+    "fat_per_unit": 0.265
+  },
+  {
+    "name": "Apricot, with skin, raw",
+    "unit": "100 g",
+    "calories_per_unit": 48.4,
+    "protein_per_unit": 0.961,
+    "carbs_per_unit": 10.2,
+    "fat_per_unit": 0.405
+  },
+  {
+    "name": "Melons, honeydew, raw",
+    "unit": "100 g",
+    "calories_per_unit": 36.7,
+    "protein_per_unit": 0.531,
+    "carbs_per_unit": 8.15,
+    "fat_per_unit": 0.216
+  },
+  {
+    "name": "Plantains, ripe, raw",
+    "unit": "100 g",
+    "calories_per_unit": 136,
+    "protein_per_unit": 1.16,
+    "carbs_per_unit": 31.0,
+    "fat_per_unit": 0.893
+  },
+  {
+    "name": "Plantains, underripe, raw",
+    "unit": "100 g",
+    "calories_per_unit": 145,
+    "protein_per_unit": 1.23,
+    "carbs_per_unit": 33.6,
+    "fat_per_unit": 0.685
+  },
+  {
+    "name": "Chia seeds, dry, raw",
+    "unit": "100 g",
+    "calories_per_unit": 517,
+    "protein_per_unit": 17.0,
+    "carbs_per_unit": 38.3,
+    "fat_per_unit": 32.9
+  },
+  {
+    "name": "Bulgur, dry, raw",
+    "unit": "100 g",
+    "calories_per_unit": 372,
+    "protein_per_unit": 11.8,
+    "carbs_per_unit": 75.9,
+    "fat_per_unit": 2.42
+  },
+  {
+    "name": "Wild rice, dry, raw",
+    "unit": "100 g",
+    "calories_per_unit": 369,
+    "protein_per_unit": 12.8,
+    "carbs_per_unit": 75.7,
+    "fat_per_unit": 1.7
+  },
+  {
+    "name": "Arugula, baby, raw",
+    "unit": "100 g",
+    "calories_per_unit": 31.0,
+    "protein_per_unit": 1.65,
+    "carbs_per_unit": 5.37,
+    "fat_per_unit": 0.325
+  },
+  {
+    "name": "Asparagus, green, raw",
+    "unit": "100 g",
+    "calories_per_unit": 28.1,
+    "protein_per_unit": 1.44,
+    "carbs_per_unit": 5.1,
+    "fat_per_unit": 0.216
+  },
+  {
+    "name": "Avocado, Hass, peeled, raw",
+    "unit": "100 g",
+    "calories_per_unit": 223,
+    "protein_per_unit": 1.81,
+    "carbs_per_unit": 8.32,
+    "fat_per_unit": 20.3
+  },
+  {
+    "name": "Rice, black, unenriched, raw",
+    "unit": "100 g",
+    "calories_per_unit": 370,
+    "protein_per_unit": 7.57,
+    "carbs_per_unit": 77.2,
+    "fat_per_unit": 3.44
+  },
+  {
+    "name": "Corn, sweet, yellow and white kernels,  fresh, raw",
+    "unit": "100 g",
+    "calories_per_unit": 84.6,
+    "protein_per_unit": 2.79,
+    "carbs_per_unit": 14.7,
+    "fat_per_unit": 1.63
+  },
+  {
+    "name": "Einkorn, grain, dry, raw",
+    "unit": "100 g",
+    "calories_per_unit": 369,
+    "protein_per_unit": 15.1,
+    "carbs_per_unit": 68.7,
+    "fat_per_unit": 3.81
+  },
+  {
+    "name": "Farro, pearled, dry, raw",
+    "unit": "100 g",
+    "calories_per_unit": 367,
+    "protein_per_unit": 12.6,
+    "carbs_per_unit": 72.1,
+    "fat_per_unit": 3.1
+  },
+  {
+    "name": "Fonio, grain, dry, raw",
+    "unit": "100 g",
+    "calories_per_unit": 369,
+    "protein_per_unit": 7.17,
+    "carbs_per_unit": 81.3,
+    "fat_per_unit": 1.69
+  },
+  {
+    "name": "Khorasan, grain, dry, raw",
+    "unit": "100 g",
+    "calories_per_unit": 371,
+    "protein_per_unit": 14.8,
+    "carbs_per_unit": 71.8,
+    "fat_per_unit": 2.8
+  },
+  {
+    "name": "Kiwifruit (kiwi), green, peeled, raw",
+    "unit": "100 g",
+    "calories_per_unit": 65.1,
+    "protein_per_unit": 1.01,
+    "carbs_per_unit": 13.8,
+    "fat_per_unit": 0.64
+  },
+  {
+    "name": "Mandarin, seedless, peeled, raw",
+    "unit": "100 g",
+    "calories_per_unit": 62.0,
+    "protein_per_unit": 1.04,
+    "carbs_per_unit": 13.4,
+    "fat_per_unit": 0.458
+  },
+  {
+    "name": "Mango, Tommy Atkins, peeled, raw",
+    "unit": "100 g",
+    "calories_per_unit": 68.5,
+    "protein_per_unit": 0.562,
+    "carbs_per_unit": 15.3,
+    "fat_per_unit": 0.572
+  },
+  {
+    "name": "Mango, Ataulfo, peeled, raw",
+    "unit": "100 g",
+    "calories_per_unit": 78.5,
+    "protein_per_unit": 0.688,
+    "carbs_per_unit": 17.4,
+    "fat_per_unit": 0.681
+  },
+  {
+    "name": "Corn flour, masa harina, white or yellow, dry, raw",
+    "unit": "100 g",
+    "calories_per_unit": 376,
+    "protein_per_unit": 7.56,
+    "carbs_per_unit": 76.7,
+    "fat_per_unit": 4.34
+  },
+  {
+    "name": "Pear, Anjou, green, with skin, raw",
+    "unit": "100 g",
+    "calories_per_unit": 63.7,
+    "protein_per_unit": 0.312,
+    "carbs_per_unit": 14.8,
+    "fat_per_unit": 0.371
+  },
+  {
+    "name": "Plum, black, with skin, raw",
+    "unit": "100 g",
+    "calories_per_unit": 58.7,
+    "protein_per_unit": 0.578,
+    "carbs_per_unit": 13.5,
+    "fat_per_unit": 0.282
+  },
+  {
+    "name": "Rice, red, unenriched, dry, raw",
+    "unit": "100 g",
+    "calories_per_unit": 370,
+    "protein_per_unit": 8.56,
+    "carbs_per_unit": 76.2,
+    "fat_per_unit": 3.44
+  },
+  {
+    "name": "Sorghum bran, white, unenriched, dry, raw",
+    "unit": "100 g",
+    "calories_per_unit": 403,
+    "protein_per_unit": 11.2,
+    "carbs_per_unit": 68.7,
+    "fat_per_unit": 9.26
+  },
+  {
+    "name": "Sorghum flour, white, pearled, unenriched, dry, raw",
+    "unit": "100 g",
+    "calories_per_unit": 364,
+    "protein_per_unit": 10.2,
+    "carbs_per_unit": 73.5,
+    "fat_per_unit": 3.24
+  },
+  {
+    "name": "Sorghum grain, white, pearled, unenriched, dry, raw",
+    "unit": "100 g",
+    "calories_per_unit": 370,
+    "protein_per_unit": 10.2,
+    "carbs_per_unit": 74.9,
+    "fat_per_unit": 3.26
+  },
+  {
+    "name": "Sorghum, whole grain, white, dry, raw",
+    "unit": "100 g",
+    "calories_per_unit": 373,
+    "protein_per_unit": 10.1,
+    "carbs_per_unit": 73.6,
+    "fat_per_unit": 4.22
+  },
+  {
+    "name": "Plantains, overripe, raw",
+    "unit": "100 g",
+    "calories_per_unit": 130,
+    "protein_per_unit": 1.17,
+    "carbs_per_unit": 29.2,
+    "fat_per_unit": 0.99
+  },
+  {
+    "name": "Chicken, drumstick, meat and skin, raw",
+    "unit": "100 g",
+    "calories_per_unit": 125,
+    "protein_per_unit": 18.4,
+    "carbs_per_unit": -0.475,
+    "fat_per_unit": 5.94
+  },
+  {
+    "name": "Chicken, thigh, meat and skin, raw",
+    "unit": "100 g",
+    "calories_per_unit": 188,
+    "protein_per_unit": 17.1,
+    "carbs_per_unit": -0.173,
+    "fat_per_unit": 13.4
+  },
+  {
+    "name": "Chicken, wing, meat and skin, raw",
+    "unit": "100 g",
+    "calories_per_unit": 168,
+    "protein_per_unit": 18.4,
+    "carbs_per_unit": -0.459,
+    "fat_per_unit": 10.6
+  },
+  {
+    "name": "Chicken, breast, meat and skin, raw",
+    "unit": "100 g",
+    "calories_per_unit": 127,
+    "protein_per_unit": 21.4,
+    "carbs_per_unit": -0.428,
+    "fat_per_unit": 4.78
+  },
+  {
+    "name": "Lamb, ground, raw",
+    "unit": "100 g",
+    "calories_per_unit": 237,
+    "protein_per_unit": 17.5,
+    "carbs_per_unit": -0.251,
+    "fat_per_unit": 18.6
+  },
+  {
+    "name": "Bison, ground, raw",
+    "unit": "100 g",
+    "calories_per_unit": 159,
+    "protein_per_unit": 19.9,
+    "carbs_per_unit": -0.15,
+    "fat_per_unit": 8.88
+  },
+  {
+    "name": "Beef, short loin (NY strip steak), raw",
+    "unit": "100 g",
+    "calories_per_unit": 190,
+    "protein_per_unit": 21.3,
+    "carbs_per_unit": 0.221,
+    "fat_per_unit": 11.5
+  },
+  {
+    "name": "Beef, tenderloin steak, raw",
+    "unit": "100 g",
+    "calories_per_unit": 143,
+    "protein_per_unit": 21.1,
+    "carbs_per_unit": 0.18,
+    "fat_per_unit": 6.46
+  },
+  {
+    "name": "Beef, top sirloin steak, raw",
+    "unit": "100 g",
+    "calories_per_unit": 140,
+    "protein_per_unit": 22.0,
+    "carbs_per_unit": 0.218,
+    "fat_per_unit": 5.71
+  },
+  {
+    "name": "Pork, chop, center cut, raw",
+    "unit": "100 g",
+    "calories_per_unit": 138,
+    "protein_per_unit": 22.8,
+    "carbs_per_unit": -0.562,
+    "fat_per_unit": 5.48
+  },
+  {
+    "name": "Pork, belly, with skin, raw",
+    "unit": "100 g",
+    "calories_per_unit": 380,
+    "protein_per_unit": 15.2,
+    "carbs_per_unit": -0.705,
+    "fat_per_unit": 35.8
+  },
+  {
+    "name": "Pawpaw, peeled, seeded, raw",
+    "unit": "100 g",
+    "calories_per_unit": 4.6,
+    "protein_per_unit": 1.15,
+    "carbs_per_unit": "N/A",
+    "fat_per_unit": "N/A"
+  },
+  {
+    "name": "Squash, pie pumpkin, peeled, seeded, raw",
+    "unit": "100 g",
+    "calories_per_unit": 3.4,
+    "protein_per_unit": 0.854,
+    "carbs_per_unit": "N/A",
+    "fat_per_unit": "N/A"
+  },
+  {
+    "name": "Squash, spaghetti, peeled, seeded, raw",
+    "unit": "100 g",
+    "calories_per_unit": 3.2,
+    "protein_per_unit": 0.792,
+    "carbs_per_unit": "N/A",
+    "fat_per_unit": "N/A"
+  },
+  {
+    "name": "Rutabaga, peeled, raw",
+    "unit": "100 g",
+    "calories_per_unit": 3.6,
+    "protein_per_unit": 0.888,
+    "carbs_per_unit": "N/A",
+    "fat_per_unit": "N/A"
+  },
+  {
+    "name": "Blackberries, raw",
+    "unit": "100 g",
+    "calories_per_unit": 6.1,
+    "protein_per_unit": 1.53,
+    "carbs_per_unit": "N/A",
+    "fat_per_unit": "N/A"
+  },
+  {
+    "name": "Tomatillos, dehusked, raw",
+    "unit": "100 g",
+    "calories_per_unit": 4.2,
+    "protein_per_unit": 1.06,
+    "carbs_per_unit": "N/A",
+    "fat_per_unit": "N/A"
+  },
+  {
+    "name": "Cabbage, napa, leaf, destemmed, raw",
+    "unit": "100 g",
+    "calories_per_unit": 4.2,
+    "protein_per_unit": 1.06,
+    "carbs_per_unit": "N/A",
+    "fat_per_unit": "N/A"
+  },
+  {
+    "name": "Leeks, bulb and greens, root removed, raw",
+    "unit": "100 g",
+    "calories_per_unit": 5.9,
+    "protein_per_unit": 1.47,
+    "carbs_per_unit": "N/A",
+    "fat_per_unit": "N/A"
+  },
+  {
+    "name": "Green onion, (scallion), bulb and greens, root removed, raw",
+    "unit": "100 g",
+    "calories_per_unit": 2.7,
+    "protein_per_unit": 0.669,
+    "carbs_per_unit": "N/A",
+    "fat_per_unit": "N/A"
+  },
+  {
+    "name": "Shallots, bulb, peeled, root removed, raw",
+    "unit": "100 g",
+    "calories_per_unit": 5.5,
+    "protein_per_unit": 1.38,
+    "carbs_per_unit": "N/A",
+    "fat_per_unit": "N/A"
+  },
+  {
+    "name": "Juice, prune, shelf-stable",
+    "unit": "100 ml",
+    "calories_per_unit": 1.7,
+    "protein_per_unit": 0.423,
+    "carbs_per_unit": "N/A",
+    "fat_per_unit": "N/A"
+  },
+  {
+    "name": "Juice, pomegranate, from concentrate, shelf-stable",
+    "unit": "100 ml",
+    "calories_per_unit": "N/A",
+    "protein_per_unit": 0.0,
+    "carbs_per_unit": "N/A",
+    "fat_per_unit": "N/A"
+  },
+  {
+    "name": "Juice, tart cherry, from concentrate, shelf-stable",
+    "unit": "100 ml",
+    "calories_per_unit": 0.6,
+    "protein_per_unit": 0.147,
+    "carbs_per_unit": "N/A",
+    "fat_per_unit": "N/A"
+  }
+]
