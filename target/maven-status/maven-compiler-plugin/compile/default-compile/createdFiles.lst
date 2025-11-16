@@ -4,6 +4,7 @@ doanJava\StudentDAO.class
 doanJava\RecipeIngredient.class
 doanJava\RecipeDAO.class
 doanJava\SqliteHelper.class
+FXMLController.class
 doanJava\MenuFoodDAO.class
 doanJava\FoodDAO.class
 doanJava\DailyMenu.class
@@ -11,6 +12,8 @@ doanJava\MenuFood.class
 doanJava\main.class
 doanJava\JsonParserToDatabase.class
 doanJava\Ingredient.class
+doanJava\FoodService.class
+doanJava\FoodService$NutritionInfo.class
 doanJava\StudentInventory.class
 doanJava\IngredientDAO.class
 doanJava\InventoryDAO.class
