@@ -23,7 +23,7 @@ public class IngredientDAO {
             
             ResultSet rs = pstmt.getGeneratedKeys();
             if (rs.next())  ingredient.setIngredientId(rs.getInt(1));
-            System.out.println("Adding xong roif  ne");
+            //System.out.println("Adding xong roif  ne");
             return ingredient;    
         } catch(SQLException e) {
             System.err.println("Error adding ingredient "+e.getMessage());
