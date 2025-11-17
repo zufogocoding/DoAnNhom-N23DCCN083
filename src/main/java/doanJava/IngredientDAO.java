@@ -16,9 +16,9 @@ public class IngredientDAO {
             pstmt.setString(1,ingredient.getName());
             pstmt.setString(2, ingredient.getUnit());
             pstmt.setDouble(3, ingredient.getCaloriesPerUnit());
-            pstmt.setDouble(4, ingredient.getCaloriesPerUnit());
-            pstmt.setDouble(5, ingredient.getCaloriesPerUnit());
-            pstmt.setDouble(6, ingredient.getCaloriesPerUnit());
+            pstmt.setDouble(4, ingredient.getProteinPerUnit());
+            pstmt.setDouble(5, ingredient.getCarbsPerUnit());
+            pstmt.setDouble(6, ingredient.getFatPerUnit());
             pstmt.executeUpdate();
             
             ResultSet rs = pstmt.getGeneratedKeys();
