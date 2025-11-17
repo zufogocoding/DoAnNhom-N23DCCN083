@@ -130,11 +130,11 @@ public class SqliteHelper {
     }
 
     // Main test
-    /*public static void main(String[] args) {
+    public static void main(String[] args) {
         System.out.println("Creating database...");
         initDatabase();
         File f = new File("data.db");
         System.out.println("Absolute path: " + f.getAbsolutePath());
         System.out.println("Exists: " + f.exists());
-    }*/
+    }
 }
