@@ -11,7 +11,7 @@ import java.util.*;
  */
 public class IngredientDAO {
     public Ingredient addIngredient(Ingredient ingredient){
-        String sql = "INSERT INTO Ingredient(name,unit,calories_per_unit,protein_per_unit,carbs_per_Unit,fat_Per_Unit) VALUES(?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO Ingredient(name,unit,calories_per_unit,protein_per_unit,carbs_per_Unit,fat_Per_Unit) VALUES(?,?,?,?,?,?)";
         try (Connection conn = SqliteHelper.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             pstmt.setString(1,ingredient.getName());
             pstmt.setString(2, ingredient.getUnit());
