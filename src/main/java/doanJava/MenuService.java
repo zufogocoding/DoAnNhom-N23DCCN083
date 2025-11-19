@@ -47,4 +47,16 @@ public class MenuService {
         dailyMenuDAO.updateNutrition(menu.getMenuId(), calories, protein, carbs, fat);
         System.out.println("Da ghi lai mon an "+foodId+"as "+mealType);
     }
+    
+    public DailyMenu getTodayNutrition(int studentId) {
+        String today = LocalDate.now().toString();
+        
+        DailyMenu menu = dailyMenuDAO.getMenu(studentId, today);
+
+        if (menu != null) {
+            return menu;
+        } else {
+            return new DailyMenu(0, studentId, today, 0, 0, 0, 0);
+        }
+    }
 }
