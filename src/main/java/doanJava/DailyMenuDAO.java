@@ -53,21 +53,22 @@ public class DailyMenuDAO {
             pstmt.setInt(5, menuId);
             
             int rowsUpdated = pstmt.executeUpdate();
-            if (rowsUpdated > 0) {
+            /*if (rowsUpdated > 0) {
                 System.out.println("Da cap nhat dinh duong cho menu_id: " + menuId);
-            }
+            }*/
 
         } catch (SQLException e) {
             System.err.println("Loi khi cap nhat dinh duong DailyMenu: " + e.getMessage());
         }
     }
-    public DailyMenu getMenu(int menuId) {
-        String sql = "SELECT * FROM Daily_Menu WHERE menu_id = ?";
+    public DailyMenu getMenu(int menuId,String date) {
+        String sql = "SELECT * FROM Daily_Menu WHERE menu_id = ? AND date = ?";
         
         try (Connection conn = SqliteHelper.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             
             pstmt.setInt(1, menuId);
+            pstmt.setString(2,date);
             ResultSet rs = pstmt.executeQuery();
             
             if (rs.next()) {
