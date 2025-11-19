@@ -35,7 +35,7 @@ public class DailyMenuDAO {
                 }
             }
         } catch (SQLException e) {
-            System.err.println("Lỗi khi findOrCreate DailyMenu: " + e.getMessage());
+            System.err.println("Error findOrCreate DailyMenu: " + e.getMessage());
         }
         return null;
     }
