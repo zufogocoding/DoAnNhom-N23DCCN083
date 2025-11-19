@@ -14,7 +14,7 @@ public class DailyMenu {
 
     private int menuId;
     private int studentId;
-    private Date date; 
+    private String date; 
     private double totalCalories;
     private double totalProtein;
     private double totalCarbs;
@@ -23,7 +23,7 @@ public class DailyMenu {
     public DailyMenu() {
     }
 
-    public DailyMenu(int menuId, int studentId, Date date, double totalCalories, double totalProtein, double totalCarbs, double totalFat) {
+    public DailyMenu(int menuId, int studentId, String date, double totalCalories, double totalProtein, double totalCarbs, double totalFat) {
         this.menuId = menuId;
         this.studentId = studentId;
         this.date = date;
@@ -32,8 +32,6 @@ public class DailyMenu {
         this.totalCarbs = totalCarbs;
         this.totalFat = totalFat;
     }
-    
-    
     
     public int getMenuId() {
         return menuId;
@@ -51,11 +49,11 @@ public class DailyMenu {
         this.studentId = studentId;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date){
         this.date = date;
     }
 
