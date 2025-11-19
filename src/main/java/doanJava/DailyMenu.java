@@ -88,9 +88,5 @@ public class DailyMenu {
     public void setTotalFat(double totalFat) {
         this.totalFat = totalFat;
     }
-
-    void setDate(String date) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }
 
