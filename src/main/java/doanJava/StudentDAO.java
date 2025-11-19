@@ -52,6 +52,31 @@ public class StudentDAO {
         }
         return null;
     }
+    
+    public boolean updateStudent(Student student) {
+    String sql = "UPDATE Student SET name = ?, height_cm = ?, weight_kg = ?, " +
+                 "target_calories = ?, target_protein_g = ?, target_carbs_g = ?, target_fat_g = ? " +
+                 "WHERE student_id = ?";
+
+    try (Connection conn = SqliteHelper.getConnection();
+         PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+        pstmt.setString(1, student.getName());
+        pstmt.setDouble(2, student.getHeightCm());
+        pstmt.setDouble(3, student.getWeightKg());
+        pstmt.setInt(4, student.getTargetCalories());
+        pstmt.setInt(5, student.getTargetProteinG());
+        pstmt.setInt(6, student.getTargetCarbsG());
+        pstmt.setInt(7, student.getTargetFatG());
+        pstmt.setInt(8, student.getStudentId()); 
+
+        return pstmt.executeUpdate() > 0; 
+        
+    } catch (SQLException e) {
+        System.err.println("Error update student: " + e.getMessage());
+        return false;
+    }
+}
 
     public ArrayList<Student> getAllStudents() {
         ArrayList<Student> students = new ArrayList<>();
