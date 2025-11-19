@@ -15,9 +15,17 @@ public class MenuFood {
     private int menuId;
     private int foodId;
     private String mealType;
-    private Time logTime;
+    private String logTime;
 
     public MenuFood() {
+    }
+
+    public MenuFood(int logId, int menuId, int foodId, String mealType, String logTime) {
+        this.logId = logId;
+        this.menuId = menuId;
+        this.foodId = foodId;
+        this.mealType = mealType;
+        this.logTime = logTime;
     }
 
     public int getLogId() {
@@ -52,11 +60,12 @@ public class MenuFood {
         this.mealType = mealType;
     }
 
-    public Time getLogTime() {
+    public String getLogTime() {
         return logTime;
     }
 
-    public void setLogTime(Time logTime) {
+    public void setLogTime(String logTime) {
         this.logTime = logTime;
     }
+    
 }
