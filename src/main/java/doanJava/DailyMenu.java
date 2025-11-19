@@ -22,6 +22,19 @@ public class DailyMenu {
 
     public DailyMenu() {
     }
+
+    public DailyMenu(int menuId, int studentId, Date date, double totalCalories, double totalProtein, double totalCarbs, double totalFat) {
+        this.menuId = menuId;
+        this.studentId = studentId;
+        this.date = date;
+        this.totalCalories = totalCalories;
+        this.totalProtein = totalProtein;
+        this.totalCarbs = totalCarbs;
+        this.totalFat = totalFat;
+    }
+    
+    
+    
     public int getMenuId() {
         return menuId;
     }
