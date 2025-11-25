@@ -13,17 +13,18 @@ public class Student {
     private String name;
     private double heightCm;
     private double weightKg;
-    private int targetCalories;
-    private int targetProteinG;
-    private int targetCarbsG;
-    private int targetFatG;
+    private double targetCalories;
+    private double targetProteinG;
+    private double targetCarbsG;
+    private double targetFatG;
     //file word em viet sai xin loi Tu
     // Constructor rỗng
     public Student() {
     }
 
     // Constructor đầy đủ
-    public Student(int studentId, String name, double heightCm, double weightKg, int targetCalories, int targetProteinG, int targetCarbsG, int targetFatG) {
+
+    public Student(int studentId, String name, double heightCm, double weightKg, double targetCalories, double targetProteinG, double targetCarbsG, double targetFatG) {
         this.studentId = studentId;
         this.name = name;
         this.heightCm = heightCm;
@@ -33,6 +34,7 @@ public class Student {
         this.targetCarbsG = targetCarbsG;
         this.targetFatG = targetFatG;
     }
+    
 
     // Getters and Setters
     public int getStudentId() {
