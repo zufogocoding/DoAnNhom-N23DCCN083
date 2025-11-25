@@ -20,10 +20,10 @@ public class StudentDAO {
             pstmt.setString(1, student.getName());
             pstmt.setDouble(2, student.getHeightCm());
             pstmt.setDouble(3, student.getWeightKg());
-            pstmt.setInt(4, student.getTargetCalories());
-            pstmt.setInt(5, student.getTargetProteinG());
-            pstmt.setInt(6, student.getTargetCarbsG());
-            pstmt.setInt(7, student.getTargetFatG());
+            pstmt.setDouble(4, student.getTargetCalories());
+            pstmt.setDouble(5, student.getTargetProteinG());
+            pstmt.setDouble(6, student.getTargetCarbsG());
+            pstmt.setDouble(7, student.getTargetFatG());
             pstmt.executeUpdate();
 
             ResultSet rs = pstmt.getGeneratedKeys();
@@ -64,10 +64,10 @@ public class StudentDAO {
         pstmt.setString(1, student.getName());
         pstmt.setDouble(2, student.getHeightCm());
         pstmt.setDouble(3, student.getWeightKg());
-        pstmt.setInt(4, student.getTargetCalories());
-        pstmt.setInt(5, student.getTargetProteinG());
-        pstmt.setInt(6, student.getTargetCarbsG());
-        pstmt.setInt(7, student.getTargetFatG());
+        pstmt.setDouble(4, student.getTargetCalories());
+        pstmt.setDouble(5, student.getTargetProteinG());
+        pstmt.setDouble(6, student.getTargetCarbsG());
+        pstmt.setDouble(7, student.getTargetFatG());
         pstmt.setInt(8, student.getStudentId()); 
 
         return pstmt.executeUpdate() > 0; 
