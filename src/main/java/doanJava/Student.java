@@ -69,38 +69,39 @@ public class Student {
         this.weightKg = weightKg;
     }
 
-    public int getTargetCalories() {
+    public double getTargetCalories() {
         return targetCalories;
     }
 
-    public void setTargetCalories(int targetCalories) {
+    public void setTargetCalories(double targetCalories) {
         this.targetCalories = targetCalories;
     }
 
-    public int getTargetProteinG() {
+    public double getTargetProteinG() {
         return targetProteinG;
     }
 
-    public void setTargetProteinG(int targetProteinG) {
+    public void setTargetProteinG(double targetProteinG) {
         this.targetProteinG = targetProteinG;
     }
 
-    public int getTargetCarbsG() {
+    public double getTargetCarbsG() {
         return targetCarbsG;
     }
 
-    public void setTargetCarbsG(int targetCarbsG) {
+    public void setTargetCarbsG(double targetCarbsG) {
         this.targetCarbsG = targetCarbsG;
     }
 
-    public int getTargetFatG() {
+    public double getTargetFatG() {
         return targetFatG;
     }
 
-    public void setTargetFatG(int targetFatG) {
+    public void setTargetFatG(double targetFatG) {
         this.targetFatG = targetFatG;
     }
 
+  
     @Override
     public String toString() {
         return "Student{" +
