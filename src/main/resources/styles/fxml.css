@@ -1,7 +1,61 @@
-/*
- * Empty Stylesheet file.
- */
+/* 1. Nền tổng thể của ứng dụng */
+#title{
+    -fx-font-size: 20px;
+    
+}
+#vbox{
+    -fx-background-color: #aedae8;
+}
+.root {
+    -fx-font-family: "Segoe UI", Arial;
+    -fx-background-color: #f4f6f8; /* Màu xám xanh nhạt hiện đại */
+}
 
-.mainFxmlClass {
+/* 2. Tiêu đề to (Dành cho chữ "Thông tin sinh viên") */
+.tieu-de {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 10;
+}
 
+/* 3. Các nhãn (Label) bình thường */
+.label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #34495e;
+    -fx-font-weight: bold;
+}
+
+/* 4. Ô nhập liệu (TextField) */
+.text-field {
+    -fx-background-color: white;
+    -fx-background-radius: 4px;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 5px;
+    -fx-padding: 8px;
+}
+
+/* Hiệu ứng khi bấm vào ô nhập liệu */
+.text-field:focused {
+    -fx-border-color: #3498db; /* Viền xanh dương */
+    -fx-effect: dropshadow(three-pass-box, rgba(52,152,219,0.3), 5, 0, 0, 0);
+}
+
+/* 5. Nút bấm (Button) */
+.button {
+    -fx-background-color: #27ae60; /* Màu xanh lá */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+    -fx-padding: 10 20 10 20;
+}
+
+.button:hover {
+    -fx-background-color: #2ecc71; /* Sáng lên khi di chuột vào */
+}
+
+.button:pressed {
+    -fx-background-color: #219150; /* Tối đi khi bấm xuống */
 }
