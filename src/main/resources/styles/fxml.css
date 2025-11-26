@@ -1,22 +1,20 @@
 /* 1. Nền tổng thể của ứng dụng */
 #title{
-    -fx-font-size: 20px;
-    
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #782828;
+    -fx-padding: 10;
+    -fx-font-family: "Inter", "Segoe UI", sans-serif;
 }
 #vbox{
     -fx-background-color: #aedae8;
+    -fx-background-radius: 15px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 5);
+    -fx-padding: 10; 
 }
 .root {
     -fx-font-family: "Segoe UI", Arial;
     -fx-background-color: #f4f6f8; /* Màu xám xanh nhạt hiện đại */
-}
-
-/* 2. Tiêu đề to (Dành cho chữ "Thông tin sinh viên") */
-.tieu-de {
-    -fx-font-size: 24px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #2c3e50;
-    -fx-padding: 10;
 }
 
 /* 3. Các nhãn (Label) bình thường */
@@ -32,7 +30,7 @@
     -fx-background-radius: 4px;
     -fx-border-color: #bdc3c7;
     -fx-border-radius: 5px;
-    -fx-padding: 8px;
+    -fx-padding: 5px;
 }
 
 /* Hiệu ứng khi bấm vào ô nhập liệu */
