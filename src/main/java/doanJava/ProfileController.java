@@ -8,7 +8,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert;
 
 public class ProfileController {
-    StudentDAO SD;
+    StudentDAO SD = new StudentDAO();
     // Khai báo các biến khớp với fx:id trong Scene Builder
     @FXML private TextField txtName;
     @FXML private TextField txtHeight;
@@ -49,7 +49,7 @@ public class ProfileController {
         } catch (NumberFormatException e) {
             showAlert("Lỗi nhập liệu", "Vui lòng nhập số hợp lệ cho Chiều cao, Cân nặng và Dinh dưỡng!");
         } catch (Exception e) {
-            showAlert("Lỗi", "Đã có lỗi xảy ra: " + e.getMessage());
+            System.err.println("Lỗi"+ "Đã có lỗi xảy ra: " + e.getMessage());
         }
     }
 
