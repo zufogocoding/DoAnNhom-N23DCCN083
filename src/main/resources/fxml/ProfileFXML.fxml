@@ -11,20 +11,19 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="534.0" stylesheets="@../styles/fxml.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="doanJava.ProfileController">
    <children>
-      <VBox alignment="CENTER" layoutX="145.0" layoutY="13.0" prefHeight="374.0" prefWidth="310.0" spacing="10.0">
+      <VBox fx:id="vbox" alignment="CENTER" layoutX="114.0" prefHeight="400.0" prefWidth="305.0" spacing="10.0" stylesheets="@../styles/fxml.css">
          <children>
-            <Label alignment="CENTER" prefHeight="50.0" prefWidth="311.0" text="Thông tin sinh viên" textAlignment="CENTER">
+            <Label fx:id="title" alignment="CENTER" prefHeight="50.0" prefWidth="311.0" text="Thông tin sinh viên" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="28.0" />
                </font>
             </Label>
-            <GridPane prefHeight="250.0" prefWidth="310.0">
+            <GridPane hgap="15.0" prefHeight="250.0" prefWidth="310.0" vgap="15.0">
               <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.20001220703125" minWidth="10.0" prefWidth="88.79996337890626" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="223.99999999999997" minWidth="10.0" prefWidth="221.60003662109372" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.20001220703125" minWidth="10.0" prefWidth="109.8" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="223.99999999999997" minWidth="10.0" prefWidth="179.39999999999998" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -72,7 +71,7 @@
                         <Font size="13.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="txtName" GridPane.columnIndex="1" />
+                  <TextField fx:id="txtName" prefHeight="33.0" prefWidth="190.0" GridPane.columnIndex="1" />
                   <TextField fx:id="txtStudentId" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <TextField fx:id="txtHeight" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <TextField fx:id="txtWeith" GridPane.columnIndex="1" GridPane.rowIndex="3" />
@@ -83,7 +82,7 @@
                   <Label text="Chiều cao (cm) :" GridPane.rowIndex="2" />
                </children>
             </GridPane>
-            <Button fx:id="btnSave" mnemonicParsing="false" onAction="#handleSaveProfile" prefHeight="30.0" prefWidth="110.0" text="Lưu thông tin">
+            <Button fx:id="btnSave" mnemonicParsing="false" onAction="#handleSaveProfile" prefHeight="39.0" prefWidth="141.0" text="Lưu thông tin">
                <font>
                   <Font size="14.0" />
                </font>
