@@ -74,7 +74,7 @@
                   <TextField fx:id="txtName" prefHeight="33.0" prefWidth="190.0" GridPane.columnIndex="1" />
                   <TextField fx:id="txtStudentId" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <TextField fx:id="txtHeight" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <TextField fx:id="txtWeith" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="txtWeight" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   <TextField fx:id="txtProtein" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                   <TextField fx:id="txtFat" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                   <TextField fx:id="txtCarbs" GridPane.columnIndex="1" GridPane.rowIndex="6" />
