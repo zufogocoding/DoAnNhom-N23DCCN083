@@ -10,7 +10,6 @@ package doanJava;
  */
 public class AppLauncher {
     public static void main(String[] args) {
-        // Gọi đến hàm main của file Main cũ
-        main.main(args);
+        Main.main(args);
 }
 }
