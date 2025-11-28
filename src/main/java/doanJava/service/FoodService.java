@@ -61,9 +61,10 @@ public class FoodService {
         return suggestions;
     }
 
-    public Food addFood(String name, String instructions) {
+    public int addFood(String name, String instructions) {
         Food newFood = new Food(0, name, instructions);
-        return foodDAO.addFood(newFood);
+        // Bây giờ nó sẽ trả về ID (int) đúng như FoodDAO cung cấp
+        return foodDAO.addFood(newFood); 
     }
 
     public void addRecipe(int foodId, int ingredientId, double quantity) {

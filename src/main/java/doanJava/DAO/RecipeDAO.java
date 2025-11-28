@@ -27,7 +27,7 @@ public class RecipeDAO {
     }
     public List<RecipeIngredient> getIngredients(int foodId) {
         List<RecipeIngredient> recipe = new ArrayList<>();
-        String sql = "SELECT ingredient_id, quantity FROM Recipe_Ingredient WHERE food_id = ?";
+        String sql = "SELECT food_id, ingredient_id, quantity FROM Recipe_Ingredient WHERE food_id = ?";
         try (Connection conn = SqliteHelper.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setInt(1, foodId);
