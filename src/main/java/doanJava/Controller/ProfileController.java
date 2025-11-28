@@ -10,7 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert;
 
 public class ProfileController {
-    StudentDAO SD;
+    StudentDAO SD =  new StudentDAO();
     // Khai báo các biến khớp với fx:id trong Scene Builder
     @FXML private TextField txtName;
     @FXML private TextField txtHeight;

@@ -1,4 +1,4 @@
-package doanJava.util;
+package doanJava.utils;
 
 import java.sql.*;
 import java.io.*;
