@@ -96,29 +96,37 @@ public class AddRecipeController {
 
     // Logic: Lưu tất cả xuống DB
     private void saveEverything() {
-        String foodName = txtFoodName.getText();
-        String instruction = txtInstruction.getText();
+        // 1. Lấy dữ liệu từ giao diện (QUAN TRỌNG: Bạn thiếu bước này)
+        String name = txtFoodName.getText();
+        String instructions = txtInstruction.getText();
 
-        if (foodName.isEmpty() || tempRecipeList.isEmpty()) {
+        // Validate: Kiểm tra rỗng
+        if (name.isEmpty() || tempRecipeList.isEmpty()) {
             showAlert("Tên món và danh sách nguyên liệu không được để trống!");
             return;
         }
 
         try {
-            // Bước 1: Lưu Food -> Lấy foodId mới
-            Food newFood = new Food(0, foodName, instruction); // 0 là dummy ID, DB sẽ tự tăng
-            foodDAO.addFood(newFood); 
+            // Bước 2: Tạo object Food (ID để 0 vì DB tự tăng)
+            Food newFood = new Food(0, name, instructions);
             
-            // Lưu ý: Hàm addFood của bạn cần trả về ID vừa insert, hoặc bạn phải query lại để lấy ID mới nhất.
-            // Giả sử logic lấy ID mới nhất ở đây:
-            int newFoodId = foodDAO.getLatestFoodId(); // <-- Bạn cần viết hàm này trong DAO hoặc trả về từ addFood
+            // Bước 3: GỌI HÀM VỪA SỬA: Lấy ngay ID mới về
+            // (Đảm bảo FoodDAO.addFood trả về int nhé)
+            int newFoodId = foodDAO.addFood(newFood); 
 
-            // Bước 2: Lưu Recipe Ingredients
+            if (newFoodId == -1) {
+                showAlert("Lỗi: Không thể lưu món ăn vào CSDL!");
+                return;
+            }
+
+            // Bước 4: Lưu Recipe Ingredients với ID vừa lấy được
             for (IngredientEntry entry : tempRecipeList) {
-                recipeDAO.addRecipeIngredient(newFoodId, entry.ingredient.getId(), entry.quantity);
+                recipeDAO.addIngredientToRecipe(newFoodId, entry.ingredient.getIngredientId(), entry.quantity);
             }
 
             showAlert("Đã lưu công thức thành công!");
+            
+            // Đóng cửa sổ hiện tại
             ((Stage) btnSaveAll.getScene().getWindow()).close();
 
         } catch (Exception e) {
