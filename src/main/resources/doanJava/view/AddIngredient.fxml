@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="doanJava.Controller.AddIngredientController"
+      stylesheets="@form-style.css" styleClass="form-container" spacing="15" prefWidth="400">
+
+    <Label text="Thêm Nguyên Liệu Mới" styleClass="form-title"/>
+
+    <GridPane hgap="10" vgap="15">
+        <columnConstraints>
+            <ColumnConstraints minWidth="100" halignment="RIGHT"/> <ColumnConstraints hgrow="ALWAYS"/> </columnConstraints>
+
+        <Label text="Tên nguyên liệu:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtName" promptText="Ví dụ: Ức gà" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Đơn vị tính:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="cbUnit" promptText="Chọn đơn vị" maxWidth="Infinity" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Calories:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtCalories" promptText="Kcal" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Protein (g):" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtProtein" promptText="gram" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Label text="Carbs (g):" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtCarbs" promptText="gram" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+        <Label text="Fat (g):" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtFat" promptText="gram" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT" style="-fx-padding: 20 0 0 0;">
+        <Button text="Hủy bỏ" fx:id="btnCancel" styleClass="btn-secondary"/>
+        <Button text="Lưu Nguyên Liệu" fx:id="btnSave" styleClass="btn-primary" prefWidth="150"/>
+    </HBox>
+</VBox>
