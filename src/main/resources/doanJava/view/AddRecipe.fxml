@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="doanJava.Controller.AddRecipeController"
+      stylesheets="@form-style.css" styleClass="form-container" spacing="15" prefWidth="600" prefHeight="700">
+
+    <Label text="Tạo Công Thức Mới" styleClass="form-title"/>
+
+    <VBox spacing="10" style="-fx-background-color: #f8f9fa; -fx-padding: 15; -fx-background-radius: 10;">
+        <Label text="1. Thông tin chung" style="-fx-font-weight: bold;"/>
+        <TextField fx:id="txtFoodName" promptText="Tên món ăn (Ví dụ: Bò kho)"/>
+        <TextArea fx:id="txtInstruction" promptText="Hướng dẫn chế biến..." prefHeight="80" wrapText="true"/>
+    </VBox>
+
+    <VBox spacing="10" VBox.vgrow="ALWAYS">
+        <Label text="2. Thành phần nguyên liệu" style="-fx-font-weight: bold;"/>
+        
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <ComboBox fx:id="cbIngredients" promptText="Chọn nguyên liệu..." prefWidth="200"/>
+            <TextField fx:id="txtQuantity" promptText="Số lượng" prefWidth="80"/>
+            <Label fx:id="lblUnit" text="đơn vị" style="-fx-text-fill: gray;"/>
+            <Button fx:id="btnAddIngredient" text="+" styleClass="btn-primary"/>
+        </HBox>
+
+        <TableView fx:id="tblRecipeIngredients" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colName" text="Nguyên Liệu" prefWidth="200"/>
+                <TableColumn fx:id="colQty" text="Số Lượng" prefWidth="100"/>
+                <TableColumn fx:id="colUnit" text="Đơn Vị" prefWidth="80"/>
+                <TableColumn fx:id="colAction" text="Xóa" prefWidth="80"/>
+            </columns>
+            <placeholder>
+                <Label text="Chưa có nguyên liệu nào"/>
+            </placeholder>
+        </TableView>
+    </VBox>
+
+    <Separator/>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Hủy" fx:id="btnCancel" styleClass="btn-secondary"/>
+        <Button text="HOÀN TẤT &amp; LƯU" fx:id="btnSaveAll" styleClass="btn-primary" prefHeight="40" prefWidth="200"/>
+    </HBox>
+
+</VBox>
