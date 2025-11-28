@@ -4,6 +4,15 @@
  */
 package doanJava;
 
+import doanJava.DAO.DailyMenuDAO;
+import doanJava.DAO.FoodDAO;
+import doanJava.DAO.IngredientDAO;
+import doanJava.DAO.InventoryDAO;
+import doanJava.DAO.MenuFoodDAO;
+import doanJava.DAO.RecipeDAO;
+import doanJava.DAO.StudentDAO;
+import doanJava.Model.DailyMenu;
+import doanJava.Model.Student;
 import java.util.ArrayList;
 import java.sql.SQLException;
 
