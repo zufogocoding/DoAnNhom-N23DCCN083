@@ -18,23 +18,34 @@ public class FoodDAO {
             name TEXT NOT NULL UNIQUE,
             instructions TEXT
             );*/
-    public Food addFood(Food food){
-        String sql = "INSERT INTO Food(name, instructions) VALUES(?,?)";
-        
-        try (Connection conn = SqliteHelper.getConnection(); PreparedStatement pstmt= conn.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS)){
-            pstmt.setString(1,food.getName());
-            pstmt.setString(2,food.getInstructions());
-            pstmt.executeUpdate();
-            ResultSet rs = pstmt.getGeneratedKeys();
-            if (rs.next()){
-                food.setFoodId(rs.getInt(1));
+    public int addFood(Food food) {
+    String sql = "INSERT INTO Food(name, instructions) VALUES(?, ?)";
+    int generatedId = -1; // Mặc định là -1 (Lỗi)
+
+    // Lưu ý: Thêm tham số Statement.RETURN_GENERATED_KEYS
+    try (Connection conn = DriverManager.getConnection("jdbc:sqlite:src/doanJava/data.db"); // Hoặc dùng class Connection của bạn
+         PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+
+        pstmt.setString(1, food.getName());
+        pstmt.setString(2, food.getInstructions()); // Giả sử model Food có getInstructions
+
+        int affectedRows = pstmt.executeUpdate();
+
+        if (affectedRows > 0) {
+            // Lấy ID vừa sinh ra
+            try (ResultSet rs = pstmt.getGeneratedKeys()) {
+                if (rs.next()) {
+                    generatedId = rs.getInt(1); // Lấy cột đầu tiên (chính là ID)
+                }
             }
-            return food;
-        } catch (SQLException e){
-            System.err.println("Error adding food "+e.getMessage());
-            return null;
         }
+    } catch (SQLException e) {
+        System.out.println("Lỗi thêm món ăn: " + e.getMessage());
+        e.printStackTrace();
     }
+
+    return generatedId; // Trả về ID (ví dụ: 1, 2, 3...) hoặc -1 nếu lỗi
+}
     
     public List<Food> getAllFoods() {
         List<Food> foods = new ArrayList<>();
