@@ -8,7 +8,7 @@ package doanJava.DAO;
  * @author congt
  */
 import doanJava.Model.RecipeIngredient;
-import doanJava.util.SqliteHelper;
+import doanJava.utils.SqliteHelper;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
