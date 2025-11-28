@@ -5,7 +5,7 @@
 package doanJava.DAO;
 
 import doanJava.Model.Food;
-import doanJava.utils.SqliteHelper;
+import doanJava.util.SqliteHelper;
 import java.util.*;
 import java.sql.*;
 /**

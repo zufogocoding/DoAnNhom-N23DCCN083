@@ -8,7 +8,7 @@ package doanJava.DAO;
  * @author phamt
  */
 import doanJava.Model.DailyMenu;
-import doanJava.utils.SqliteHelper;
+import doanJava.util.SqliteHelper;
 import java.sql.*;
 
 public class DailyMenuDAO {
