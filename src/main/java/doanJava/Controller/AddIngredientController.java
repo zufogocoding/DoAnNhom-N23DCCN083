@@ -40,27 +40,40 @@ public class AddIngredientController {
             }
 
             double quantity = Double.parseDouble(qtyText);
-            double cal = Double.parseDouble(txtCalories.getText());
-            double pro = Double.parseDouble(txtProtein.getText());
-            double carb = Double.parseDouble(txtCarbs.getText());
-            double fat = Double.parseDouble(txtFat.getText());
-
-            // 2. Tạo hoặc Tìm Ingredient
-            // Logic: Thêm vào bảng Ingredient trước
-            Ingredient ing = new Ingredient(0, name, unit, cal, pro, carb, fat);
             
-            // Lưu ý: ingredientDAO.addIngredient cần trả về ID của nguyên liệu vừa tạo
-            // Nếu bạn chưa sửa DAO trả về int, hãy sửa IngredientDAO giống FoodDAO hôm qua
-            // Hoặc dùng tạm logic: add xong -> getByName để lấy ID
+            // Lấy giá trị dinh dưỡng thô (User nhập theo bao bì)
+            double rawCal = Double.parseDouble(txtCalories.getText());
+            double rawPro = Double.parseDouble(txtProtein.getText());
+            double rawCarb = Double.parseDouble(txtCarbs.getText());
+            double rawFat = Double.parseDouble(txtFat.getText());
+
+            // --- LOGIC TỰ ĐỘNG CHUẨN HÓA ĐƠN VỊ ---
+            double finalCal = rawCal;
+            double finalPro = rawPro;
+            double finalCarb = rawCarb;
+            double finalFat = rawFat;
+
+            // Nếu đơn vị là g hoặc ml, ta hiểu user nhập cho 100g (chuẩn bao bì)
+            // Nên ta chia 100 để lưu về dạng "per 1g"
+            if (unit.equals("g") || unit.equals("ml")) {
+                finalCal = rawCal / 100.0;
+                finalPro = rawPro / 100.0;
+                finalCarb = rawCarb / 100.0;
+                finalFat = rawFat / 100.0;
+            }
+
+            // 2. Tạo hoặc Tìm Ingredient (Lưu với chỉ số đã chuẩn hóa)
+            Ingredient ing = new Ingredient(0, name, unit, finalCal, finalPro, finalCarb, finalFat);
+            
+            // Thêm vào bảng Ingredient
             ingredientDAO.addIngredient(ing); 
             
-            // Lấy ID vừa tạo (Giả sử bạn viết hàm getIngredientByName hoặc add trả về ID)
-            // Ở đây mình viết đoạn code "chữa cháy" lấy ID bằng tên nếu DAO bạn chưa trả về ID
+            // Lấy ID vừa tạo (Để thêm vào kho)
             Ingredient savedIng = ingredientDAO.getIngredientByName(name); 
             int ingId = (savedIng != null) ? savedIng.getIngredientId() : -1;
 
             if (ingId != -1) {
-                // 3. THÊM VÀO KHO (QUAN TRỌNG)
+                // 3. THÊM VÀO KHO
                 inventoryDAO.addOrUpdateInventory(currentStudentId, ingId, quantity);
                 
                 showAlert("Thành công: Đã thêm " + quantity + " " + unit + " " + name + " vào kho!");

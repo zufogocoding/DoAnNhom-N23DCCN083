@@ -26,16 +26,18 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
+import javafx.scene.chart.PieChart;
 
 public class MainFXMLController implements Initializable {
 
     // --- KHAI BÁO CÁC ID KHỚP VỚI MainLayout.fxml ---
     // 1. Sửa ListView<String> thành ListView<StudentInventory>
     @FXML private ListView<StudentInventory> inventoryListView; 
-    @FXML private Button btnFindRecipes;
     @FXML private Button btnAddIngredient;
     @FXML private Button btnRecipes;
     @FXML private FlowPane recipesContainer;
+    @FXML private Button btnSummary;
+    @FXML private PieChart macroPieChart;
     
     // Các nhãn thống kê ở Sidebar (Analyze)
     @FXML private Label lblTotalCalories;
@@ -61,9 +63,6 @@ public class MainFXMLController implements Initializable {
         // 3. Cập nhật thống kê ngay khi mở app
         refreshAnalyzeSidebar();
 
-        // 4. Gắn sự kiện
-        btnFindRecipes.setOnAction(e -> loadSuggestedRecipes());
-
         btnAddIngredient.setOnAction(e -> {
             openModal("/doanJava/view/AddIngredient.fxml", "Nhập Nguyên Liệu Vào Kho");
         });
@@ -72,7 +71,13 @@ public class MainFXMLController implements Initializable {
             btnRecipes.setOnAction(e -> {
                 openModal("/doanJava/view/AddRecipe.fxml", "Thêm Công Thức Mới");
             });
+            
+         if (btnSummary != null) {
+            btnSummary.setOnAction(e -> {
+                openModal("/doanJava/view/DailySummary.fxml", "Lịch Sử Dinh Dưỡng");
+            });
         }
+       }
     }
 
     private void initServices() {
@@ -86,8 +91,8 @@ public class MainFXMLController implements Initializable {
         MenuFoodDAO menuFoodDAO = new MenuFoodDAO();
         
         // Khởi tạo Services
-        this.foodService = new FoodService(foodDAO, recipeDAO, inventoryDAO, ingredientDAO);
-        this.menuService = new MenuService(dailyMenuDAO, menuFoodDAO, recipeDAO, ingredientDAO);
+        this.foodService = new FoodService(foodDAO, recipeDAO, this.inventoryDAO, ingredientDAO);
+        this.menuService = new MenuService(dailyMenuDAO, menuFoodDAO, recipeDAO, ingredientDAO,this.inventoryDAO);
     }
 
     // --- HÀM 1: Load danh sách kho (ĐÃ SỬA DÙNG DỮ LIỆU THẬT & GIAO DIỆN ĐẸP) ---
@@ -110,17 +115,14 @@ public class MainFXMLController implements Initializable {
 
     // --- HÀM 2: Load Card món ăn & Tính tổng dinh dưỡng ---
     private void loadSuggestedRecipes() {
-        recipesContainer.getChildren().clear(); 
+        recipesContainer.getChildren().clear();
         
         List<Food> foods = foodService.getSuggestedFoods(currentStudentId);
         
+        // (Giữ nguyên đoạn fake data nếu có)
         if (foods.isEmpty()) {
-            // Fake data để test nếu kho trống
             foods.add(new Food(1, "Beefsteak", "Áp chảo..."));
-            foods.add(new Food(2, "Carbonara", "Mì ý..."));
-            foods.add(new Food(3, "Salmon Steak", "Cá hồi..."));
-            foods.add(new Food(4, "Sandwich", "Bánh mì..."));
-            foods.add(new Food(5, "Egg Soup", "Canh trứng..."));
+            // ...
         }
 
         for (Food food : foods) {
@@ -132,14 +134,20 @@ public class MainFXMLController implements Initializable {
             RecipeCard card = new RecipeCard(food, nutrition, (mealType, selectedFood) -> {
                 System.out.println("User chọn nấu món: " + selectedFood.getName() + " vào " + mealType);
 
-                // 1. GỌI MENU SERVICE ĐỂ LƯU
+                // 1. GỌI SERVICE ĐỂ TRỪ KHO & LƯU MENU
                 menuService.logMeal(currentStudentId, selectedFood.getFoodId(), mealType);
 
                 // 2. Hiện thông báo
-                showAlert("Thành công", "Đã thêm món '" + selectedFood.getName() + "' vào thực đơn " + mealType);
+                showAlert("Thành công", "Đã nấu món '" + selectedFood.getName() + "'. Kho đã được cập nhật!");
 
-                // 3. Cập nhật Sidebar
+                // 3. Cập nhật thống kê (Biểu đồ tròn)
                 refreshAnalyzeSidebar();
+                
+                // 4. --- QUAN TRỌNG: CẬP NHẬT LẠI KHO TRÊN GIAO DIỆN ---
+                loadInventory(); 
+                
+                // 5. Cập nhật lại danh sách gợi ý (Món nào hết nguyên liệu sẽ tự ẩn đi)
+                loadSuggestedRecipes();
             });
 
             recipesContainer.getChildren().add(card);
@@ -172,14 +180,24 @@ public class MainFXMLController implements Initializable {
             Stage stage = new Stage();
             stage.setTitle(title);
             stage.setScene(new Scene(root));
-            stage.initModality(Modality.APPLICATION_MODAL);
+            
+            // Chặn cửa sổ chính, bắt buộc xử lý xong form con mới được quay lại
+            stage.initModality(Modality.APPLICATION_MODAL); 
+            
+            // Chờ cho đến khi cửa sổ con đóng lại
             stage.showAndWait();
             
-            loadInventory(); // Reload kho sau khi đóng form nhập
+            // --- SAU KHI ĐÓNG FORM CON ---
+            // 1. Load lại kho (Để thấy nguyên liệu vừa nhập)
+            loadInventory(); 
+            
+            // 2. Load lại gợi ý món ăn (QUAN TRỌNG: Để thấy món vừa thêm nếu đủ nguyên liệu)
+            loadSuggestedRecipes();
             
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println("Lỗi không tìm thấy file FXML: " + fxmlPath);
+            showAlert("Lỗi", "Không tìm thấy file: " + fxmlPath);
         }
     }
     

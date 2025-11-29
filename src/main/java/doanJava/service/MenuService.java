@@ -2,12 +2,14 @@ package doanJava.service;
 
 import doanJava.DAO.DailyMenuDAO;
 import doanJava.DAO.IngredientDAO;
+import doanJava.DAO.InventoryDAO;
 import doanJava.DAO.MenuFoodDAO;
 import doanJava.DAO.RecipeDAO;
 import doanJava.Model.Ingredient;
 import doanJava.Model.RecipeIngredient;
 import doanJava.Model.DailyMenu;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MenuService {
@@ -15,12 +17,16 @@ public class MenuService {
     private final MenuFoodDAO menuFoodDAO;
     private final RecipeDAO recipeDAO;
     private final IngredientDAO ingredientDAO;
+    private final InventoryDAO inventoryDAO;
     
-    public MenuService(DailyMenuDAO dailyMenuDAO, MenuFoodDAO menuFoodDAO, RecipeDAO recipeDAO, IngredientDAO ingredientDAO) {
+    public MenuService(DailyMenuDAO dailyMenuDAO, MenuFoodDAO menuFoodDAO, 
+                       RecipeDAO recipeDAO, IngredientDAO ingredientDAO, 
+                       InventoryDAO inventoryDAO) { // <--- Thêm tham số này
         this.dailyMenuDAO = dailyMenuDAO;
         this.menuFoodDAO = menuFoodDAO;
         this.recipeDAO = recipeDAO;
         this.ingredientDAO = ingredientDAO;
+        this.inventoryDAO = inventoryDAO; // <--- Gán giá trị
     }
     
     // Đổi thành public để Controller gọi được
@@ -50,6 +56,7 @@ public class MenuService {
                 foodCarb += ing.getCarbsPerUnit() * quantity;
                 foodFat  += ing.getFatPerUnit() * quantity;
             }
+            inventoryDAO.reduceStock(studentID, req.getIngredientId(), req.getQuantity());
         }
 
         // 4. CỘNG DỒN VÀO TỔNG CŨ (Fix lỗi logic ở đây)
@@ -69,5 +76,18 @@ public class MenuService {
         // Sửa lại chỗ này một chút: findOrCreate luôn để đảm bảo không null
         DailyMenu menu = dailyMenuDAO.findOrCreate(studentId, today); 
         return menu;
+    }
+    
+    // Thêm hàm này vào MenuService
+    public List<String> getHistoryByDate(int studentId, LocalDate date) {
+        String dateStr = date.toString();
+        // 1. Tìm Menu ID của ngày đó
+        DailyMenu menu = dailyMenuDAO.findOrCreate(studentId, dateStr);
+        
+        if (menu != null) {
+            // 2. Lấy danh sách món ăn
+            return menuFoodDAO.getFoodNamesByMenuId(menu.getMenuId());
+        }
+        return new ArrayList<>();
     }
 }

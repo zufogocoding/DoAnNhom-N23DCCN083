@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.PieChart?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -36,23 +37,30 @@
                   <ListView fx:id="inventoryListView" style="-fx-background-color: transparent; -fx-border-width: 0;" VBox.vgrow="ALWAYS" />
                   
                   <Button fx:id="btnAddIngredient" maxWidth="Infinity" styleClass="btn-add-small" text="+ Nhập nguyên liệu" />
-                  
                </children>
             </VBox>
 
-            <VBox alignment="TOP_CENTER" prefHeight="200.0" spacing="10.0" styleClass="sidebar-card">
+            <VBox alignment="TOP_CENTER" prefHeight="300.0" spacing="10.0" styleClass="sidebar-card">
                <children>
                   <Label styleClass="sidebar-title-pill" text="ANALIZE" />
-                  <VBox spacing="8.0" style="-fx-padding: 10 0 0 0;">
+                  
+                  <PieChart fx:id="macroPieChart" labelsVisible="false" legendSide="BOTTOM" prefHeight="150.0" prefWidth="200.0" />
+                  
+                  <Button fx:id="btnSummary" text="📜 Xem Lịch Sử / Tổng Kết" maxWidth="Infinity" style="-fx-background-color: white; -fx-border-color: #8CC63F; -fx-text-fill: #8CC63F; -fx-background-radius: 10; -fx-border-radius: 10; -fx-cursor: hand;">
+                        <VBox.margin><Insets top="10.0"/></VBox.margin>
+                    </Button>
+                  
+                  <VBox spacing="8.0" style="-fx-padding: 0 0 0 10;">
                      <children>
                         <Label fx:id="lblTotalCalories" text="🔥 Kcal: 0" textFill="#555" />
-                        <Label fx:id="lblTotalProtein" text="🥩 Protein: 0g" textFill="#555" />
-                        <Label fx:id="lblTotalCarbs" text="🍞 Carbs: 0g" textFill="#555" />
-                        <Label fx:id="lblTotalFat" text="🥑 Fat: 0g" textFill="#555" />
+                        <Label fx:id="lblTotalProtein" text="🥩 Protein: 0g" textFill="#0984e3" />
+                        <Label fx:id="lblTotalCarbs" text="🍞 Carbs: 0g" textFill="#e17055" />
+                        <Label fx:id="lblTotalFat" text="🥑 Fat: 0g" textFill="#fdcb6e" />
                      </children>
                   </VBox>
                </children>
             </VBox>
+            
          </children>
       </VBox>
    </left>

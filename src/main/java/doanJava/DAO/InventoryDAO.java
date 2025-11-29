@@ -32,7 +32,27 @@ public class InventoryDAO {
         }
         return list;
     }
-
+    
+    // --- 3. TRỪ NGUYÊN LIỆU KHI NẤU ĂN ---
+    public void reduceStock(int studentId, int ingredientId, double quantityUsed) {
+        String sql = "UPDATE Student_Inventory SET quantity = quantity - ? WHERE student_id = ? AND ingredient_id = ?";
+        
+        try (Connection conn = SqliteHelper.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            
+            pstmt.setDouble(1, quantityUsed);
+            pstmt.setInt(2, studentId);
+            pstmt.setInt(3, ingredientId);
+            
+            int rows = pstmt.executeUpdate();
+            if (rows > 0) {
+                System.out.println("Đã trừ kho: ID " + ingredientId + " giảm đi " + quantityUsed);
+            }
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
     // 2. Thêm hoặc Cập nhật kho (Logic Thông minh)
     public void addOrUpdateInventory(int studentId, int ingredientId, double quantityToAdd) {
         
@@ -53,6 +73,7 @@ public class InventoryDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        
         
 
         // Bước B: Xử lý
