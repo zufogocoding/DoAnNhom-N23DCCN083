@@ -19,7 +19,7 @@
             <Label text="Home">
                <font><Font name="System Bold" size="20.0" /></font>
             </Label>
-            <Button styleClass="header-btn" text="Recipes" />
+            <Button fx:id="btnRecipes" styleClass="header-btn" text="Recipes" />
          </children>
       </HBox>
    </top>
@@ -36,8 +36,7 @@
                   <ListView fx:id="inventoryListView" style="-fx-background-color: transparent; -fx-border-width: 0;" VBox.vgrow="ALWAYS" />
                   
                   <Button fx:id="btnAddIngredient" maxWidth="Infinity" styleClass="btn-add-small" text="+ Nhập nguyên liệu" />
-
-                  <Button fx:id="btnFindRecipes" maxWidth="Infinity" prefHeight="35.0" styleClass="btn-action" text="Find Recipes" />
+                  
                </children>
             </VBox>
 
