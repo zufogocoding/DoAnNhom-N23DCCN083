@@ -1,73 +1,170 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package doanJava.Controller;
+
+import doanJava.Components.RecipeCard;
+import doanJava.DAO.*;
 import doanJava.Model.Food;
+import doanJava.service.FoodService;
+import doanJava.service.FoodService.NutritionInfo;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.control.Pagination;
-import javafx.scene.layout.TilePane;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.layout.FlowPane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+
 import java.io.IOException;
+import java.net.URL;
 import java.util.List;
+import java.util.ResourceBundle;
 
-public class MainFXMLController {
-    @FXML private Pagination pagination;
-    // Giả sử đây là danh sách món ăn lấy từ Database
-    private List<Food> masterData; 
-    // Số lượng món ăn muốn hiện trên 1 trang
-    private static final int ITEMS_PER_PAGE = 6; 
-    public void initialize() {
-        // 1. Lấy dữ liệu (Ví dụ: Lấy từ FoodService)
-        // masterData = foodService.getSuggestedFoods(studentId);
-        // (Tạm thời mình giả lập dữ liệu mẫu để code không bị lỗi nhé)
-        masterData = List.of(); // <--thay dòng này bằng dòng gọi service ở trên
+public class MainFXMLController implements Initializable {
 
-        // 2. Tính tổng số trang
-        // Công thức: (Tổng số món / Số món 1 trang) làm tròn lên
-        int pageCount = (int) Math.ceil((double) masterData.size() / ITEMS_PER_PAGE);
-        // Cài đặt số trang cho Pagination (Ít nhất là 1 trang nếu danh sách rỗng)
-        pagination.setPageCount(pageCount > 0 ? pageCount : 1);
-        // 3. Cài đặt "Nhà máy sản xuất trang" (Page Factory)
-        // Mỗi khi người dùng bấm chuyển trang, hàm createPage sẽ được gọi
-        pagination.setPageFactory(pageIndex -> createPage(pageIndex));
+    // --- KHAI BÁO CÁC ID KHỚP VỚI MainLayout.fxml ---
+    @FXML private ListView<String> inventoryListView; // List bên trái
+    @FXML private Button btnFindRecipes;              // Nút tìm món to (Sidebar)
+    @FXML private Button btnAddIngredient;            // Nút thêm nguyên liệu nhỏ (Sidebar)
+    @FXML private Button btnRecipes;                  // Nút Recipes trên Header (Mới thêm)
+    @FXML private FlowPane recipesContainer;          // Khu vực chứa các Card món ăn
+    
+    // Các nhãn thống kê ở Sidebar (Analyze)
+    @FXML private Label lblTotalCalories;
+    @FXML private Label lblTotalProtein;
+    @FXML private Label lblTotalCarbs;
+    @FXML private Label lblTotalFat;
+
+    // Services
+    private FoodService foodService;
+    private int currentStudentId = 1; // ID giả lập
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        // 1. Khởi tạo Service và DAO
+        initServices();
+        
+        // 2. Load dữ liệu lên giao diện
+        loadInventory();        // List bên trái
+        loadSuggestedRecipes(); // List Card ở giữa + Tính toán dinh dưỡng
+        
+        // 3. Gắn sự kiện (Event Handler)
+        
+        // Bấm nút Find -> Reload lại gợi ý
+        btnFindRecipes.setOnAction(e -> loadSuggestedRecipes());
+
+        // Bấm nút Thêm Nguyên Liệu -> Mở Form nhập
+        btnAddIngredient.setOnAction(e -> {
+            openModal("/doanJava/view/AddIngredient.fxml", "Nhập Nguyên Liệu Vào Kho");
+        });
+
+        // Bấm nút Recipes trên Header -> Mở Form thêm món ăn mới
+        // (Cần đảm bảo trong FXML nút Recipes có fx:id="btnRecipes")
+        if (btnRecipes != null) {
+            btnRecipes.setOnAction(e -> {
+                openModal("/doanJava/view/AddRecipe.fxml", "Thêm Công Thức Mới");
+            });
+        }
     }
 
-    // --- TẠO GIAO DIỆN CHO 1 TRANG ---
-    private Node createPage(int pageIndex) {
-        // A. Tạo một cái khung để chứa các thẻ (TilePane tự động xuống dòng rất đẹp)
-        TilePane pageBox = new TilePane();
-        pageBox.setPrefColumns(3); // Muốn 3 cột
-        pageBox.setHgap(20);       // Khoảng cách ngang
-        pageBox.setVgap(20);       // Khoảng cách dọc
+    private void initServices() {
+        FoodDAO foodDAO = new FoodDAO();
+        RecipeDAO recipeDAO = new RecipeDAO();
+        InventoryDAO inventoryDAO = new InventoryDAO();
+        IngredientDAO ingredientDAO = new IngredientDAO();
         
-        // B. Tính toán xem trang này bắt đầu từ món nào đến món nào
-        int fromIndex = pageIndex * ITEMS_PER_PAGE;
-        int toIndex = Math.min(fromIndex + ITEMS_PER_PAGE, masterData.size());
+        this.foodService = new FoodService(foodDAO, recipeDAO, inventoryDAO, ingredientDAO);
+    }
 
-        // C. Vòng lặp tạo thẻ
-        for (int i = fromIndex; i < toIndex; i++) {
-            Food food = masterData.get(i);
-            
-            try {
-                // Load FoodCard.fxml
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/FoodCard.fxml"));
-                Node cardNode = loader.load();
+    // --- HÀM 1: Load danh sách kho (Sidebar) ---
+    private void loadInventory() {
+        inventoryListView.getItems().clear();
+        // TODO: Sau này gọi inventoryDAO.getInventory(studentId)
+        // Hiện tại Fake data cho giống Figma
+        inventoryListView.getItems().addAll("Avocado", "Salmons", "Beefs", "Eggs", "Onion", "Cheese", "Tomato");
+    }
 
-                // Lấy Controller của cái thẻ đó để truyền dữ liệu
-                FoodCardController cardCtrl = loader.getController();
-                cardCtrl.setData(food); // <--- Hàm này bạn phải viết bên FoodCardController
-
-                // Thêm thẻ vào khung
-                pageBox.getChildren().add(cardNode);
-
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+    // --- HÀM 2: Load Card món ăn & Tính tổng dinh dưỡng ---
+    private void loadSuggestedRecipes() {
+        recipesContainer.getChildren().clear(); // Xóa card cũ
+        
+        // Lấy danh sách món gợi ý từ DB
+        List<Food> foods = foodService.getSuggestedFoods(currentStudentId);
+        
+        // Nếu không có món nào (do chưa nhập kho), tạo dữ liệu giả để Test giao diện
+        if (foods.isEmpty()) {
+            foods.add(new Food(1, "Beefsteak", "Áp chảo..."));
+            foods.add(new Food(2, "Carbonara", "Mì ý..."));
+            foods.add(new Food(3, "Salmon Steak", "Cá hồi..."));
+            foods.add(new Food(4, "Sandwich", "Bánh mì..."));
+            foods.add(new Food(5, "Egg Soup", "Canh trứng..."));
         }
 
-        // D. Trả về cái khung đã chứa đầy thẻ
-        return pageBox;
+        // Biến tính tổng dinh dưỡng
+        double sumCal = 0, sumPro = 0, sumCarb = 0, sumFat = 0;
+
+        // Vòng lặp tạo Card
+        for (Food food : foods) {
+            // Lấy dinh dưỡng từng món
+            NutritionInfo nutrition = foodService.getNutrition(food.getFoodId());
+            
+            // Nếu data fake chưa có dinh dưỡng -> Fake luôn số liệu
+            if (nutrition.calories == 0) {
+                nutrition = new NutritionInfo(350, 25, 15, 10);
+            }
+
+            // Cộng dồn vào tổng
+            sumCal += nutrition.calories;
+            sumPro += nutrition.protein;
+            sumCarb += nutrition.carbs;
+            sumFat += nutrition.fat;
+
+            // --- TẠO CARD (Đã sửa lỗi add trùng lặp) ---
+            RecipeCard card = new RecipeCard(food, nutrition, (mealType, selectedFood) -> {
+                System.out.println("User chọn nấu món: " + selectedFood.getName() + " vào " + mealType);
+
+                // TODO: Gọi MenuService để lưu vào Database tại đây
+                // Ví dụ: menuService.addDailyMenu(currentStudentId, selectedFood.getId(), mealType, LocalDate.now());
+
+                // Sau khi lưu xong, cập nhật lại biểu đồ dinh dưỡng bên dưới nếu cần
+            });
+
+            // Chỉ add 1 lần duy nhất!
+            recipesContainer.getChildren().add(card);
+        }
+
+        // Cập nhật số liệu lên Sidebar (Analyze)
+        updateAnalyzeLabels(sumCal, sumPro, sumCarb, sumFat);
+    }
+
+    // Hàm cập nhật nhãn thống kê
+    private void updateAnalyzeLabels(double cal, double pro, double carb, double fat) {
+        lblTotalCalories.setText(String.format("🔥 Kcal: %.0f", cal));
+        lblTotalProtein.setText(String.format("🥩 Protein: %.0f g", pro));
+        lblTotalCarbs.setText(String.format("🍞 Carbs: %.0f g", carb));
+        lblTotalFat.setText(String.format("🥑 Fat: %.0f g", fat));
+    }
+
+    // Hàm mở Popup Form
+    private void openModal(String fxmlPath, String title) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setTitle(title);
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL); // Chặn cửa sổ chính
+            stage.showAndWait();
+            
+            // Sau khi đóng form nhập liệu -> Reload lại kho
+            loadInventory(); 
+            // loadSuggestedRecipes(); // Uncomment nếu muốn reload cả danh sách món
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Lỗi không tìm thấy file FXML: " + fxmlPath);
+        }
     }
 }
