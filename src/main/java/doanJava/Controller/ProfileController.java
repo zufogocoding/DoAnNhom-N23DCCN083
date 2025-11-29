@@ -74,8 +74,8 @@ public class ProfileController {
     // Hàm chuyển cảnh sang Dashboard
     private void switchToMainScreen() {
         try {
-            // Load file MainLayout.fxml (Trang chủ màu xanh lá)
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/doanJava/view/MainLayout.fxml"));
+            // Load file 
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/doanJava/view/MainFXML.fxml"));
             Parent root = loader.load();
 
             // Lấy cửa sổ (Stage) hiện tại từ nút Save
@@ -91,7 +91,7 @@ public class ProfileController {
             
         } catch (IOException e) {
             e.printStackTrace();
-            showAlert("Lỗi hệ thống", "Không tìm thấy file giao diện MainLayout.fxml!");
+            showAlert("Lỗi hệ thống", "Không tìm thấy file giao diện MainFXML.fxml!");
         }
     }
 
