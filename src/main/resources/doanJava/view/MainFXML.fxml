@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="rootPane" prefHeight="768.0" prefWidth="1024.0" styleClass="root-background" stylesheets="@../../styles/style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="doanJava.Controller.MainController">
+<BorderPane fx:id="rootPane" prefHeight="768.0" prefWidth="1024.0" styleClass="root-background" stylesheets="@../../styles/form-style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="doanJava.Controller.MainFXMLController">
    
    <top>
       <HBox alignment="CENTER_LEFT" spacing="20.0" styleClass="header-bar">
