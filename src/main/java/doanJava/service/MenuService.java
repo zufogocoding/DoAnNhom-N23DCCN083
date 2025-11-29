@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package doanJava.service;
 
 import doanJava.DAO.DailyMenuDAO;
@@ -12,11 +8,8 @@ import doanJava.Model.Ingredient;
 import doanJava.Model.RecipeIngredient;
 import doanJava.Model.DailyMenu;
 import java.time.LocalDate;
-import java.util.*;
-/**
- *
- * @author phamt
- */
+import java.util.List;
+
 public class MenuService {
     private final DailyMenuDAO dailyMenuDAO;
     private final MenuFoodDAO menuFoodDAO;
@@ -30,40 +23,51 @@ public class MenuService {
         this.ingredientDAO = ingredientDAO;
     }
     
-    private void logMeal(int studentID,int foodId,String mealType){
+    // Đổi thành public để Controller gọi được
+    public void logMeal(int studentID, int foodId, String mealType){
         String today = LocalDate.now().toString();
+        
+        // 1. Lấy menu hiện tại (để lấy số liệu cũ)
         DailyMenu menu = dailyMenuDAO.findOrCreate(studentID, today);
-        if (menu==null) {
+        if (menu == null) {
             System.err.println("Error: can not find or create menu");
             return;
         }
+
+        // 2. Thêm món vào bảng chi tiết
         menuFoodDAO.addFood(menu.getMenuId(), foodId, mealType);
-        double calories = 0,protein = 0,carbs = 0, fat = 0;
+        
+        // 3. Tính dinh dưỡng của món MỚI thêm
+        double foodCal = 0, foodPro = 0, foodCarb = 0, foodFat = 0;
         
         List<RecipeIngredient> recipe = recipeDAO.getIngredients(foodId);
         for(RecipeIngredient req: recipe){
             Ingredient ing  = ingredientDAO.getIngredient(req.getIngredientId());
-            if (ing!=null) {
+            if (ing != null) {
                 double quantity = req.getQuantity();
-                calories += ing.getCaloriesPerUnit() *quantity;
-                protein += ing.getProteinPerUnit() *quantity;
-                carbs += ing.getCarbsPerUnit()*quantity;
-                fat += ing.getFatPerUnit()*quantity;
+                foodCal  += ing.getCaloriesPerUnit() * quantity;
+                foodPro  += ing.getProteinPerUnit() * quantity;
+                foodCarb += ing.getCarbsPerUnit() * quantity;
+                foodFat  += ing.getFatPerUnit() * quantity;
             }
         }
-        dailyMenuDAO.updateNutrition(menu.getMenuId(), calories, protein, carbs, fat);
-        System.out.println("Da ghi lai mon an "+foodId+"as "+mealType);
+
+        // 4. CỘNG DỒN VÀO TỔNG CŨ (Fix lỗi logic ở đây)
+        double newTotalCal = menu.getTotalCalories() + foodCal;
+        double newTotalPro = menu.getTotalProtein() + foodPro;
+        double newTotalCarb = menu.getTotalCarbs() + foodCarb;
+        double newTotalFat = menu.getTotalFat() + foodFat;
+
+        // 5. Cập nhật lại Database
+        dailyMenuDAO.updateNutrition(menu.getMenuId(), newTotalCal, newTotalPro, newTotalCarb, newTotalFat);
+        
+        System.out.println("Đã ghi lại món ăn " + foodId + " vào bữa " + mealType);
     }
     
     public DailyMenu getTodayNutrition(int studentId) {
         String today = LocalDate.now().toString();
-        
-        DailyMenu menu = dailyMenuDAO.getMenu(studentId, today);
-
-        if (menu != null) {
-            return menu;
-        } else {
-            return new DailyMenu(0, studentId, today, 0, 0, 0, 0);
-        }
+        // Sửa lại chỗ này một chút: findOrCreate luôn để đảm bảo không null
+        DailyMenu menu = dailyMenuDAO.findOrCreate(studentId, today); 
+        return menu;
     }
 }
