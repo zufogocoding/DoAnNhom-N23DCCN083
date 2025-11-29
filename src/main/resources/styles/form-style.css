@@ -1,0 +1,53 @@
+/* Form Container */
+.form-container {
+    -fx-background-color: white;
+    -fx-padding: 30;
+}
+
+/* Tiêu đề Form */
+.form-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2d3436;
+    -fx-padding: 0 0 20 0;
+}
+
+/* Ô nhập liệu (TextField, ComboBox) */
+.text-field, .text-area, .combo-box {
+    -fx-background-color: #f1f2f6;
+    -fx-background-radius: 8;
+    -fx-border-color: transparent;
+    -fx-padding: 8;
+    -fx-font-size: 14px;
+}
+
+.text-field:focused, .text-area:focused, .combo-box:focused {
+    -fx-background-color: white;
+    -fx-border-color: #00b894; /* Viền xanh khi nhập */
+    -fx-border-radius: 8;
+}
+
+/* Nút bấm (Button) */
+.btn-primary {
+    -fx-background-color: #0984e3;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+.btn-primary:hover { -fx-background-color: #74b9ff; }
+
+.btn-secondary {
+    -fx-background-color: #dfe6e9;
+    -fx-text-fill: #636e72;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+.btn-secondary:hover { -fx-background-color: #b2bec3; }
+
+.btn-danger {
+    -fx-background-color: #ff7675;
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+}
