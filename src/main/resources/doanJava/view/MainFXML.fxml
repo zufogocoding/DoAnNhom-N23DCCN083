@@ -46,7 +46,7 @@
                   
                   <PieChart fx:id="macroPieChart" labelsVisible="false" legendSide="BOTTOM" prefHeight="150.0" prefWidth="200.0" />
                   
-                  <Button fx:id="btnSummary" text="📜 Xem Lịch Sử / Tổng Kết" maxWidth="Infinity" style="-fx-background-color: white; -fx-border-color: #8CC63F; -fx-text-fill: #8CC63F; -fx-background-radius: 10; -fx-border-radius: 10; -fx-cursor: hand;">
+                  <Button fx:id="btnSummary" text="Xem Lịch Sử / Tổng Kết" maxWidth="Infinity" style="-fx-background-color: white; -fx-border-color: #8CC63F; -fx-text-fill: #8CC63F; -fx-background-radius: 10; -fx-border-radius: 10; -fx-cursor: hand;">
                         <VBox.margin><Insets top="10.0"/></VBox.margin>
                     </Button>
                   

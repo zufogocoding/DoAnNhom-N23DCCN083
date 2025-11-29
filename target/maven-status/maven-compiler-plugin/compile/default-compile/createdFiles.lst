@@ -31,6 +31,7 @@ doanJava\Controller\ProfileController.class
 doanJava\DAO\RecipeDAO.class
 doanJava\Controller\AddRecipeController$2.class
 doanJava\DAO\FoodDAO.class
+doanJava\Controller\ProfileController$1.class
 doanJava\DAO\StudentDAO.class
 doanJava\Controller\MainFXMLController.class
 doanJava\Model\MenuFood.class

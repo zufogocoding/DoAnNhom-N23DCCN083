@@ -26,6 +26,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.chart.PieChart;
 
 public class MainFXMLController implements Initializable {
@@ -167,12 +169,22 @@ public class MainFXMLController implements Initializable {
     }
 
     private void updateAnalyzeLabels(double cal, double pro, double carb, double fat) {
+        // 1. Cập nhật Text
         lblTotalCalories.setText(String.format("🔥 Kcal: %.0f", cal));
         lblTotalProtein.setText(String.format("🥩 Protein: %.0f g", pro));
         lblTotalCarbs.setText(String.format("🍞 Carbs: %.0f g", carb));
         lblTotalFat.setText(String.format("🥑 Fat: %.0f g", fat));
-    }
 
+        // 2. Cập nhật PieChart
+        if (macroPieChart != null) {
+            ObservableList<PieChart.Data> pieData = FXCollections.observableArrayList(
+                new PieChart.Data("Protein", pro),
+                new PieChart.Data("Carbs", carb),
+                new PieChart.Data("Fat", fat)
+            );
+            macroPieChart.setData(pieData);
+        }
+    }
     private void openModal(String fxmlPath, String title) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
