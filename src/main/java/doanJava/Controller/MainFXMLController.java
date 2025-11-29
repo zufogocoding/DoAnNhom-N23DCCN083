@@ -1,10 +1,12 @@
 package doanJava.Controller;
 
+import doanJava.Component.InventoryListCell;
 import doanJava.Components.RecipeCard;
 import doanJava.DAO.*;
-import doanJava.Model.DailyMenu; // Import Model DailyMenu
+import doanJava.Model.DailyMenu;
 import doanJava.Model.Food;
-import doanJava.service.MenuService; // Import MenuService
+import doanJava.Model.StudentInventory; // Import Model
+import doanJava.service.MenuService;
 import doanJava.service.FoodService;
 import doanJava.service.FoodService.NutritionInfo;
 import javafx.fxml.FXML;
@@ -12,7 +14,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert; // Import Alert
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -28,7 +30,8 @@ import java.util.ResourceBundle;
 public class MainFXMLController implements Initializable {
 
     // --- KHAI BÁO CÁC ID KHỚP VỚI MainLayout.fxml ---
-    @FXML private ListView<String> inventoryListView;
+    // 1. Sửa ListView<String> thành ListView<StudentInventory>
+    @FXML private ListView<StudentInventory> inventoryListView; 
     @FXML private Button btnFindRecipes;
     @FXML private Button btnAddIngredient;
     @FXML private Button btnRecipes;
@@ -40,10 +43,11 @@ public class MainFXMLController implements Initializable {
     @FXML private Label lblTotalCarbs;
     @FXML private Label lblTotalFat;
 
-    // Services
+    // Services & DAOs
     private FoodService foodService;
-    private MenuService menuService; // KHAI BÁO SERVICE MỚI
-    private int currentStudentId = 1;
+    private MenuService menuService;
+    private InventoryDAO inventoryDAO; // Khai báo DAO để dùng chung
+    private int currentStudentId = 1; 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -51,10 +55,10 @@ public class MainFXMLController implements Initializable {
         initServices();
         
         // 2. Load dữ liệu lên giao diện
-        loadInventory();
-        loadSuggestedRecipes();
+        loadInventory();        
+        loadSuggestedRecipes(); 
         
-        // 3. Cập nhật thống kê ngay khi mở app (Lấy dữ liệu thật từ DB)
+        // 3. Cập nhật thống kê ngay khi mở app
         refreshAnalyzeSidebar();
 
         // 4. Gắn sự kiện
@@ -72,35 +76,46 @@ public class MainFXMLController implements Initializable {
     }
 
     private void initServices() {
-        // Khởi tạo tất cả các DAO cần thiết
+        // Khởi tạo tất cả các DAO
         FoodDAO foodDAO = new FoodDAO();
         RecipeDAO recipeDAO = new RecipeDAO();
-        InventoryDAO inventoryDAO = new InventoryDAO();
+        this.inventoryDAO = new InventoryDAO(); // Gán vào biến class
         IngredientDAO ingredientDAO = new IngredientDAO();
         
-        // DAO cho MenuService (Master-Detail)
         DailyMenuDAO dailyMenuDAO = new DailyMenuDAO();
         MenuFoodDAO menuFoodDAO = new MenuFoodDAO();
         
         // Khởi tạo Services
         this.foodService = new FoodService(foodDAO, recipeDAO, inventoryDAO, ingredientDAO);
-        
-        // Khởi tạo MenuService với đầy đủ DAO phụ thuộc
         this.menuService = new MenuService(dailyMenuDAO, menuFoodDAO, recipeDAO, ingredientDAO);
     }
 
+    // --- HÀM 1: Load danh sách kho (ĐÃ SỬA DÙNG DỮ LIỆU THẬT & GIAO DIỆN ĐẸP) ---
     private void loadInventory() {
+        // Cài đặt giao diện dòng (Cell Factory) dùng InventoryListCell
+        inventoryListView.setCellFactory(param -> new InventoryListCell());
+
+        // Xóa dữ liệu cũ
         inventoryListView.getItems().clear();
-        // TODO: Kết nối InventoryService sau này
-        inventoryListView.getItems().addAll("Avocado", "Salmons", "Beefs", "Eggs", "Onion", "Cheese", "Tomato");
+        
+        // Lấy dữ liệu thật từ DB thông qua inventoryDAO
+        List<StudentInventory> myInventory = inventoryDAO.getInventory(currentStudentId);
+        
+        if (myInventory != null && !myInventory.isEmpty()) {
+            inventoryListView.getItems().addAll(myInventory);
+        } else {
+            System.out.println("Kho đang trống.");
+        }
     }
 
+    // --- HÀM 2: Load Card món ăn & Tính tổng dinh dưỡng ---
     private void loadSuggestedRecipes() {
-        recipesContainer.getChildren().clear();
+        recipesContainer.getChildren().clear(); 
         
         List<Food> foods = foodService.getSuggestedFoods(currentStudentId);
         
         if (foods.isEmpty()) {
+            // Fake data để test nếu kho trống
             foods.add(new Food(1, "Beefsteak", "Áp chảo..."));
             foods.add(new Food(2, "Carbonara", "Mì ý..."));
             foods.add(new Food(3, "Salmon Steak", "Cá hồi..."));
@@ -108,24 +123,22 @@ public class MainFXMLController implements Initializable {
             foods.add(new Food(5, "Egg Soup", "Canh trứng..."));
         }
 
-        // Vòng lặp tạo Card
         for (Food food : foods) {
             NutritionInfo nutrition = foodService.getNutrition(food.getFoodId());
             if (nutrition.calories == 0) {
                 nutrition = new NutritionInfo(350, 25, 15, 10);
             }
 
-            // --- TẠO CARD VÀ XỬ LÝ SỰ KIỆN LƯU MENU ---
             RecipeCard card = new RecipeCard(food, nutrition, (mealType, selectedFood) -> {
                 System.out.println("User chọn nấu món: " + selectedFood.getName() + " vào " + mealType);
 
-                // 1. GỌI MENU SERVICE ĐỂ LƯU VÀO DB
+                // 1. GỌI MENU SERVICE ĐỂ LƯU
                 menuService.logMeal(currentStudentId, selectedFood.getFoodId(), mealType);
 
-                // 2. Hiện thông báo thành công
+                // 2. Hiện thông báo
                 showAlert("Thành công", "Đã thêm món '" + selectedFood.getName() + "' vào thực đơn " + mealType);
 
-                // 3. CẬP NHẬT LẠI THANH THỐNG KÊ (ANALYZE) NGAY LẬP TỨC
+                // 3. Cập nhật Sidebar
                 refreshAnalyzeSidebar();
             });
 
@@ -133,14 +146,10 @@ public class MainFXMLController implements Initializable {
         }
     }
 
-    // --- HÀM MỚI: Lấy số liệu thực tế hôm nay để cập nhật Sidebar ---
+    // --- HÀM 3: Cập nhật Sidebar thống kê ---
     private void refreshAnalyzeSidebar() {
         if (menuService == null) return;
-
-        // Gọi Service lấy thông tin dinh dưỡng hôm nay
         DailyMenu todayMenu = menuService.getTodayNutrition(currentStudentId);
-        
-        // Cập nhật lên giao diện
         updateAnalyzeLabels(
             todayMenu.getTotalCalories(), 
             todayMenu.getTotalProtein(), 
@@ -166,7 +175,7 @@ public class MainFXMLController implements Initializable {
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.showAndWait();
             
-            loadInventory(); 
+            loadInventory(); // Reload kho sau khi đóng form nhập
             
         } catch (IOException e) {
             e.printStackTrace();
@@ -174,7 +183,6 @@ public class MainFXMLController implements Initializable {
         }
     }
     
-    // Hàm hiển thị thông báo
     private void showAlert(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
