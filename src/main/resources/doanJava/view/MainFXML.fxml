@@ -8,16 +8,15 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="rootPane" prefHeight="768.0" prefWidth="1024.0" styleClass="root-background" stylesheets="@../../styles/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="doanJava.Controller.MainController">
+<BorderPane fx:id="rootPane" prefHeight="768.0" prefWidth="1024.0" styleClass="root-background" stylesheets="@../../styles/style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="doanJava.Controller.MainController">
    
    <top>
       <HBox alignment="CENTER_LEFT" spacing="20.0" styleClass="header-bar">
          <children>
-            <Label text="Home" textFill="WHITE">
+            <Label text="Home">
                <font><Font name="System Bold" size="20.0" /></font>
             </Label>
             <Button styleClass="header-btn" text="Recipes" />
@@ -36,7 +35,7 @@
                   
                   <ListView fx:id="inventoryListView" style="-fx-background-color: transparent; -fx-border-width: 0;" VBox.vgrow="ALWAYS" />
                   
-                  <Button fx:id="btnAddIngredient" text="+ Nhập nguyên liệu" styleClass="btn-add-small" maxWidth="Infinity"/>
+                  <Button fx:id="btnAddIngredient" maxWidth="Infinity" styleClass="btn-add-small" text="+ Nhập nguyên liệu" />
 
                   <Button fx:id="btnFindRecipes" maxWidth="Infinity" prefHeight="35.0" styleClass="btn-action" text="Find Recipes" />
                </children>
