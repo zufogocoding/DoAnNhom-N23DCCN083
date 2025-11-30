@@ -19,8 +19,9 @@ Hệ thống này giúp:
 | **Java** | 24 | Ngôn ngữ lập trình chính |
 | **JavaFX** | 21.0.1 | Framework xây dựng giao diện (GUI) |
 | **SQLite** | 3.46.0. 0 | Cơ sở dữ liệu nhúng |
-| **Jackson** | 2.17.1 | Xử lý JSON | //thật ra khi xử lý cho file Json lấy từ USDA em đã dùng Python :)
+| **Jackson** | 2.17.1 | Xử lý JSON   | //thật ra khi xử lý cho file Json lấy từ USDA em đã dùng Python :)
 | **Maven** | - | Quản lý build và dependencies |
+thật ra khi xử lý cho file Json lấy từ USDA em đã dùng Python :)
 ## 📂 Cấu trúc Dự án
 DoAnNhom-N23DCCN083/
 ├── src/ 
