@@ -48,3 +48,12 @@ DoAnNhom-N23DCCN083/
 1. **Clone repository**
 2. Cài đặt Dependencies: mvn clean install
 3. run: thông qua việc run file AppLauncher.java bằng Maven hoặc mở cả project bằng netbeans và run file AppLauncher.java
+
+### Hướng dẫn init lại database trong trường hợp bạn cần:
+bước 1: xóa file data.db
+bước 2: chạy lại file AppLauncher hoặc sqliteHelper để tạo lại file data.db
+bước 3: chạy file DataInit, sau khi chạy xong nó sẽ hiện cho bạn khoảng hơn trăm nguyên liệu bằng tiếng Anh trong table ingredient, bạn có thể kiểm tra lại bằng db browser.
+bước 4: mở app lên và sử dụng như bình thường
+
+### Bạn tưởng lỗi nhưng mà không
+--Lần đầu bạn nhập dữ liệu đó vào database thì mới cần nhập đúng chính xác tpdd, kể từ lần sau bạn cứ nhập 0 0 0 0 là được bởi vì dữ liệu khởi tạo là dữ liệu cứng không cho phép sửa đổi để đảm bảo quá trình chạy không xảy ra thật nhiều lỗi :D
