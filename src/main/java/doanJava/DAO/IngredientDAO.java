@@ -7,20 +7,19 @@ import java.util.*;
 
 public class IngredientDAO {
     
-    // --- 1. TÌM NGUYÊN LIỆU THEO TÊN (Nâng cấp: Không phân biệt hoa thường) ---
-    public Ingredient getIngredientByName(String name) {
-        // Dùng LOWER để so sánh chữ thường -> Tránh trùng lặp kiểu "Thịt bò" vs "thịt bò"
-        String sql = "SELECT * FROM Ingredient WHERE LOWER(name) = LOWER(?)";
-        
+    public Ingredient getIngredientByName(String nameToCheck) { 
+        String sql = "SELECT * FROM Ingredient";
+        String searchName = nameToCheck.trim(); 
+
         try (Connection conn = SqliteHelper.getConnection(); 
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
             
-            // Trim() để cắt khoảng trắng thừa 2 đầu
-            pstmt.setString(1, name.trim());
-            ResultSet rs = pstmt.executeQuery();
-            
-            if (rs.next()) {
-                return MapResultSetToIngredient(rs);
+            while (rs.next()) {
+                String dbName = rs.getString("name");
+                if (dbName.trim().equalsIgnoreCase(searchName)) {
+                    return MapResultSetToIngredient(rs);
+                }
             }
         } catch (SQLException e) {
             System.err.println("Lỗi tìm kiếm tên: " + e.getMessage());
