@@ -45,7 +45,7 @@ public class SqliteHelper {
             """
             CREATE TABLE IF NOT EXISTS Ingredient (
                 ingredient_id INTEGER PRIMARY KEY AUTOINCREMENT,
-                name TEXT NOT NULL UNIQUE,
+                name TEXT NOT NULL UNIQUE COLLATE NOCASE,
                 unit TEXT NOT NULL,
                 calories_per_unit REAL,
                 protein_per_unit REAL,
