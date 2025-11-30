@@ -101,10 +101,10 @@ public class StudentDAO {
                 rs.getString("name"),
                 rs.getDouble("height_cm"),
                 rs.getDouble("weight_kg"),
-                rs.getInt("target_calories"),
                 rs.getInt("target_protein_g"),
                 rs.getInt("target_carbs_g"),
-                rs.getInt("target_fat_g")
+                rs.getInt("target_fat_g"),
+                rs.getInt("target_calories")
         );
     }
 

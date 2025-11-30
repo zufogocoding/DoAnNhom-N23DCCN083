@@ -10,7 +10,7 @@ public class StudentTest {
     
     @BeforeEach
     public void setUp() {
-        student = new Student(1, "Nguyễn Văn A", 170, 65, 2000, 150, 200, 60);
+        student = new Student(1, "Nguyễn Văn A", 170, 65, 150, 200, 60,2000);
     }
     
     @Test
