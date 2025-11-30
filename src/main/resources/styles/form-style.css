@@ -1,0 +1,10 @@
+/* Thêm vào file style.css của bạn */
+.text-field-normal {
+    -fx-background-color: #f1f2f6;
+    -fx-background-radius: 5;
+    -fx-border-color: transparent;
+}
+.text-field-normal:focused {
+    -fx-background-color: white;
+    -fx-border-color: #8CC63F;
+}

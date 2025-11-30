@@ -38,8 +38,8 @@ public class StudentDAO {
             return null;
         }
     }
-        
 
+  
     public Student getStudent(int id) {
         String sql = "SELECT * FROM Student WHERE student_id = ?";
         try (Connection conn = SqliteHelper.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql)) {

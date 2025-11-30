@@ -13,6 +13,7 @@ import doanJava.utils.SqliteHelper;
 import java.sql.*;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.List;
 
 public class MenuFoodDAO {
     public MenuFood addFood(int menuId, int foodId, String mealType) {
@@ -50,6 +51,33 @@ public class MenuFoodDAO {
             System.err.println("Loi khi lay danh sach mon an cua menu: " + e.getMessage());
         }
         return foods;
+    }
+    // Lấy danh sách món ăn chi tiết (Kèm tên món) của một Menu ID
+    // Trả về List các chuỗi 
+    public List<String> getFoodNamesByMenuId(int menuId) {
+        List<String> details = new ArrayList<>();
+        // Join bảng Menu_Food với bảng Food để lấy tên
+        String sql = "SELECT f.name, mf.meal_type " +
+                     "FROM Menu_Food mf " +
+                     "JOIN Food f ON mf.food_id = f.food_id " +
+                     "WHERE mf.menu_id = ?";
+
+        try (Connection conn = SqliteHelper.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            
+            pstmt.setInt(1, menuId);
+            ResultSet rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+                String foodName = rs.getString("name");
+                String mealType = rs.getString("meal_type");
+                // Format: "Bữa Sáng: Phở Bò"
+                details.add(mealType + ": " + foodName);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return details;
     }
     private MenuFood mapResultSetToMenuFood(ResultSet rs) throws SQLException {
         return new MenuFood(

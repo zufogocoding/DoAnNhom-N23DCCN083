@@ -1,38 +1,99 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package doanJava.Controller;
+
 import doanJava.DAO.StudentDAO;
 import doanJava.Model.Student;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Alert;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable; // Import để dùng hàm initialize
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.stage.Stage;
+import javafx.util.StringConverter;
 
-public class ProfileController {
-    StudentDAO SD =  new StudentDAO();
-    // Khai báo các biến khớp với fx:id trong Scene Builder
+import java.io.IOException;
+import java.net.URL;
+import java.util.List;
+import java.util.ResourceBundle;
+
+public class ProfileController implements Initializable {
+
+    StudentDAO SD = new StudentDAO();
+
+    // Khai báo khớp với fx:id trong FXML
+    @FXML private ComboBox<Student> cbSavedProfiles; // ComboBox chọn người cũ
     @FXML private TextField txtName;
+    @FXML private TextField txtStudentId;
     @FXML private TextField txtHeight;
     @FXML private TextField txtWeight;
     @FXML private TextField txtProtein;
     @FXML private TextField txtCarbs;
     @FXML private TextField txtFat;
     @FXML private TextField txtCalories;
+    @FXML private Button btnSave;
+
+    // Hàm này chạy ngay khi form mở lên
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        loadSavedProfiles();
+    }
+
+    // Logic load danh sách sinh viên cũ vào ComboBox
+    private void loadSavedProfiles() {
+        if (cbSavedProfiles == null) return; // Phòng trường hợp FXML chưa có ID này
+
+        List<Student> students = SD.getAllStudents();
+        cbSavedProfiles.setItems(FXCollections.observableArrayList(students));
+
+        // Hiển thị Tên trong ComboBox
+        cbSavedProfiles.setConverter(new StringConverter<Student>() {
+            @Override
+            public String toString(Student s) {
+                return (s != null) ? s.getName() + " (ID: " + s.getStudentId() + ")" : "";
+            }
+            @Override
+            public Student fromString(String string) { return null; }
+        });
+
+        // Khi chọn -> Tự điền dữ liệu
+        cbSavedProfiles.setOnAction(e -> {
+            Student selected = cbSavedProfiles.getValue();
+            if (selected != null) {
+                txtName.setText(selected.getName());
+                txtStudentId.setText(String.valueOf(selected.getStudentId()));
+                txtHeight.setText(String.valueOf(selected.getHeightCm()));
+                txtWeight.setText(String.valueOf(selected.getWeightKg()));
+                txtProtein.setText(String.valueOf(selected.getTargetProteinG()));
+                txtCarbs.setText(String.valueOf(selected.getTargetCarbsG()));
+                txtFat.setText(String.valueOf(selected.getTargetFatG()));
+                txtCalories.setText(String.valueOf(selected.getTargetCalories()));
+            }
+        });
+    }
 
     @FXML
     private void handleSaveProfile() {
         try {
-            // 1. Lấy dữ liệu từ giao diện
+            // 1. Validate cơ bản
             String name = txtName.getText();
-            
-            // Validate: Kiểm tra xem các trường có trống không
             if (name.isEmpty()) {
                 showAlert("Lỗi", "Vui lòng nhập Tên!");
                 return;
             }
 
-            // 2. Parse dữ liệu số (Sử dụng try-catch để tránh lỗi nếu nhập chữ)
+            // 2. Parse dữ liệu số
+            // Nếu ô ID trống hoặc nhập chữ -> mặc định là 0 (để DB tự tăng hoặc xử lý sau)
+            int studentId = 0;
+            try {
+                if (!txtStudentId.getText().isEmpty()) {
+                    studentId = Integer.parseInt(txtStudentId.getText());
+                }
+            } catch (NumberFormatException e) {
+                showAlert("Lỗi nhập liệu", "MSSV phải là số!");
+                return;
+            }
+
             double height = Double.parseDouble(txtHeight.getText());
             double weight = Double.parseDouble(txtWeight.getText());
             double protein = Double.parseDouble(txtProtein.getText());
@@ -40,27 +101,62 @@ public class ProfileController {
             double fat = Double.parseDouble(txtFat.getText());
             double calories = Double.parseDouble(txtCalories.getText());
 
-            // 3. Tạo đối tượng và lưu (Ở đây in ra console demo)
-            Student profile = new Student(0, name, height, weight, protein, carbs, fat, calories);
+            // 3. Lưu vào DB
+            Student profile = new Student(studentId, name, height, weight, protein, carbs, fat, calories);
             SD.addStudent(profile);
-            System.out.println("Đã lưu hồ sơ: " + profile.toString());
-            showAlert("Thành công", "Đã thêm hồ sơ dinh dưỡng cho: " + name);
             
-            //code lưu vào Database hoặc List
+            System.out.println("Đã lưu hồ sơ: " + profile.toString());
+            
+            // 4. Chuyển cảnh
+            switchToMainScreen();
 
         } catch (NumberFormatException e) {
-            showAlert("Lỗi nhập liệu", "Vui lòng nhập số hợp lệ cho Chiều cao, Cân nặng và Dinh dưỡng!");
+            showAlert("Lỗi nhập liệu", "Vui lòng nhập đúng định dạng số cho các chỉ số!");
         } catch (Exception e) {
+            e.printStackTrace();
             showAlert("Lỗi", "Đã có lỗi xảy ra: " + e.getMessage());
         }
     }
 
-    // Hàm tiện ích để hiện thông báo
+    // Hàm chuyển cảnh sang Dashboard (Đã sửa đường dẫn)
+    private void switchToMainScreen() {
+        try {
+            // Đường dẫn file FXML chính xác
+            String fxmlPath = "/doanJava/view/MainFXML.fxml";
+            
+            // Kiểm tra xem file có tồn tại không trước khi load
+            URL url = getClass().getResource(fxmlPath);
+            if (url == null) {
+                System.err.println("❌ KHÔNG TÌM THẤY FILE: " + fxmlPath);
+                showAlert("Lỗi Hệ Thống", "Không tìm thấy file giao diện MainFXML.fxml!\nKiểm tra lại tên file trong thư mục resources/doanJava/view/");
+                return;
+            }
+
+            FXMLLoader loader = new FXMLLoader(url);
+            Parent root = loader.load();
+
+            // Lấy cửa sổ hiện tại
+            Stage stage = (Stage) btnSave.getScene().getWindow();
+            
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setTitle("Healthy Kitchen - Dashboard");
+            stage.centerOnScreen();
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+            // In lỗi chi tiết ra console để dễ sửa
+            System.err.println("Lỗi khi load FXML: " + e.getMessage());
+            showAlert("Lỗi Fatal", "Không thể mở màn hình chính: " + e.getMessage());
+        }
+    }
+
+  
     private void showAlert(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
         alert.setHeaderText(null);
         alert.setContentText(content);
-        alert.showAndWait();
+        alert.show();
     }
 }

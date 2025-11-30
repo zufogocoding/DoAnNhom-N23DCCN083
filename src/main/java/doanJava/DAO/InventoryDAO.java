@@ -1,79 +1,110 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package doanJava.DAO;
 
 import doanJava.Model.StudentInventory;
 import doanJava.utils.SqliteHelper;
-import java.util.*;
 import java.sql.*;
-/**
- *
- * @author phamt
- */
+import java.util.ArrayList;
+import java.util.List;
+
 public class InventoryDAO {
-   public ArrayList<StudentInventory> getInventory(int studentId){
-       ArrayList<StudentInventory> inventory = new ArrayList<>();
-       String sql = "SELECT * FROM Student_Inventory WHERE student_id = ?";
-       
-       try (Connection conn = SqliteHelper.getConnection();PreparedStatement pstmt = conn.prepareStatement(sql)){
-           pstmt.setInt(1,studentId);
-           ResultSet rs = pstmt.executeQuery();
-           while (rs.next()){
-               inventory.add(mapResultSetToInventory(rs));
-           }
-       } catch(SQLException e) {
-            System.err.println("Error getting inventory "+e.getMessage());
-       }
-       return inventory;
-}
-   
-   public void addStock(int studentId, int ingredientId, double quantityToAdd) {
-        String checkSql = "SELECT quantity FROM Student_Inventory WHERE student_id = ? AND ingredient_id = ?";
-        String updateSql = "UPDATE Student_Inventory SET quantity = ? WHERE student_id = ? AND ingredient_id = ?";
-        String insertSql = "INSERT INTO Student_Inventory(student_id, ingredient_id, quantity) VALUES(?,?,?)";
 
-        try (Connection conn = SqliteHelper.getConnection()) {
-            double currentQuantity = 0;
-            boolean exists = false;
-            try (PreparedStatement checkStmt = conn.prepareStatement(checkSql)) {
-                checkStmt.setInt(1, studentId);
-                checkStmt.setInt(2, ingredientId);
-                ResultSet rs = checkStmt.executeQuery();
-                if (rs.next()) {
-                    exists = true;
-                    currentQuantity = rs.getDouble("quantity");
-                }
-            }
+    // 1. Lấy danh sách kho (Hiển thị lên Sidebar)
+    public List<StudentInventory> getInventory(int studentId) {
+        List<StudentInventory> list = new ArrayList<>();
+        String sql = "SELECT * FROM Student_Inventory WHERE student_id = ?";
 
-            if (exists) {
-                try (PreparedStatement updateStmt = conn.prepareStatement(updateSql)) {
-                    updateStmt.setDouble(1, currentQuantity + quantityToAdd);
-                    updateStmt.setInt(2, studentId);
-                    updateStmt.setInt(3, ingredientId);
-                    updateStmt.executeUpdate();
-                }
-            } 
-            else {
-                try (PreparedStatement insertStmt = conn.prepareStatement(insertSql)) {
-                    insertStmt.setInt(1, studentId);
-                    insertStmt.setInt(2, ingredientId);
-                    insertStmt.setDouble(3, quantityToAdd);
-                    insertStmt.executeUpdate();
-                }
+        try (Connection conn = SqliteHelper.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setInt(1, studentId);
+            ResultSet rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+                // Constructor mới chỉ có 3 tham số
+                list.add(new StudentInventory(
+                    rs.getInt("student_id"),
+                    rs.getInt("ingredient_id"),
+                    rs.getDouble("quantity")
+                ));
             }
         } catch (SQLException e) {
-            System.err.println("Error adding stock: " + e.getMessage());
+            System.err.println("Lỗi lấy Inventory: " + e.getMessage());
+        }
+        return list;
+    }
+    
+    // --- 3. TRỪ NGUYÊN LIỆU KHI NẤU ĂN ---
+    public void reduceStock(int studentId, int ingredientId, double quantityUsed) {
+        String sql = "UPDATE Student_Inventory SET quantity = quantity - ? WHERE student_id = ? AND ingredient_id = ?";
+        
+        try (Connection conn = SqliteHelper.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            
+            pstmt.setDouble(1, quantityUsed);
+            pstmt.setInt(2, studentId);
+            pstmt.setInt(3, ingredientId);
+            
+            int rows = pstmt.executeUpdate();
+            if (rows > 0) {
+                System.out.println("Đã trừ kho: ID " + ingredientId + " giảm đi " + quantityUsed);
+            }
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
-   
-   
-   private StudentInventory mapResultSetToInventory(ResultSet rs) throws SQLException {
-        return new StudentInventory(
-                rs.getInt("student_id"),
-                rs.getInt("ingredient_id"),
-                rs.getDouble("quantity")
-        );
+    // 2. Thêm hoặc Cập nhật kho (Logic Thông minh)
+    public void addOrUpdateInventory(int studentId, int ingredientId, double quantityToAdd) {
+        
+        // Bước A: Kiểm tra xem đã có chưa
+        String checkSql = "SELECT quantity FROM Student_Inventory WHERE student_id = ? AND ingredient_id = ?";
+        double currentQty = -1;
+
+        try (Connection conn = SqliteHelper.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(checkSql)) {
+            
+            pstmt.setInt(1, studentId);
+            pstmt.setInt(2, ingredientId);
+            ResultSet rs = pstmt.executeQuery();
+            
+            if (rs.next()) {
+                currentQty = rs.getDouble("quantity");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        
+        
+
+        // Bước B: Xử lý
+        if (currentQty >= 0) {
+            // CÓ RỒI -> UPDATE cộng dồn
+            double newQty = currentQty + quantityToAdd;
+            String updateSql = "UPDATE Student_Inventory SET quantity = ? WHERE student_id = ? AND ingredient_id = ?";
+            
+            try (Connection conn = SqliteHelper.getConnection();
+                 PreparedStatement pstmt = conn.prepareStatement(updateSql)) {
+                pstmt.setDouble(1, newQty);
+                pstmt.setInt(2, studentId);
+                pstmt.setInt(3, ingredientId);
+                pstmt.executeUpdate();
+                System.out.println("DEBUG: Updated Inventory Item " + ingredientId + ": " + newQty);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        } else {
+            // CHƯA CÓ -> INSERT mới
+            String insertSql = "INSERT INTO Student_Inventory(student_id, ingredient_id, quantity) VALUES(?,?,?)";
+            try (Connection conn = SqliteHelper.getConnection();
+                 PreparedStatement pstmt = conn.prepareStatement(insertSql)) {
+                pstmt.setInt(1, studentId);
+                pstmt.setInt(2, ingredientId);
+                pstmt.setDouble(3, quantityToAdd);
+                pstmt.executeUpdate();
+                System.out.println("DEBUG: Inserted New Inventory Item " + ingredientId);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

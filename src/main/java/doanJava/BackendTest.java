@@ -49,8 +49,8 @@ public class BackendTest {
             System.out.println("[Task 1]" + friedRiceId);
 
             // Task 2: Thêm đồ vào kho
-            inventoryDAO.addStock(studentId, eggId, 10.0);
-            inventoryDAO.addStock(studentId, riceId, 5000.0);
+            //inventoryDAO.addStock(studentId, eggId, 10.0);
+            //inventoryDAO.addStock(studentId, riceId, 5000.0);
             System.out.println("[Task 2] ");
 
             // ✅ Task 4: Log Meal 

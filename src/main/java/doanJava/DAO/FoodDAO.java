@@ -23,7 +23,7 @@ public class FoodDAO {
     int generatedId = -1; // Mặc định là -1 (Lỗi)
 
     // Lưu ý: Thêm tham số Statement.RETURN_GENERATED_KEYS
-    try (Connection conn = DriverManager.getConnection("jdbc:sqlite:src/doanJava/data.db"); // Hoặc dùng class Connection của bạn
+    try (Connection conn = DriverManager.getConnection("jdbc:sqlite:data.db");
          PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 
         pstmt.setString(1, food.getName());

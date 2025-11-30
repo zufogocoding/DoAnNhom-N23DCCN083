@@ -10,47 +10,88 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox prefWidth="400" spacing="15" styleClass="form-container" stylesheets="@form-style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="doanJava.Controller.AddIngredientController">
+<VBox alignment="CENTER_LEFT" prefWidth="450.0" spacing="20.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-color: #ddd; -fx-border-radius: 15; -fx-border-width: 1;" stylesheets="@../../styles/form-style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="doanJava.Controller.AddIngredientController">
+    
+    <padding>
+        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+    </padding>
 
-    <Label styleClass="form-title" text="Thêm Nguyên Liệu Mới" />
+    <children>
+        <Label text="NHẬP KHO NGUYÊN LIỆU" textFill="#2d3436">
+            <font>
+                <Font name="Segoe UI Bold" size="20.0" />
+            </font>
+        </Label>
+        
+        <Label text="Điền thông tin nguyên liệu bạn vừa mua:" textFill="#636e72">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Label>
 
-    <GridPane hgap="10" vgap="15">
-        <columnConstraints>
-            <ColumnConstraints halignment="RIGHT" minWidth="100" /> <ColumnConstraints hgrow="ALWAYS" /> </columnConstraints>
+        <GridPane hgap="15.0" vgap="15.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="120.0" />
+                <ColumnConstraints hgrow="ALWAYS" minWidth="200.0" />
+            </columnConstraints>
+            
+            <rowConstraints>
+                <RowConstraints minHeight="35.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="35.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="35.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="35.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="35.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="35.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="35.0" vgrow="SOMETIMES" />
+            </rowConstraints>
 
-        <Label text="Tên nguyên liệu:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-        <TextField fx:id="txtName" promptText="Ví dụ: Ức gà" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <children>
+                <Label text="Số lượng nhập:" textFill="#0984e3" GridPane.rowIndex="0">
+                    <font><Font name="System Bold" size="13.0" /></font>
+                </Label>
+                <TextField fx:id="txtQuantity" promptText="VD: 500 (Nhập số)" style="-fx-border-color: #0984e3; -fx-border-radius: 5; -fx-background-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
-        <Label text="Đơn vị tính:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-        <ComboBox fx:id="cbUnit" maxWidth="Infinity" promptText="Chọn đơn vị" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label text="Tên nguyên liệu:" textFill="#2d3436" GridPane.rowIndex="1">
+                     <font><Font name="System Bold" size="13.0" /></font>
+                </Label>
+                <TextField fx:id="txtName" promptText="Ví dụ: Ức gà" styleClass="text-field-normal" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
-        <Label text="Calories:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-        <TextField fx:id="txtCalories" promptText="Kcal" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Label text="Đơn vị tính:" textFill="#2d3436" GridPane.rowIndex="2">
+                     <font><Font name="System Bold" size="13.0" /></font>
+                </Label>
+                <ComboBox fx:id="cbUnit" maxWidth="1.7976931348623157E308" promptText="Chọn đơn vị (g/ml...)" style="-fx-background-radius: 5; -fx-background-color: #f1f2f6;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
-        <Label text="Protein (g):" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-        <TextField fx:id="txtProtein" promptText="gram" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <Label text="Calories / unit:" textFill="#636e72" GridPane.rowIndex="3" />
+                <TextField fx:id="txtCalories" promptText="Kcal" styleClass="text-field-normal" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
-        <Label text="Carbs (g):" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-        <TextField fx:id="txtCarbs" promptText="gram" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <Label text="Protein (g):" textFill="#636e72" GridPane.rowIndex="4" />
+                <TextField fx:id="txtProtein" promptText="gram" styleClass="text-field-normal" GridPane.columnIndex="1" GridPane.rowIndex="4" />
 
-        <Label text="Fat (g):" GridPane.columnIndex="0" GridPane.rowIndex="5" />
-        <TextField fx:id="txtFat" promptText="gram" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-      <rowConstraints>
-         <RowConstraints />
-         <RowConstraints />
-         <RowConstraints />
-         <RowConstraints />
-         <RowConstraints />
-         <RowConstraints />
-      </rowConstraints>
-    </GridPane>
+                <Label text="Carbs (g):" textFill="#636e72" GridPane.rowIndex="5" />
+                <TextField fx:id="txtCarbs" promptText="gram" styleClass="text-field-normal" GridPane.columnIndex="1" GridPane.rowIndex="5" />
 
-    <HBox alignment="CENTER_RIGHT" spacing="10" style="-fx-padding: 20 0 0 0;">
-        <Button fx:id="btnCancel" styleClass="btn-secondary" text="Hủy bỏ" />
-        <Button fx:id="btnSave" prefWidth="150" styleClass="btn-primary" text="Lưu Nguyên Liệu" />
-      <opaqueInsets>
-         <Insets />
-      </opaqueInsets>
-    </HBox>
+                <Label text="Fat (g):" textFill="#636e72" GridPane.rowIndex="6" />
+                <TextField fx:id="txtFat" promptText="gram" styleClass="text-field-normal" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            </children>
+        </GridPane>
+
+        <HBox alignment="CENTER_RIGHT" spacing="15.0">
+            <children>
+                <Button fx:id="btnCancel" cancelButton="true" mnemonicParsing="false" style="-fx-background-color: #dfe6e9; -fx-text-fill: #636e72; -fx-font-weight: bold; -fx-background-radius: 20; -fx-cursor: hand;" text="Hủy bỏ">
+                    <padding><Insets bottom="8.0" left="20.0" right="20.0" top="8.0" /></padding>
+                </Button>
+                
+                <Button fx:id="btnSave" defaultButton="true" mnemonicParsing="false" style="-fx-background-color: #8CC63F; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 20; -fx-cursor: hand;" text="LƯU VÀO KHO">
+                    <padding><Insets bottom="8.0" left="25.0" right="25.0" top="8.0" /></padding>
+                    <font><Font size="13.0" /></font>
+                </Button>
+            </children>
+            <VBox.margin>
+                <Insets top="10.0" />
+            </VBox.margin>
+        </HBox>
+        
+    </children>
 </VBox>
