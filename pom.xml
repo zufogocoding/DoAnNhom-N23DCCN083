@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>N23DCCN083</groupId>
     <artifactId>NhomN23DCCN083</artifactId>
-    <version>0.betaOpenTesting</version>
+    <version>1.0Officainghien</version>
     <packaging>jar</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
