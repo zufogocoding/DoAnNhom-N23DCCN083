@@ -68,8 +68,9 @@
    <center>
       <ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-background: transparent;">
          <content>
-            <FlowPane fx:id="recipesContainer" hgap="20.0" vgap="20.0">
-               <padding><Insets bottom="20.0" left="10.0" right="20.0" top="20.0" /></padding>
+            <FlowPane fx:id="recipesContainer" alignment="TOP_CENTER" 
+          columnHalignment="CENTER" hgap="20.0" vgap="20.0" prefWrapLength="600.0">
+               <padding><Insets bottom="20.0" left="10.0" right="10.0" top="20.0" /></padding>
             </FlowPane>
          </content>
       </ScrollPane>
