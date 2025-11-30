@@ -8,26 +8,23 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceDialog;
 import javafx.scene.control.Label;
 import javafx.scene.effect.DropShadow;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 
 import java.util.Optional;
-import java.util.function.BiConsumer; // <--- Quan trọng: Import cái này để xử lý sự kiện
+import java.util.function.BiConsumer;
 
 public class RecipeCard extends VBox {
 
     private final Food food;
     private final NutritionInfo nutrition;
-    
-    // Biến lưu hành động sẽ làm khi chọn xong bữa (Callback)
     private final BiConsumer<String, Food> onCookAction;
 
-    // --- CONSTRUCTOR MỚI (3 THAM SỐ) ---
-    // Bạn đang thiếu cái này nên bên Controller báo đỏ
     public RecipeCard(Food food, NutritionInfo nutrition, BiConsumer<String, Food> onCookAction) {
         this.food = food;
         this.nutrition = nutrition;
@@ -36,43 +33,30 @@ public class RecipeCard extends VBox {
     }
 
     private void initUI() {
-        this.setPrefWidth(220);
-        this.setPrefHeight(310);
-        this.setStyle("-fx-background-color: white; -fx-background-radius: 15; -fx-cursor: hand;");
+        // 1. Setup Card Container
+        this.setPrefWidth(210);
+        this.setPrefHeight(290);
+        this.setStyle("-fx-background-color: white; -fx-background-radius: 20; -fx-cursor: hand;");
         this.setSpacing(10);
         this.setPadding(new Insets(0, 0, 15, 0));
 
-        // Đổ bóng
+        // Đổ bóng nhẹ
         DropShadow shadow = new DropShadow();
-        shadow.setColor(Color.rgb(0, 0, 0, 0.1));
-        shadow.setRadius(10);
+        shadow.setColor(Color.rgb(0, 0, 0, 0.08));
+        shadow.setRadius(15);
         shadow.setOffsetY(5);
         this.setEffect(shadow);
 
-        // Ảnh món ăn
-        ImageView imageView = new ImageView();
-        imageView.setFitWidth(220);
-        imageView.setFitHeight(140);
-        imageView.setPreserveRatio(false);
+        // 2. --- TẠO HÌNH ĐẠI DIỆN THAY VÌ ẢNH THẬT ---
+        StackPane imagePlaceholder = createAvatarImage(food.getName());
 
-        try {
-            Image img = new Image(getClass().getResource("/images/default_food.png").toExternalForm());
-            imageView.setImage(img);
-        } catch (Exception e) {
-            imageView.setStyle("-fx-background-color: #eee;");
-        }
-
-        Rectangle clip = new Rectangle(220, 140);
-        clip.setArcWidth(15);
-        clip.setArcHeight(15);
-        imageView.setClip(clip);
-
-        // Nội dung text
+        // 3. Thông tin món ăn
         VBox contentBox = new VBox(5);
         contentBox.setPadding(new Insets(5, 15, 0, 15));
 
         Label nameLabel = new Label(food.getName());
-        nameLabel.setStyle("-fx-font-weight: bold; -fx-font-size: 16px; -fx-text-fill: #2d3436;");
+        nameLabel.setStyle("-fx-text-fill: #2d3436;");
+        nameLabel.setFont(Font.font("Segoe UI", FontWeight.BOLD, 16));
         nameLabel.setWrapText(true);
         nameLabel.setPrefHeight(45);
 
@@ -82,25 +66,69 @@ public class RecipeCard extends VBox {
 
         contentBox.getChildren().addAll(nameLabel, metaLabel);
 
-        // Nút Cook Now
+        // 4. Nút Cook Now
         Button btnCook = new Button("Cook Now");
         btnCook.setPrefWidth(180);
         btnCook.setStyle("-fx-background-color: #8CC63F; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 20; -fx-cursor: hand;");
         
-        // SỰ KIỆN: Khi bấm nút -> Gọi hàm hiện hộp thoại
         btnCook.setOnAction(e -> showMealSelectionDialog());
 
         HBox actionBox = new HBox(btnCook);
         actionBox.setAlignment(Pos.CENTER);
         actionBox.setPadding(new Insets(10, 0, 0, 0));
 
-        this.getChildren().addAll(imageView, contentBox, actionBox);
+        // Add tất cả vào VBox chính
+        this.getChildren().addAll(imagePlaceholder, contentBox, actionBox);
         
+        // Hiệu ứng Hover
         this.setOnMouseEntered(e -> this.setTranslateY(-3));
         this.setOnMouseExited(e -> this.setTranslateY(0));
     }
 
-    // Hộp thoại chọn bữa Sáng/Trưa/Tối
+    // --- HÀM TẠO AVATAR MÀU SẮC ---
+    private StackPane createAvatarImage(String name) {
+        StackPane stack = new StackPane();
+        stack.setPrefSize(210, 140);
+        
+        // A. Sinh màu ngẫu nhiên nhưng cố định theo Tên món
+        // (Tên giống nhau sẽ ra màu giống nhau)
+        int hash = name.hashCode(); 
+        // Dùng hệ màu HSB để ra màu Pastel tươi sáng
+        // Hue: dựa vào tên, Saturation: 0.6 (tươi), Brightness: 0.9 (sáng)
+        Color dynamicColor = Color.hsb(Math.abs(hash) % 360, 0.6, 0.9);
+        
+        // B. Tạo nền màu
+        Rectangle bg = new Rectangle(210, 140);
+        bg.setFill(dynamicColor);
+        // Bo góc trên
+        bg.setArcWidth(20);
+        bg.setArcHeight(20);
+        
+        // Clip để bo tròn chỉ 2 góc trên (Trick)
+        Rectangle clip = new Rectangle(210, 140);
+        clip.setArcWidth(20);
+        clip.setArcHeight(20);
+        stack.setClip(clip);
+
+        // C. Tạo chữ cái đầu (Ví dụ: "Phở Bò" -> "P")
+        String firstLetter = "";
+        if (name != null && !name.isEmpty()) {
+            firstLetter = name.substring(0, 1).toUpperCase();
+            // Nếu muốn lấy 2 chữ cái đầu (VD: P B):
+            // String[] parts = name.split(" ");
+            // if (parts.length > 1) firstLetter += parts[1].substring(0, 1).toUpperCase();
+        }
+
+        Label letterLabel = new Label(firstLetter);
+        letterLabel.setTextFill(Color.WHITE);
+        letterLabel.setFont(Font.font("Segoe UI", FontWeight.BOLD, 48)); // Chữ to đùng
+        // Thêm bóng cho chữ để nổi bật trên nền sáng
+        letterLabel.setEffect(new DropShadow(10, Color.rgb(0,0,0,0.2)));
+
+        stack.getChildren().addAll(bg, letterLabel);
+        return stack;
+    }
+
     private void showMealSelectionDialog() {
         ChoiceDialog<String> dialog = new ChoiceDialog<>("Bữa Sáng", "Bữa Sáng", "Bữa Trưa", "Bữa Tối");
         dialog.setTitle("Chọn Bữa Ăn");
@@ -108,12 +136,8 @@ public class RecipeCard extends VBox {
         dialog.setContentText("Chọn bữa:");
 
         Optional<String> result = dialog.showAndWait();
-        
-        // Nếu người dùng chọn xong -> Gửi dữ liệu về Controller
         result.ifPresent(selectedMeal -> {
-            if (onCookAction != null) {
-                onCookAction.accept(selectedMeal, food);
-            }
+            if (onCookAction != null) onCookAction.accept(selectedMeal, food);
         });
     }
 }
