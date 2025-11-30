@@ -13,10 +13,10 @@ public class Student {
     private String name;
     private double heightCm;
     private double weightKg;
-    private double targetCalories;
     private double targetProteinG;
     private double targetCarbsG;
     private double targetFatG;
+    private double targetCalories;
     //file word em viet sai xin loi Tu
     // Constructor rỗng
     public Student() {
@@ -24,16 +24,18 @@ public class Student {
 
     // Constructor đầy đủ
 
-    public Student(int studentId, String name, double heightCm, double weightKg, double targetCalories, double targetProteinG, double targetCarbsG, double targetFatG) {
+    public Student(int studentId, String name, double heightCm, double weightKg, double targetProteinG, double targetCarbsG, double targetFatG, double targetCalories) {
         this.studentId = studentId;
         this.name = name;
         this.heightCm = heightCm;
         this.weightKg = weightKg;
-        this.targetCalories = targetCalories;
         this.targetProteinG = targetProteinG;
         this.targetCarbsG = targetCarbsG;
         this.targetFatG = targetFatG;
+        this.targetCalories = targetCalories;
     }
+
+    
     
 
     // Getters and Setters
