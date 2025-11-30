@@ -1,10 +1,174 @@
-/* Thêm vào file style.css của bạn */
-.text-field-normal {
-    -fx-background-color: #f1f2f6;
-    -fx-background-radius: 5;
+/* =============================================================================
+   GLOBAL VARIABLES & ROOT
+   Màu chủ đạo: #8CC63F (Xanh lá) | Nền: #F0F2F5 (Xám nhạt) | Text: #2D3436
+   ============================================================================= */
+.root {
+    -fx-font-family: 'Segoe UI', sans-serif; /* Font chữ hiện đại */
+    -fx-font-size: 14px;
+}
+
+/* Nền chính của toàn bộ ứng dụng */
+.root-background {
+    -fx-background-color: #F0F2F5;
+}
+
+/* =============================================================================
+   HEADER (Thanh trên cùng)
+   ============================================================================= */
+.header-bar {
+    -fx-background-color: #8CC63F; /* Xanh lá giống ảnh */
+    -fx-padding: 10 30;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);
+}
+
+.header-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 18px;
+    -fx-cursor: hand;
+    -fx-border-width: 0 0 2 0; /* Gạch chân ẩn */
     -fx-border-color: transparent;
 }
-.text-field-normal:focused {
+
+.header-btn:hover {
+    -fx-border-color: white; /* Hiện gạch chân khi hover */
+}
+
+/* =============================================================================
+   SIDEBAR & CARDS (Khối trắng bo tròn)
+   ============================================================================= */
+/* Cái khung trắng chứa Inventory và Analyze */
+.sidebar-card {
+    -fx-background-color: white;
+    -fx-background-radius: 20; /* Bo góc tròn trịa */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 3); /* Bóng mờ nhẹ */
+    -fx-padding: 15;
+}
+
+/* Cái nhãn xanh "INVENTORY", "ANALIZE" hình viên thuốc */
+.sidebar-title-pill {
+    -fx-background-color: #8CC63F;
+    -fx-background-radius: 20;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-padding: 5 30 5 30; /* Padding ngang rộng cho giống ảnh */
+    -fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.2), 2, 0, 0, 1);
+}
+
+/* =============================================================================
+   LIST VIEW (Danh sách nguyên liệu)
+   ============================================================================= */
+.list-view {
+    -fx-background-color: transparent;
+    -fx-padding: 5;
+}
+
+.list-cell {
+    -fx-background-color: transparent;
+    -fx-padding: 5 0 5 0;
+    -fx-text-fill: #2d3436;
+}
+
+.list-cell:filled:selected, .list-cell:filled:hover {
+    -fx-background-color: #f0fdf4; /* Xanh rất nhạt khi chọn/hover */
+}
+
+/* Thanh cuộn (Scrollbar) - Làm đẹp, bỏ cái thanh xám xịt mặc định */
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:horizontal, .scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical .track, .scroll-bar:horizontal .track {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-bar:vertical .thumb, .scroll-bar:horizontal .thumb {
+    -fx-background-color: #bdc3c7; /* Màu xám nhạt */
+    -fx-background-radius: 5em;
+}
+
+.scroll-bar:vertical .thumb:hover, .scroll-bar:horizontal .thumb:hover {
+    -fx-background-color: #8CC63F; /* Hover đổi màu xanh */
+}
+
+/* =============================================================================
+   BUTTONS (Các nút bấm)
+   ============================================================================= */
+/* Nút chính (Màu xanh đặc): Save, Cook Now, Find Recipes */
+.btn-primary, .btn-action, .button { 
+    -fx-background-color: #8CC63F;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 20; /* Bo tròn */
+    -fx-cursor: hand;
+}
+
+.btn-primary:hover, .btn-action:hover, .button:hover {
+    -fx-background-color: #7CB32E; /* Đậm hơn khi hover */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 2);
+}
+
+/* Nút phụ (Viền xanh, nền trắng): + Nhập nguyên liệu, Xem lịch sử */
+.btn-add-small, .btn-outline {
     -fx-background-color: white;
     -fx-border-color: #8CC63F;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 15;
+    -fx-background-radius: 15;
+    -fx-text-fill: #8CC63F;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-cursor: hand;
+    -fx-padding: 8 15;
+}
+
+.btn-add-small:hover, .btn-outline:hover {
+    -fx-background-color: #8CC63F;
+    -fx-text-fill: white;
+}
+
+/* Nút Hủy (Màu xám) */
+.btn-secondary {
+    -fx-background-color: #dfe6e9;
+    -fx-text-fill: #636e72;
+    -fx-background-radius: 20;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+.btn-secondary:hover { -fx-background-color: #b2bec3; }
+
+/* =============================================================================
+   INPUTS (TextField, ComboBox, TextArea) - Dùng cho các Form nhập liệu
+   ============================================================================= */
+.text-field, .combo-box, .text-area {
+    -fx-background-color: #F1F2F6; /* Nền xám nhạt */
+    -fx-background-radius: 10;
+    -fx-border-color: transparent;
+    -fx-padding: 8;
+    -fx-prompt-text-fill: #b2bec3;
+}
+
+.text-field:focused, .combo-box:focused, .text-area:focused {
+    -fx-background-color: white;
+    -fx-border-color: #8CC63F; /* Viền xanh khi nhập */
+    -fx-border-radius: 10;
+}
+
+/* =============================================================================
+   PIE CHART (Biểu đồ tròn)
+   ============================================================================= */
+.chart-pie-label {
+    -fx-fill: #555;
+    -fx-font-size: 10px;
+}
+.chart-legend {
+    -fx-background-color: transparent;
 }

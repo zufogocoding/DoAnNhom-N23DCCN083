@@ -51,20 +51,20 @@ public class MainFXMLController implements Initializable {
     private FoodService foodService;
     private MenuService menuService;
     private InventoryDAO inventoryDAO; // Khai báo DAO để dùng chung
-    private int currentStudentId = 1; 
-
+    private int currentStudentId;
+    
+    public void setStudentId(int id){
+        this.currentStudentId = id;
+        System.out.println("Main Controller đã nhận  ID: " + id);
+        
+        loadInventory();
+        loadSuggestedRecipes();
+        refreshAnalyzeSidebar();
+    }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // 1. Khởi tạo Service và DAO
         initServices();
-        
-        // 2. Load dữ liệu lên giao diện
-        loadInventory();        
-        loadSuggestedRecipes(); 
-        
-        // 3. Cập nhật thống kê ngay khi mở app
-        refreshAnalyzeSidebar();
-
         btnAddIngredient.setOnAction(e -> {
             openModal("/doanJava/view/AddIngredient.fxml", "Nhập Nguyên Liệu Vào Kho");
         });

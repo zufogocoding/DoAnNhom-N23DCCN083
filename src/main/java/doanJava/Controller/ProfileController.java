@@ -20,7 +20,7 @@ import java.util.ResourceBundle;
 public class ProfileController implements Initializable {
 
     StudentDAO SD = new StudentDAO();
-
+    private int selectedProfileId = 0;
     // Khai báo khớp với fx:id trong FXML
     @FXML private ComboBox<Student> cbSavedProfiles; // ComboBox chọn người cũ
     @FXML private TextField txtName;
@@ -37,6 +37,16 @@ public class ProfileController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         loadSavedProfiles();
+        
+        cbSavedProfiles.setOnAction(e ->{
+            Student selected = cbSavedProfiles.getValue();
+            if (selected !=null) {
+                selectedProfileId = selected.getStudentId();
+                fillForm(selected);
+            } else{
+                selectedProfileId = 0;
+            }
+        });
     }
 
     // Logic load danh sách sinh viên cũ vào ComboBox
@@ -102,10 +112,21 @@ public class ProfileController implements Initializable {
             double calories = Double.parseDouble(txtCalories.getText());
 
             // 3. Lưu vào DB
-            Student profile = new Student(studentId, name, height, weight, protein, carbs, fat, calories);
-            SD.addStudent(profile);
+            if (selectedProfileId == 0){
+                Student profile = new Student(studentId, name, height, weight, protein, carbs, fat, calories);
+                Student newProfile = SD.addStudent(profile);
+                if (newProfile!= null) {
+                    selectedProfileId = newProfile.getStudentId();
+                    System.out.println("DDax tajo moiws profile voi id = " + selectedProfileId);
+                }
+            }
+            else {
+                Student existingStudent = new Student(selectedProfileId, name, height, weight, protein, carbs, fat,calories);
+                SD.updateStudent(existingStudent);
+            }
             
-            System.out.println("Đã lưu hồ sơ: " + profile.toString());
+            
+            //System.out.println("Đã lưu hồ sơ: " + profile.toString());
             
             // 4. Chuyển cảnh
             switchToMainScreen();
@@ -134,7 +155,8 @@ public class ProfileController implements Initializable {
 
             FXMLLoader loader = new FXMLLoader(url);
             Parent root = loader.load();
-
+            MainFXMLController mainCtrl = loader.getController();
+            mainCtrl.setStudentId(selectedProfileId);
             // Lấy cửa sổ hiện tại
             Stage stage = (Stage) btnSave.getScene().getWindow();
             
@@ -159,4 +181,21 @@ public class ProfileController implements Initializable {
         alert.setContentText(content);
         alert.show();
     }
+    
+    private void fillForm(Student s) {
+        if (s == null) return;
+
+        txtName.setText(s.getName());
+        
+
+        txtStudentId.setText(String.valueOf(s.getStudentId()));
+        txtHeight.setText(String.valueOf(s.getHeightCm()));
+        txtWeight.setText(String.valueOf(s.getWeightKg()));
+        
+        txtProtein.setText(String.valueOf(s.getTargetProteinG()));
+        txtCarbs.setText(String.valueOf(s.getTargetCarbsG()));
+        txtFat.setText(String.valueOf(s.getTargetFatG()));
+        txtCalories.setText(String.valueOf(s.getTargetCalories()));
+    }
+    
 }
