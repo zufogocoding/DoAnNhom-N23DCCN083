@@ -114,12 +114,15 @@ public class ProfileController implements Initializable {
             // 3. Lưu vào DB
             if (selectedProfileId == 0){
                 Student profile = new Student(studentId, name, height, weight, protein, carbs, fat, calories);
-                SD.addStudent(profile);
+                Student newProfile = SD.addStudent(profile);
+                if (newProfile!= null) {
+                    selectedProfileId = newProfile.getStudentId();
+                    System.out.println("DDax tajo moiws profile voi id = " + selectedProfileId);
+                }
             }
             else {
                 Student existingStudent = new Student(selectedProfileId, name, height, weight, protein, carbs, fat,calories);
                 SD.updateStudent(existingStudent);
-                System.out.println("Đã cập nhật profile ID: " + selectedProfileId);
             }
             
             
@@ -152,7 +155,8 @@ public class ProfileController implements Initializable {
 
             FXMLLoader loader = new FXMLLoader(url);
             Parent root = loader.load();
-
+            MainFXMLController mainCtrl = loader.getController();
+            mainCtrl.setStudentId(selectedProfileId);
             // Lấy cửa sổ hiện tại
             Stage stage = (Stage) btnSave.getScene().getWindow();
             
