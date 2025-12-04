@@ -37,6 +37,7 @@ public class MainFXMLController implements Initializable {
     @FXML private ListView<StudentInventory> inventoryListView; 
     @FXML private Button btnAddIngredient;
     @FXML private Button btnRecipes;
+    @FXML private Button btnLogout;
     @FXML private FlowPane recipesContainer;
     @FXML private Button btnSummary;
     @FXML private PieChart macroPieChart;
@@ -73,7 +74,10 @@ public class MainFXMLController implements Initializable {
             btnRecipes.setOnAction(e -> {
                 openModal("/doanJava/view/AddRecipe.fxml", "Thêm Công Thức Mới");
             });
-            
+        
+        if (btnLogout != null) {
+            btnLogout.setOnAction(e -> handleLogout());
+        }
          if (btnSummary != null) {
             btnSummary.setOnAction(e -> {
                 openModal("/doanJava/view/DailySummary.fxml", "Lịch Sử Dinh Dưỡng");
@@ -189,6 +193,12 @@ public class MainFXMLController implements Initializable {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
             Parent root = loader.load();
+            
+            if (fxmlPath.contains("AddIngredient.fxml")) {
+                AddIngredientController ctrl = loader.getController();
+                ctrl.setStudentId(this.currentStudentId); 
+            }
+            
             Stage stage = new Stage();
             stage.setTitle(title);
             stage.setScene(new Scene(root));
@@ -212,7 +222,28 @@ public class MainFXMLController implements Initializable {
             showAlert("Lỗi", "Không tìm thấy file: " + fxmlPath);
         }
     }
-    
+    private void handleLogout() {
+        try {
+            // 1. Load lại màn hình Profile
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/doanJava/view/ProfileFXML.fxml"));
+            Parent root = loader.load();
+            
+            // 2. Lấy Stage hiện tại
+            Stage stage = (Stage) btnLogout.getScene().getWindow();
+            
+            // 3. Chuyển cảnh
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setTitle("Healthy Kitchen - Hồ sơ");
+            stage.centerOnScreen();
+            
+            System.out.println("Đã đăng xuất. Quay về màn hình chọn hồ sơ.");
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+            showAlert("Lỗi", "Không thể quay về màn hình Profile: " + e.getMessage());
+        }
+    }
     private void showAlert(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
