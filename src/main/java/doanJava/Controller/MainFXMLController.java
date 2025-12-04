@@ -181,6 +181,8 @@ public class MainFXMLController implements Initializable {
 
         // 2. Cập nhật PieChart
         if (macroPieChart != null) {
+            
+            macroPieChart.getData().clear();       
             ObservableList<PieChart.Data> pieData = FXCollections.observableArrayList(
                 new PieChart.Data("Protein", pro),
                 new PieChart.Data("Carbs", carb),
@@ -188,6 +190,7 @@ public class MainFXMLController implements Initializable {
             );
             macroPieChart.setData(pieData);
         }
+        
     }
     private void openModal(String fxmlPath, String title) {
         try {
