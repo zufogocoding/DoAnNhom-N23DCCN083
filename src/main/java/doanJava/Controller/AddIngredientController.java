@@ -16,9 +16,14 @@ public class AddIngredientController {
 
     private IngredientDAO ingredientDAO = new IngredientDAO();
     private InventoryDAO inventoryDAO = new InventoryDAO(); // DAO kho
-    private int currentStudentId = 1; // ID giả lập
+    private int currentStudentId ; // ID giả lập
 
     @FXML
+    
+    public void setStudentId(int studentId){
+        this.currentStudentId = studentId;
+    }
+    
     public void initialize() {
         cbUnit.getItems().addAll("g", "kg", "ml", "l", "cái", "quả", "lát");
         cbUnit.getSelectionModel().select(0); // Mặc định chọn g
@@ -38,7 +43,11 @@ public class AddIngredientController {
                 showAlert("Vui lòng nhập Tên và Số lượng đang có!");
                 return;
             }
-
+            
+            if (currentStudentId == 0) {
+                showAlert("Lỗi hệ thống: Chưa xác định được người dùng (ID=0).");
+                return;
+            }
             double quantity = Double.parseDouble(qtyText);
             
             // Lấy giá trị dinh dưỡng thô (User nhập theo bao bì)
