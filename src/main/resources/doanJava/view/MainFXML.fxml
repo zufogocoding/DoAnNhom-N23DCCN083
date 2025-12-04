@@ -21,10 +21,14 @@
                <font><Font name="System Bold" size="20.0" /></font>
             </Label>
             <Button fx:id="btnRecipes" styleClass="header-btn" text="Recipes" />
+            <Button fx:id="btnLogout" text="Đổi người dùng" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-underline: true; -fx-cursor: hand;">
+               <font><Font name="System Bold" size="14.0" /></font>
+            </Button>
+            
          </children>
       </HBox>
    </top>
-
+    
    <left>
       <VBox prefWidth="280.0" spacing="20.0">
          <padding><Insets bottom="20.0" left="20.0" right="20.0" top="20.0" /></padding>
