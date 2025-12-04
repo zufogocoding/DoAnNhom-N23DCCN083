@@ -83,6 +83,10 @@ public class AddRecipeController {
 
         try {
             double qty = Double.parseDouble(qtyText);
+            if (qty<=0) {
+                showAlert("Số lượng phải là số dương!");
+                return;
+            }
             // Thêm vào list tạm
             tempRecipeList.add(new IngredientEntry(selected, qty));
             
