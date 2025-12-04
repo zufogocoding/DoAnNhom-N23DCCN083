@@ -17,7 +17,7 @@ public class AddIngredientController {
     private IngredientDAO ingredientDAO = new IngredientDAO();
     private InventoryDAO inventoryDAO = new InventoryDAO(); // DAO kho
     private int currentStudentId ; // ID giả lập
-
+    
     @FXML
     
     public void setStudentId(int studentId){
